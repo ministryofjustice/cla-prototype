@@ -7,7 +7,9 @@
     <li>You don't have children dependent on you</li>
     <li>You or your partner are not 60 or over</li>
   </ul>
+  {% if include.editable %}
   <a href="your-problem.html" class="SummaryBlock-edit">Change these answers</a>
+  {% endif %}
 </section>
 
 <section class="SummaryBlock">
@@ -19,7 +21,9 @@
     <li>You don't have any money owned to you</li>
   </ul>
 
+  {% if include.editable %}
   <a href="your-finances.html" class="SummaryBlock-edit">Change these answers</a>
+  {% endif %}
 </section>
 
 <section class="SummaryBlock">
@@ -33,7 +37,9 @@
     <li>Your partner doesn't have any other income</li>
   </ul>
 
+  {% if include.editable %}
   <a href="your-income.html" class="SummaryBlock-edit">Change these answers</a>
+  {% endif %}
 </section>
 
 <section class="SummaryBlock">
@@ -46,5 +52,7 @@
     <li>Your payments being made towards a contribution order: £0.00</li>
   </ul>
 
+  {% if include.editable %}
   <a href="your-expenses.html" class="SummaryBlock-edit">Change these answers</a>
+  {% endif %}
 </section>

@@ -1,6 +1,8 @@
 --- 
 layout: default
 body_class: v-Result
+next: confirmation.html
+prev: 
 ---
 
 {% include progress-nav.html step=4 %}
@@ -98,8 +100,8 @@ body_class: v-Result
   </fieldset>
 
   <div class="FormActions">
-    <button type="submit" class="Button">Apply for legal aid</button>
+    <a href="{{ page.next }}" class="Button">Apply for legal aid</a>
   </div>
 </form>
 
-{% include summary.html %}
+{% include summary.html editable=true %}
