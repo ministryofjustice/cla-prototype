@@ -11,10 +11,7 @@ prev: your-income.html
   <p>Whether or not you qualify for legal aid depends on how much money you and your partner earn. To find out if you’re financially eligible, please answer these questions as honestly and fully as you can.</p>
 </header>
 
-<form method="post" action="." role="form">
-  <input type="hidden" name="csrfmiddlewaretoken" value="aNZLHlm72gOlNc48H5REzJCnZo5T5aL6">
-  <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_allowances">
-
+<form method="get" action="{{ page.next }}">
   <section>
     <h2 id="your_allowances-label" class="FormBlock-label">Your expenses</h2>
 
@@ -29,7 +26,7 @@ prev: your-income.html
             </span>
             <span class="Grid-col Grid-col--1-3">
               <span class="FormRow-prefix">£</span>
-              <input id="id_your_allowances-mortgage" max="9999999999" min="0" name="your_allowances-mortgage" step="0.01" type="number">
+              <input id="id_your_allowances-mortgage" max="9999999999" min="0" name="your_allowances-mortgage" step="0.01" type="number" required>
               <span class="FormRow-help">per month</span>
             </span>
           </label>
@@ -42,7 +39,7 @@ prev: your-income.html
             </span>
             <span class="Grid-col Grid-col--1-3">
               <span class="FormRow-prefix">£</span>
-              <input id="id_your_allowances-rent" max="9999999999" min="0" name="your_allowances-rent" step="0.01" type="number">
+              <input id="id_your_allowances-rent" max="9999999999" min="0" name="your_allowances-rent" step="0.01" type="number" required>
               <span class="FormRow-help">per month</span>
             </span>
           </label>
@@ -56,7 +53,7 @@ prev: your-income.html
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix">£</span>
-            <input id="id_your_allowances-tax" max="9999999999" min="0" name="your_allowances-tax" step="0.01" type="number">
+            <input id="id_your_allowances-tax" max="9999999999" min="0" name="your_allowances-tax" step="0.01" type="number" required>
             <span class="FormRow-help">per month</span>
           </span>
         </label>
@@ -69,7 +66,7 @@ prev: your-income.html
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix">£</span>
-            <input id="id_your_allowances-ni" max="9999999999" min="0" name="your_allowances-ni" step="0.01" type="number">
+            <input id="id_your_allowances-ni" max="9999999999" min="0" name="your_allowances-ni" step="0.01" type="number" required>
             <span class="FormRow-help">per month</span>
           </span>
         </label>
@@ -82,7 +79,7 @@ prev: your-income.html
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix">£</span>
-            <input id="id_your_allowances-maintenance" max="9999999999" min="0" name="your_allowances-maintenance" step="0.01" type="number">
+            <input id="id_your_allowances-maintenance" max="9999999999" min="0" name="your_allowances-maintenance" step="0.01" type="number" required>
             <span class="FormRow-help">per month</span>
           </span>
         </label>
@@ -95,7 +92,7 @@ prev: your-income.html
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix">£</span>
-            <input id="id_your_allowances-childcare" max="9999999999" min="0" name="your_allowances-childcare" step="0.01" type="number">
+            <input id="id_your_allowances-childcare" max="9999999999" min="0" name="your_allowances-childcare" step="0.01" type="number" required>
             <span class="FormRow-help">per month</span>
           </span>
         </label>
@@ -108,7 +105,7 @@ prev: your-income.html
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix">£</span>
-            <input id="id_your_allowances-criminal_legalaid_contributions" max="9999999999" min="0" name="your_allowances-criminal_legalaid_contributions" step="0.01" type="number">
+            <input id="id_your_allowances-criminal_legalaid_contributions" max="9999999999" min="0" name="your_allowances-criminal_legalaid_contributions" step="0.01" type="number" required>
             <span class="FormRow-help">per month</span>
           </span>
         </label>
@@ -136,7 +133,7 @@ prev: your-income.html
             </span>
             <span class="Grid-col Grid-col--1-3">
               <span class="FormRow-prefix">£</span>
-              <input id="id_partners_allowances-mortgage" max="9999999999" min="0" name="partners_allowances-mortgage" step="0.01" type="number">
+              <input id="id_partners_allowances-mortgage" max="9999999999" min="0" name="partners_allowances-mortgage" step="0.01" type="number" required>
               <span class="FormRow-help">per month</span>
             </span>
           </label>
@@ -149,7 +146,7 @@ prev: your-income.html
             </span>
             <span class="Grid-col Grid-col--1-3">
               <span class="FormRow-prefix">£</span>
-              <input id="id_partners_allowances-rent" max="9999999999" min="0" name="partners_allowances-rent" step="0.01" type="number">
+              <input id="id_partners_allowances-rent" max="9999999999" min="0" name="partners_allowances-rent" step="0.01" type="number" required>
               <span class="FormRow-help">per month</span>
             </span>
           </label>
@@ -163,7 +160,7 @@ prev: your-income.html
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix">£</span>
-            <input id="id_partners_allowances-tax" max="9999999999" min="0" name="partners_allowances-tax" step="0.01" type="number">
+            <input id="id_partners_allowances-tax" max="9999999999" min="0" name="partners_allowances-tax" step="0.01" type="number" required>
             <span class="FormRow-help">per month</span>
           </span>
         </label>
@@ -176,7 +173,7 @@ prev: your-income.html
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix">£</span>
-            <input id="id_partners_allowances-ni" max="9999999999" min="0" name="partners_allowances-ni" step="0.01" type="number">
+            <input id="id_partners_allowances-ni" max="9999999999" min="0" name="partners_allowances-ni" step="0.01" type="number" required>
             <span class="FormRow-help">per month</span>
           </span>
         </label>
@@ -189,7 +186,7 @@ prev: your-income.html
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix">£</span>
-            <input id="id_partners_allowances-maintenance" max="9999999999" min="0" name="partners_allowances-maintenance" step="0.01" type="number">
+            <input id="id_partners_allowances-maintenance" max="9999999999" min="0" name="partners_allowances-maintenance" step="0.01" type="number" required>
             <span class="FormRow-help">per month</span>
           </span>
         </label>
@@ -202,7 +199,7 @@ prev: your-income.html
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix">£</span>
-            <input id="id_partners_allowances-childcare" max="9999999999" min="0" name="partners_allowances-childcare" step="0.01" type="number">
+            <input id="id_partners_allowances-childcare" max="9999999999" min="0" name="partners_allowances-childcare" step="0.01" type="number" required>
             <span class="FormRow-help">per month</span>
           </span>
         </label>
@@ -215,7 +212,7 @@ prev: your-income.html
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix">£</span>
-            <input id="id_partners_allowances-criminal_legalaid_contributions" max="9999999999" min="0" name="partners_allowances-criminal_legalaid_contributions" step="0.01" type="number">
+            <input id="id_partners_allowances-criminal_legalaid_contributions" max="9999999999" min="0" name="partners_allowances-criminal_legalaid_contributions" step="0.01" type="number" required>
             <span class="FormRow-help">per month</span>
           </span>
         </label>
@@ -230,7 +227,7 @@ prev: your-income.html
   </section>
 
   <div class="FormActions">
-    <a href="{{ page.next }}" class="Button">Next step</button>
+    <button type="submit" class="Button">Next step</button>
     <a href="{{ page.prev }}">Go back to previous step</a>
   </div>
 </form>

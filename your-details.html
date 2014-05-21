@@ -10,10 +10,7 @@ prev: your-problem.html
   <h1>Your details</h1>
 </header>
 
-<form action="." method="POST">
-  <input type="hidden" name="csrfmiddlewaretoken" value="aNZLHlm72gOlNc48H5REzJCnZo5T5aL6">
-  <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_details">
-
+<form action="{{ page.next }}" method="get">
   <div class="FormBlock FormBlock--grey">
     <div class="FormRow cf FormRow--details" role="radiogroup" aria-labelledby="id_your_details-has_partner-label">
       <p class="FormRow-label" id="id_your_details-has_partner-label">
@@ -28,7 +25,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-has_partner_0" class="FormRow-option">
-        <input type="radio" name="your_details-has_partner" id="id_your_details-has_partner_0" value="1">Yes
+        <input type="radio" name="your_details-has_partner" id="id_your_details-has_partner_0" value="1" required>Yes
       </label>
 
       <label for="id_your_details-has_partner_1" class="FormRow-option">
@@ -49,7 +46,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-has_benefits_0" class="FormRow-option">
-        <input type="radio" name="your_details-has_benefits" id="id_your_details-has_benefits_0" value="1">Yes
+        <input type="radio" name="your_details-has_benefits" id="id_your_details-has_benefits_0" value="1" required>Yes
       </label>
 
       <label for="id_your_details-has_benefits_1" class="FormRow-option">
@@ -70,7 +67,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-has_children_0" class="FormRow-option">
-        <input type="radio" name="your_details-has_children" id="id_your_details-has_children_0" value="1">Yes
+        <input type="radio" name="your_details-has_children" id="id_your_details-has_children_0" value="1" required>Yes
       </label>
 
       <label for="id_your_details-has_children_1" class="FormRow-option">
@@ -91,7 +88,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-caring_responsibilities_0" class="FormRow-option">
-        <input type="radio" name="your_details-caring_responsibilities" id="id_your_details-caring_responsibilities_0" value="1">Yes
+        <input type="radio" name="your_details-caring_responsibilities" id="id_your_details-caring_responsibilities_0" value="1" required>Yes
       </label>
 
       <label for="id_your_details-caring_responsibilities_1" class="FormRow-option">
@@ -112,7 +109,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-own_property_0" class="FormRow-option">
-        <input type="radio" name="your_details-own_property" id="id_your_details-own_property_0" value="1">Yes
+        <input type="radio" name="your_details-own_property" id="id_your_details-own_property_0" value="1" required>Yes
       </label>
 
       <label for="id_your_details-own_property_1" class="FormRow-option">
@@ -133,7 +130,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-risk_homeless_0" class="FormRow-option">
-        <input type="radio" name="your_details-risk_homeless" id="id_your_details-risk_homeless_0" value="1">Yes
+        <input type="radio" name="your_details-risk_homeless" id="id_your_details-risk_homeless_0" value="1" required>Yes
       </label>
 
       <label for="id_your_details-risk_homeless_1" class="FormRow-option">
@@ -147,7 +144,7 @@ prev: your-problem.html
       </p>
 
       <label for="id_your_details-older_than_sixty_0" class="FormRow-option">
-        <input type="radio" name="your_details-older_than_sixty" id="id_your_details-older_than_sixty_0" value="1">Yes
+        <input type="radio" name="your_details-older_than_sixty" id="id_your_details-older_than_sixty_0" value="1" required>Yes
       </label>
 
       <label for="id_your_details-older_than_sixty_1" class="FormRow-option">
@@ -157,7 +154,7 @@ prev: your-problem.html
   </div>
   
   <div class="FormActions">
-    <a href="{{ page.next }}" class="Button">Next step - Your finances</a>
+    <button type="submit" class="Button">Next step - Your finances</button>
     <a href="{{ page.prev }}">Go back to previous step</a>
   </div>
 </form>

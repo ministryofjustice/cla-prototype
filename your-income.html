@@ -11,10 +11,7 @@ prev: your-finances.html
   <p>Whether or not you qualify for legal aid depends on how much money you and your partner earn. To find out if you’re financially eligible, please answer these questions as honestly and fully as you can.</p>
 </header>
 
-<form method="post" action="." role="form">
-  <input type="hidden" name="csrfmiddlewaretoken" value="aNZLHlm72gOlNc48H5REzJCnZo5T5aL6">
-  <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_income">
-
+<form method="get" action="{{ page.next }}">
   <section>
     <h2 id="your_income-label" class="FormBlock-label">Your income</h2>
 
@@ -25,7 +22,7 @@ prev: your-finances.html
             Earnings per month
           </span>
           <span class="FormRow-prefix">£</span>
-          <input id="id_your_income-earnings" max="9999999999" min="0" name="your_income-earnings" step="0.01" type="number">
+          <input id="id_your_income-earnings" max="9999999999" min="0" name="your_income-earnings" step="0.01" type="number" required>
         </label>
       </div>
 
@@ -35,7 +32,7 @@ prev: your-finances.html
             Other income per month?
           </span>
           <span class="FormRow-prefix">£</span>
-          <input id="id_your_income-other_income" max="9999999999" min="0" name="your_income-other_income" step="0.01" type="number">
+          <input id="id_your_income-other_income" max="9999999999" min="0" name="your_income-other_income" step="0.01" type="number" required>
         </label>
       </div>
 
@@ -65,7 +62,7 @@ prev: your-finances.html
             Earnings per month
           </span>
           <span class="FormRow-prefix">£</span>
-          <input id="id_partners_income-earnings" max="9999999999" min="0" name="partners_income-earnings" step="0.01" type="number">
+          <input id="id_partners_income-earnings" max="9999999999" min="0" name="partners_income-earnings" step="0.01" type="number" required>
         </label>
       </div>
 
@@ -75,7 +72,7 @@ prev: your-finances.html
             Other income per month?
           </span>
           <span class="FormRow-prefix">£</span>
-          <input id="id_partners_income-other_income" max="9999999999" min="0" name="partners_income-other_income" step="0.01" type="number">
+          <input id="id_partners_income-other_income" max="9999999999" min="0" name="partners_income-other_income" step="0.01" type="number" required>
         </label>
       </div>
 
@@ -105,7 +102,7 @@ prev: your-finances.html
           <span class="FormRow-label">
             Children aged 16 and over
           </span>
-          <input class="FormRow-field--xs" id="id_dependants-dependants_old" min="0" name="dependants-dependants_old" type="number">
+          <input class="FormRow-field--xs" id="id_dependants-dependants_old" min="0" name="dependants-dependants_old" type="number" required>
         </label>
       </div>
 
@@ -114,14 +111,14 @@ prev: your-finances.html
           <span class="FormRow-label">
             Children aged 15 and under
           </span>
-          <input class="FormRow-field--xs" id="id_dependants-dependants_young" min="0" name="dependants-dependants_young" type="number">
+          <input class="FormRow-field--xs" id="id_dependants-dependants_young" min="0" name="dependants-dependants_young" type="number" required>
         </label>
       </div>
     </div>
   </section>
 
   <div class="FormActions">
-    <a href="{{ page.next }}" class="Button">Next step</button>
+    <button type="submit" class="Button">Next step</button>
     <a href="{{ page.prev }}">Go back to previous step</a>
   </div>
 </form>

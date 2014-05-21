@@ -10,16 +10,13 @@ prev:
   <h1>Your problem</h1>
 </header>
 
-<form action="." method="POST" class="js-LabelSelect js-LabelFocus">
-  <input type="hidden" name="csrfmiddlewaretoken" value="aNZLHlm72gOlNc48H5REzJCnZo5T5aL6">
-  <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_problem">
-
+<form action="{{ page.next }}" method="get" class="js-LabelSelect js-LabelFocus">
   <p id="id_your_problem-category-label">What is your problem about? Choose what is putting you at immediate risk.</p>
 
   <div class="FormBlock FormBlock--grey">
     <div class="FormRow FormRow--group FormRow--details">
       <label for="id_your_problem-category_0" class="FormRow-label FormRow-label--odd">
-        <input type="radio" name="your_problem-category" id="id_your_problem-category_0" value="violence" class="js-Conditional">Violence and abuse at home
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_0" value="violence" class="js-Conditional" required>Violence and abuse at home
       </label>
 
       <details>
@@ -199,6 +196,6 @@ prev:
   <p>If possible, please choose one of the categories above. If you’re really not sure or it doesn’t appear above, you can ask for a call back here.</p>
 
   <div class="FormActions">
-    <a href="{{ page.next }}" class="Button">Next step - Your details</a>
+    <button type="submit" class="Button">Next step - Your details</button>
   </div>
 </form>
