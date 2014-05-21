@@ -1,283 +1,105 @@
----
+--- 
 layout: default
 body_class: v-Result
 ---
-      <nav>
-        <ol class="ProgressIndicator" role="progressbar" aria-valuetext="Step 4 of 4">
-          
-            <li class="ProgressIndicator-step is-complete">
-              
-                <a href="/checker/your_problem/" class="ProgressIndicator-tick">Your Problem</a>
-              
-            </li>
-          
-            <li class="ProgressIndicator-step is-complete">
-              
-                <a href="/checker/your_details/" class="ProgressIndicator-tick">Your Details</a>
-              
-            </li>
-          
-            <li class="ProgressIndicator-step is-complete is-previous">
-              
-                <a href="/checker/your_capital/" class="ProgressIndicator-tick">Your Finances</a>
-              
-            </li>
-          
-            <li class="ProgressIndicator-step is-active">
-              
-                Result
-              
-            </li>
-          
-        </ol>
-      </nav>
-    
 
-    <header class="PageHeader">
-      
-    
-        <h1 class="TextIcon TextIcon--tick">You might be able to get Legal Aid</h1>
-    
+{% include progress-nav.html step=4 %}
 
-    </header>
+<header class="PageHeader">
+  <h1 class="TextIcon TextIcon--tick">You might be able to get Legal Aid</h1>
+</header>
 
-    
-  
-    <form action="." method="POST">
-      <input type="hidden" name="csrfmiddlewaretoken" value="aNZLHlm72gOlNc48H5REzJCnZo5T5aL6">
-      <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="result">
-      
+<form action="." method="POST">
+  <input type="hidden" name="csrfmiddlewaretoken" value="aNZLHlm72gOlNc48H5REzJCnZo5T5aL6">
+  <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="result">
 
-      
-        
+  <p>To finish applying for Legal Aid, you need to fill in your personal details</p>
 
+  <fieldset class="FormBlock FormBlock--grey">
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-title" id="id_contact_details-title-label">
+        <span class="FormRow-label">
+          Title
+        </span>
+        <select id="id_contact_details-title" name="contact_details-title">
+          <option value="mr">Mr</option>
+          <option value="mrs">Mrs</option>
+          <option value="miss">Miss</option>
+          <option value="ms">Ms</option>
+          <option value="dr">Dr</option>
+        </select>
+      </label>
+    </div>
 
-      
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-full_name" id="id_contact_details-full_name-label">
+        <span class="FormRow-label">
+          Full name
+        </span>
+        <input class="FormRow-field--l" id="id_contact_details-full_name" maxlength="300" name="contact_details-full_name" type="text">
+      </label>
+    </div>
 
-      <p>To finish applying for Legal Aid, you need to fill in your personal details</p>
-      
-      
-      <fieldset class="FormBlock FormBlock--grey">
-        <div class="FormRow FormRow--inline cf">
-          <label for="id_contact_details-title" id="id_contact_details-title-label">
-            <span class="FormRow-label">
-              Title
-              
-            </span>
-            <select id="id_contact_details-title" name="contact_details-title">
-<option value="mr">Mr</option>
-<option value="mrs">Mrs</option>
-<option value="miss">Miss</option>
-<option value="ms">Ms</option>
-<option value="dr">Dr</option>
-</select>
-          </label>
-        </div>
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-postcode" id="id_contact_details-postcode-label">
+        <span class="FormRow-label">
+          Postcode
+        </span>
+        <input id="id_contact_details-postcode" maxlength="10" name="contact_details-postcode" type="text">
+      </label>
+    </div>
 
-        <div class="FormRow FormRow--inline cf">
-          <label for="id_contact_details-full_name" id="id_contact_details-full_name-label">
-            <span class="FormRow-label">
-              Full name
-              
-            </span>
-            <input class="FormRow-field--l" id="id_contact_details-full_name" maxlength="300" name="contact_details-full_name" type="text">
-          </label>
-        </div>
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-street" id="id_contact_details-street-label">
+        <span class="FormRow-label">
+          Address
+        </span>
+        <textarea class="FormRow-field--l" cols="21" id="id_contact_details-street" name="contact_details-street" rows="4"></textarea>
+      </label>
+    </div>
 
-        <div class="FormRow FormRow--inline cf">
-          <label for="id_contact_details-postcode" id="id_contact_details-postcode-label">
-            <span class="FormRow-label">
-              Postcode
-              
-            </span>
-            <input id="id_contact_details-postcode" maxlength="10" name="contact_details-postcode" type="text">
-          </label>
-        </div>
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-town" id="id_contact_details-town-label">
+        <span class="FormRow-label">
+          Town/city
+        </span>
+        <input class="FormRow-field--l" id="id_contact_details-town" maxlength="100" name="contact_details-town" type="text">
+      </label>
+    </div>
 
-        <div class="FormRow FormRow--inline cf">
-          <label for="id_contact_details-street" id="id_contact_details-street-label">
-            <span class="FormRow-label">
-              Address
-              
-            </span>
-            <textarea class="FormRow-field--l" cols="21" id="id_contact_details-street" name="contact_details-street" rows="4"></textarea>
-          </label>
-        </div>
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-mobile_phone" id="id_contact_details-mobile_phone-label">
+        <span class="FormRow-label">
+          Mobile Phone
+        </span>
+        <input id="id_contact_details-mobile_phone" maxlength="20" name="contact_details-mobile_phone" type="text">
+      </label>
+    </div>
 
-        <div class="FormRow FormRow--inline cf">
-          <label for="id_contact_details-town" id="id_contact_details-town-label">
-            <span class="FormRow-label">
-              Town/city
-              
-            </span>
-            <input class="FormRow-field--l" id="id_contact_details-town" maxlength="100" name="contact_details-town" type="text">
-          </label>
-        </div>
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-home_phone" id="id_contact_details-home_phone-label">
+        <span class="FormRow-label">
+          Home Phone
+        </span>
+        <input id="id_contact_details-home_phone" maxlength="20" name="contact_details-home_phone" type="text">
+      </label>
+    </div>
+  </fieldset>
 
-        <div class="FormRow FormRow--inline cf">
-          <label for="id_contact_details-mobile_phone" id="id_contact_details-mobile_phone-label">
-            <span class="FormRow-label">
-              Mobile Phone
-              
-            </span>
-            <input id="id_contact_details-mobile_phone" maxlength="20" name="contact_details-mobile_phone" type="text">
-          </label>
-        </div>
+  <fieldset class="FormBlock">
+    <div class="FormRow cf">
+      <label for="id_extra-notes" id="id_extra-notes-label">
+        <span class="FormRow-label">
+          Additional details about your problem
+        </span>
+        <textarea class=" form-control" cols="80" id="id_extra-notes" name="extra-notes" rows="5"></textarea>
+      </label>
+    </div>
+  </fieldset>
 
-        <div class="FormRow FormRow--inline cf">
-          <label for="id_contact_details-home_phone" id="id_contact_details-home_phone-label">
-            <span class="FormRow-label">
-              Home Phone
-              
-            </span>
-            <input id="id_contact_details-home_phone" maxlength="20" name="contact_details-home_phone" type="text">
-          </label>
-        </div>
-      </fieldset>
-      
+  <div class="FormActions">
+    <button type="submit" class="Button">Apply for legal aid</button>
+  </div>
+</form>
 
-      
-      <fieldset class="FormBlock">
-        <div class="FormRow cf">
-          <label for="id_extra-notes" id="id_extra-notes-label">
-            <span class="FormRow-label">
-              Additional details about your problem
-              
-            </span>
-            <textarea class=" form-control" cols="80" id="id_extra-notes" name="extra-notes" rows="5"></textarea>
-          </label>
-        </div>
-      </fieldset>
-      
-
-      <div class="FormActions">
-          <button type="submit" class="Button">Apply for legal aid</button>
-      </div>
-    </form>
-  
-
-
-    
-
-
-
-  
-    <section class="SummaryBlock">
-      <h2 class="SummaryBlock-heading">Details you've already given</h2>
-      <ul class="SummaryBlock-list">
-
-      
-        <li>You are looking for help about immigration</li>
-      
-        <li>You live with a partner</li>
-      
-        <li>You or your partner are not on Income Support benefits</li>
-      
-        <li>You don't have children dependent on you</li>
-      
-        <li>You or your partner are 60 or over</li>
-      
-      </ul>
-
-      
-      <a href="/checker/your_problem/" class="SummaryBlock-edit">Change these answers</a>
-      
-    </section>
-  
-    <section class="SummaryBlock">
-      <h2 class="SummaryBlock-heading">Your finances</h2>
-      <ul class="SummaryBlock-list">
-
-      
-        <li>You have one property</li>
-      
-        <li>Property 1: Your property is worth £0.00</li>
-      
-        <li>Property 1: You have no outstanding mortgage on the property</li>
-      
-        <li>Property 1: You own 0% of the property</li>
-      
-        <li>Property 1: This is not a disputed property</li>
-      
-        <li>You don't have any money saved in a bank or building society</li>
-      
-        <li>You don't have any money in investments, shares, ISAs</li>
-      
-        <li>You don't have any valuable items</li>
-      
-        <li>You don't have any money owned to you</li>
-      
-        <li>Your partner doesn't have any money saved in a bank or building society</li>
-      
-        <li>Your partner doesn't have any money in investments, shares, ISAs</li>
-      
-        <li>Your partner doesn't have any valuable items</li>
-      
-        <li>Your partner doesn't have any money owned to them</li>
-      
-      </ul>
-
-      
-      <a href="/checker/your_capital/" class="SummaryBlock-edit">Change these answers</a>
-      
-    </section>
-  
-    <section class="SummaryBlock">
-      <h2 class="SummaryBlock-heading">Your income</h2>
-      <ul class="SummaryBlock-list">
-
-      
-        <li>Your earnings: £1588.38</li>
-      
-        <li>You are self employed</li>
-      
-        <li>You don't have any other income</li>
-      
-        <li>Your partner doesn't have earnings</li>
-      
-        <li>Your partner is self employed</li>
-      
-        <li>Your partner doesn't have any other income</li>
-      
-        <li>You have one child aged 15 and under</li>
-      
-        <li>You have 2 children aged 16 and over</li>
-      
-      </ul>
-
-      
-      <a href="/checker/your_income/" class="SummaryBlock-edit">Change these answers</a>
-      
-    </section>
-  
-    <section class="SummaryBlock">
-      <h2 class="SummaryBlock-heading">Your expenses</h2>
-      <ul class="SummaryBlock-list">
-
-      
-        <li>Your mortgage or rent: £0.00</li>
-      
-        <li>Your National Insurance and tax: £0.00</li>
-      
-        <li>Your maintenance: £0.00</li>
-      
-        <li>Your childcare: £0.00</li>
-      
-        <li>Your payments being made towards a contribution order: £0.00</li>
-      
-        <li>Your partner's mortgage or rent: £0.00</li>
-      
-        <li>Your partner's National Insurance and tax: £0.00</li>
-      
-        <li>Your partner's maintenance: £0.00</li>
-      
-        <li>Your partner's childcare: £0.00</li>
-      
-        <li>Your partner's payments being made towards a contribution order: £0.00</li>
-      
-      </ul>
-
-      
-      <a href="/checker/your_allowances/" class="SummaryBlock-edit">Change these answers</a>
-      
-    </section>
+{% include summary.html %}

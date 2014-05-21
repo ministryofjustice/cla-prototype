@@ -2,41 +2,10 @@
 layout: default
 ---
 
-<nav>
-  <ol class="ProgressIndicator" role="progressbar" aria-valuetext="Step 2 of 4">
-
-    <li class="ProgressIndicator-step is-complete is-previous">
-
-      <a href="/checker/your_problem/" class="ProgressIndicator-tick">Your Problem</a>
-
-    </li>
-
-    <li class="ProgressIndicator-step is-active">
-
-      Your Details
-
-    </li>
-
-    <li class="ProgressIndicator-step">
-
-      Your Finances
-
-    </li>
-
-    <li class="ProgressIndicator-step">
-
-      Result
-
-    </li>
-
-  </ol>
-</nav>
-
+{% include progress-nav.html step=2 %}
 
 <header class="PageHeader">
-
   <h1>Your details</h1>
-
 </header>
 
 
