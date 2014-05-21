@@ -1,5 +1,7 @@
 ---
 layout: default
+next: your-details.html
+prev: 
 ---
 
 {% include progress-nav.html step=1 %}
@@ -44,35 +46,30 @@ layout: default
           You may be able to get legal aid: for family mediation which helps to solve arguments about children and finances on the breakdown of a relationship if Social Services are involved with your children for injunctions against a violent/abusive partner or family member or for other family problems, eg debt or homelessness, if you or your child have suffered (or are at risk of) violence or abuse if you disagree with a decision about your child’s special educational needs for forced marriages for babies injured during pregnancy or around birth due to clinical negligence if you’re unhappy with the community care given for an old or disabled relative for an inquest into the death of a family member to appeal against a decision stopping you working with children and vulnerable adults
         </div>
       </details>
-
     </div>
 
     <div class="FormRow FormRow--group">
       <label for="id_your_problem-category_4" class="FormRow-label FormRow-label--odd">
         <input type="radio" name="your_problem-category" id="id_your_problem-category_4" value="immigration" class="js-Conditional">Applying for asylum or permission to stay in the UK
       </label>
-
     </div>
 
     <div class="FormRow FormRow--group">
       <label for="id_your_problem-category_5" class="FormRow-label">
         <input type="radio" name="your_problem-category" id="id_your_problem-category_5" value="benefits" class="js-Conditional">Welfare benefits appeals
       </label>
-
     </div>
 
     <div class="FormRow FormRow--group">
       <label for="id_your_problem-category_6" class="FormRow-label FormRow-label--odd">
         <input type="radio" name="your_problem-category" id="id_your_problem-category_6" value="police" class="js-Conditional">In trouble with the police
       </label>
-
     </div>
 
     <div class="FormRow FormRow--group">
       <label for="id_your_problem-category_7" class="FormRow-label">
         <input type="radio" name="your_problem-category" id="id_your_problem-category_7" value="health" class="js-Conditional">Mental health, discrimination, disability and other issues
       </label>
-
     </div>
 
     <div class="FormRow FormRow--group">
@@ -90,14 +87,12 @@ layout: default
           <textarea cols="80" id="id_your_problem-your_problem_notes" name="your_problem-your_problem_notes" rows="5"></textarea>
         </div>
       </div>
-
     </div>
-
   </div>
 
   <p>If possible, please choose one of the categories above. If you’re really not sure or it doesn’t appear above, you can ask for a call back here.</p>
 
   <div class="FormActions">
-    <a href="your-details.html" class="Button">Next step - Your details</a>
+    <a href="{{ page.next }}" class="Button">Next step - Your details</a>
   </div>
 </form>

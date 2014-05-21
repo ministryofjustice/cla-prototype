@@ -1,5 +1,7 @@
---- 
+---
 layout: default
+next: your-expenses.html
+prev: your-finances.html
 ---
 
 {% include progress-nav.html step=3 %}
@@ -119,7 +121,7 @@ layout: default
   </section>
 
   <div class="FormActions">
-    <a href="your-expenses.html" class="Button">Next step</button>
-      <a href="your-finances.html">Go back to previous step</a>
+    <a href="{{ page.next }}" class="Button">Next step</button>
+    <a href="{{ page.prev }}">Go back to previous step</a>
   </div>
 </form>
