@@ -83,15 +83,20 @@ prev:
         <input id="id_contact_details-home_phone" maxlength="20" name="contact_details-home_phone" type="text">
       </label>
     </div>
-  </fieldset>
 
-  <fieldset class="FormBlock">
-    <div class="FormRow cf">
-      <label for="id_extra-notes" id="id_extra-notes-label">
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-email" id="id_contact_details-email-label">
         <span class="FormRow-label">
-          Additional details about your problem
+          Email address
         </span>
-        <textarea class=" form-control" cols="80" id="id_extra-notes" name="extra-notes" rows="5"></textarea>
+        <input id="id_contact_details-email" maxlength="20" name="contact_details-email" type="text">
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-can_email" id="id_contact_details-can_email-label">
+        <span class="FormRow-label"></span>
+        <input id="id_contact_details-can_email" maxlength="20" name="contact_details-can_email" type="checkbox"> Please tick if we can email you
       </label>
     </div>
   </fieldset>
@@ -100,5 +105,3 @@ prev:
     <button type="submit" class="Button">Apply for legal aid</button>
   </div>
 </form>
-
-{% include summary.html editable=true %}

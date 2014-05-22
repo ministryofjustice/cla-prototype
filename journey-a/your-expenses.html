@@ -1,6 +1,6 @@
 ---
 layout: default
-next: result-success.html
+next: your-finances.html
 prev: your-income.html
 ---
 
@@ -226,8 +226,5 @@ prev: your-income.html
     </div>
   </section>
 
-  <div class="FormActions">
-    <button type="submit" class="Button">Next step</button>
-    <a href="{{ page.prev }}">Go back to previous step</a>
-  </div>
+  {% include form-actions.html %}
 </form>
