@@ -18,11 +18,9 @@
 
     cacheEls: function () {
       this.FormData = sessionStorage.getItem("FormData") !== null ? JSON.parse(sessionStorage.getItem("FormData")) : [];
-      moj.log(this.FormData);
     },
 
     render: function () {
-      moj.log(this.FormData);
       $.each(this.FormData, function(i, obj) {
         if (obj.type === "radio" || obj.type === "checkbox") {
           $('[name="' + obj.name + '"][value="' + obj.value + '"]').prop('checked', true);
