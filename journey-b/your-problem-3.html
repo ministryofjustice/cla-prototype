@@ -31,9 +31,7 @@ prev: your-problem-2.html
         <input type="radio" name="your_problem-step3" id="id_your_problem-step3_7" value="health" class="js-Conditional">Mental health, discrimination, disability and other issues
       </label>
     </div>
-
-  <div class="FormActions">
-    <button type="submit" class="Button">Next step</button>
-    <a href="{{ page.prev }}">Go back to previous step</a>
   </div>
+
+  {% include form-actions.html %}
 </form>
