@@ -1,0 +1,46 @@
+---
+layout: default
+next: your-problem-3.html
+prev: your-problem.html
+---
+
+{% include progress-nav.html step=1 %}
+
+<header class="PageHeader">
+  <h1>Your problem Step 2</h1>
+</header>
+
+<form action="{{ page.next }}" method="get" class="js-LabelSelect js-LabelFocus">
+  <p id="id_your_problem-step2-label">What is your problem about? Choose what is putting you at immediate risk.</p>
+
+  <div class="FormBlock FormBlock--grey">
+    <div class="FormRow FormRow--group">
+      <label for="id_your_problem-step2_0" class="FormRow-label FormRow-label--odd">
+        <input type="radio" name="your_problem-step2" id="id_your_problem-step2_0" value="violence" class="js-Conditional" required>Violence and abuse at home
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--group">
+      <label for="id_your_problem-step2_1" class="FormRow-label">
+        <input type="radio" name="your_problem-step2" id="id_your_problem-step2_1" value="housing" class="js-Conditional">Housing, eviction and homelessness
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--group">
+      <label for="id_your_problem-step2_2" class="FormRow-label FormRow-label--odd">
+        <input type="radio" name="your_problem-step2" id="id_your_problem-step2_2" value="debt" class="js-Conditional">Debt, money problems and bankruptcy
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--group">
+      <label for="id_your_problem-step2_3" class="FormRow-label">
+        <input type="radio" name="your_problem-step2" id="id_your_problem-step2_3" value="marriage" class="js-Conditional">Family, marriage, separation and children
+      </label>
+    </div>
+  </div>
+
+  <div class="FormActions">
+    <button type="submit" class="Button">Next step - Your details</button>
+    <a href="{{ page.prev }}">Go back to previous step</a>
+  </div>
+</form>

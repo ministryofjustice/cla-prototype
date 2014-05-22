@@ -1,0 +1,39 @@
+---
+layout: default
+next: your-details.html
+prev: your-problem-2.html
+---
+
+{% include progress-nav.html step=1 %}
+
+<header class="PageHeader">
+  <h1>Your problem Step 3</h1>
+</header>
+
+<form action="{{ page.next }}" method="get" class="js-LabelSelect js-LabelFocus">
+  <p id="id_your_problem-step3-label">What is your problem about? Choose what is putting you at immediate risk.</p>
+
+  <div class="FormBlock FormBlock--grey">
+    <div class="FormRow FormRow--group">
+      <label for="id_your_problem-step3_5" class="FormRow-label">
+        <input type="radio" name="your_problem-step3" id="id_your_problem-step3_5" value="benefits" class="js-Conditional">Welfare benefits appeals
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--group">
+      <label for="id_your_problem-step3_6" class="FormRow-label FormRow-label--odd">
+        <input type="radio" name="your_problem-step3" id="id_your_problem-step3_6" value="police" class="js-Conditional">In trouble with the police
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--group">
+      <label for="id_your_problem-step3_7" class="FormRow-label">
+        <input type="radio" name="your_problem-step3" id="id_your_problem-step3_7" value="health" class="js-Conditional">Mental health, discrimination, disability and other issues
+      </label>
+    </div>
+
+  <div class="FormActions">
+    <button type="submit" class="Button">Next step - Your details</button>
+    <a href="{{ page.prev }}">Go back to previous step</a>
+  </div>
+</form>
