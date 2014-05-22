@@ -1,0 +1,124 @@
+---
+layout: default
+next: your-expenses.html
+prev: your-finances.html
+---
+
+{% include progress-nav.html step=3 %}
+
+<header class="PageHeader">
+  <h1>Your income</h1>
+  <p>Whether or not you qualify for legal aid depends on how much money you and your partner earn. To find out if you’re financially eligible, please answer these questions as honestly and fully as you can.</p>
+</header>
+
+<form method="get" action="{{ page.next }}">
+  <section>
+    <h2 id="your_income-label" class="FormBlock-label">Your income</h2>
+
+    <div class="FormBlock FormBlock--grey" aria-labelledby="your_income-label" role="group">
+      <div class="FormRow cf">
+        <label for="id_your_income-earnings" id="id_your_income-earnings-label">
+          <span class="FormRow-label">
+            Earnings per month
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_income-earnings" max="9999999999" min="0" name="your_income-earnings" step="0.01" type="number" required>
+        </label>
+      </div>
+
+      <div class="FormRow cf">
+        <label for="id_your_income-other_income" id="id_your_income-other_income-label">
+          <span class="FormRow-label">
+            Other income per month?
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_income-other_income" max="9999999999" min="0" name="your_income-other_income" step="0.01" type="number" required>
+        </label>
+      </div>
+
+      <div class="FormRow cf" role="radiogroup" aria-labelledby="id_your_income-self_employed-label">
+        <p class="FormRow-label" id="id_your_income-self_employed-label">
+          Are you self employed?
+        </p>
+
+        <label for="id_your_income-self_employed_0" class="FormRow-option">
+          <input type="radio" name="your_income-self_employed" id="id_your_income-self_employed_0" value="1">Yes
+        </label>
+
+        <label for="id_your_income-self_employed_1" class="FormRow-option">
+          <input type="radio" name="your_income-self_employed" id="id_your_income-self_employed_1" value="0" checked="checked">No
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="partners_income-label" class="FormBlock-label">Your partner's income</h2>
+
+    <div class="FormBlock FormBlock--grey" aria-labelledby="partners_income-label" role="group">
+      <div class="FormRow cf">
+        <label for="id_partners_income-earnings" id="id_partners_income-earnings-label">
+          <span class="FormRow-label">
+            Earnings per month
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_income-earnings" max="9999999999" min="0" name="partners_income-earnings" step="0.01" type="number" required>
+        </label>
+      </div>
+
+      <div class="FormRow cf">
+        <label for="id_partners_income-other_income" id="id_partners_income-other_income-label">
+          <span class="FormRow-label">
+            Other income per month?
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_income-other_income" max="9999999999" min="0" name="partners_income-other_income" step="0.01" type="number" required>
+        </label>
+      </div>
+
+      <div class="FormRow cf" role="radiogroup" aria-labelledby="id_partners_income-self_employed-label">
+        <p class="FormRow-label" id="id_partners_income-self_employed-label">
+          Are you self employed?
+        </p>
+
+        <label for="id_partners_income-self_employed_0" class="FormRow-option">
+          <input type="radio" name="partners_income-self_employed" id="id_partners_income-self_employed_0" value="1">Yes
+        </label>
+
+        <label for="id_partners_income-self_employed_1" class="FormRow-option">
+          <input type="radio" name="partners_income-self_employed" id="id_partners_income-self_employed_1" value="0" checked="checked">No
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="dependants-label" class="FormBlock-label">Dependants</h2>
+
+    <div class="FormBlock FormBlock--grey" aria-labelledby="dependants-label" role="group">
+
+      <div class="FormRow cf">
+        <label for="id_dependants-dependants_old" id="id_dependants-dependants_old-label">
+          <span class="FormRow-label">
+            Children aged 16 and over
+          </span>
+          <input class="FormRow-field--xs" id="id_dependants-dependants_old" min="0" name="dependants-dependants_old" type="number" required>
+        </label>
+      </div>
+
+      <div class="FormRow cf">
+        <label for="id_dependants-dependants_young" id="id_dependants-dependants_young-label">
+          <span class="FormRow-label">
+            Children aged 15 and under
+          </span>
+          <input class="FormRow-field--xs" id="id_dependants-dependants_young" min="0" name="dependants-dependants_young" type="number" required>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <div class="FormActions">
+    <button type="submit" class="Button">Next step</button>
+    <a href="{{ page.prev }}">Go back to previous step</a>
+  </div>
+</form>

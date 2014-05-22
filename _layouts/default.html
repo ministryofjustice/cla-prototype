@@ -64,7 +64,7 @@
 
   </head>
 
-  <body class="service alpha v-StartPage js-enabled details" screen_capture_injected="true">
+  <body class="service alpha js-enabled details {{ page.body_class }}">
     <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     <div id="skiplink-container">
@@ -150,6 +150,8 @@
 
     
   <script src="assets/core/javascripts/cla.main.js"></script>
+
+  <script src="assets/prototype/javascripts/FormStorage.js"></script>
   
   <script type="text/javascript">$(moj.init);</script>
   <!--<![endif]-->  
