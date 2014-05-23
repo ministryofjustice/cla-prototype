@@ -359,6 +359,7 @@ section ol li {
         padding-top: 3px;
         margin-left: 15px; } }
   .FormRow input[type=text],
+  .FormRow input[type=email],
   .FormRow input[type=password],
   .FormRow input[type=number] {
     font-family: "nta", Arial, sans-serif;
@@ -379,6 +380,7 @@ section ol li {
     box-sizing: border-box; }
     @media (max-width: 640px) {
       .FormRow input[type=text],
+      .FormRow input[type=email],
       .FormRow input[type=password],
       .FormRow input[type=number] {
         font-size: 20px;
@@ -487,6 +489,7 @@ section ol li {
     padding-top: 5px; }
   .FormRow--inline select,
   .FormRow--inline input[type=text],
+  .FormRow--inline input[type=email],
   .FormRow--inline input[type=password],
   .FormRow--inline input[type=number],
   .FormRow--inline textarea {

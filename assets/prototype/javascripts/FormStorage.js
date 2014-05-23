@@ -13,7 +13,7 @@
     bindEvents: function () {
       moj.Events.on('render', this.render);
 
-      $(this.el).on('change keyup', 'input[type="radio"], input[type="checkbox"], input[type="text"], input[type="number"], textarea', this.onFieldChange);
+      $(this.el).on('change keyup', 'input[type="radio"], input[type="checkbox"], input[type="text"], input[type="email"], input[type="number"], textarea', this.onFieldChange);
     },
 
     cacheEls: function () {
