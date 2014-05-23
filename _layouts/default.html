@@ -64,7 +64,7 @@
 
   </head>
 
-  <body class="service alpha js-enabled details {{ page.body_class }}">
+  <body class="service alpha js-enabled details {{ page.body_class }}" data-next-step="{{ page.next }}">
     <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     <div id="skiplink-container">
@@ -154,7 +154,10 @@
   <script src="{{ site.baseurl }}/assets/prototype/javascripts/FormStorage.js"></script>
   <script src="{{ site.baseurl }}/assets/prototype/javascripts/FieldHelp.js"></script>
   
-  <script type="text/javascript">$(moj.init);</script>
+  <script type="text/javascript">
+    moj.Modules.devs = {};
+    $(moj.init);
+  </script>
   <!--<![endif]-->  
 
 </body></html>
