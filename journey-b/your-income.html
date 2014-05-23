@@ -32,7 +32,7 @@ prev: your-finances.html
       <div class="FormRow Grid cf">
         <label for="id_your_income-other_income" id="id_your_income-other_income-label" class="Grid-col Grid-col--1-3">
           <span class="FormRow-label">
-            Other income per month?
+            Other income per month
           </span>
           <span class="FormRow-prefix">£</span>
           <input id="id_your_income-other_income" max="9999999999" min="0" name="your_income-other_income" step="0.01" type="number" required>
@@ -53,7 +53,7 @@ prev: your-finances.html
           </label>
 
           <label for="id_your_income-self_employed_1" class="FormRow-option">
-            <input type="radio" name="your_income-self_employed" id="id_your_income-self_employed_1" value="0" checked="checked">No
+            <input type="radio" name="your_income-self_employed" id="id_your_income-self_employed_1" value="0">No
           </label>
         </div>
         <div class="Grid-col Grid-col--2-3">
@@ -63,7 +63,7 @@ prev: your-finances.html
     </div>
   </section>
 
-  <section>
+  <section data-dependant-field="your_details-has_partner">
     <h2 id="partners_income-label" class="FormBlock-label">Your partner's income</h2>
 
     <div class="FormBlock FormBlock--grey" aria-labelledby="partners_income-label" role="group">
@@ -83,7 +83,7 @@ prev: your-finances.html
       <div class="FormRow Grid cf">
         <label for="id_partners_income-other_income" id="id_partners_income-other_income-label" class="Grid-col Grid-col--1-3">
           <span class="FormRow-label">
-            Other income per month?
+            Other income per month
           </span>
           <span class="FormRow-prefix">£</span>
           <input id="id_partners_income-other_income" max="9999999999" min="0" name="partners_income-other_income" step="0.01" type="number" required>
@@ -96,7 +96,7 @@ prev: your-finances.html
       <div class="FormRow Grid cf" role="radiogroup" aria-labelledby="id_partners_income-self_employed-label">
         <div class="Grid-col Grid-col--1-3">
           <p class="FormRow-label" id="id_partners_income-self_employed-label">
-            Are you self employed?
+            Are they self employed?
           </p>
 
           <label for="id_partners_income-self_employed_0" class="FormRow-option">
@@ -104,7 +104,7 @@ prev: your-finances.html
           </label>
 
           <label for="id_partners_income-self_employed_1" class="FormRow-option">
-            <input type="radio" name="partners_income-self_employed" id="id_partners_income-self_employed_1" value="0" checked="checked">No
+            <input type="radio" name="partners_income-self_employed" id="id_partners_income-self_employed_1" value="0">No
           </label>
         </div>
         <div class="Grid-col Grid-col--2-3">
@@ -114,7 +114,7 @@ prev: your-finances.html
     </div>
   </section>
 
-  <section>
+  <section data-dependant-field="your_details-has_children">
     <h2 id="dependants-label" class="FormBlock-label">Dependants</h2>
 
     <div class="FormBlock FormBlock--grey" aria-labelledby="dependants-label" role="group">

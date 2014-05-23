@@ -17,7 +17,7 @@
     },
 
     cacheEls: function () {
-      this.FormData = sessionStorage.getItem("FormData") !== null ? JSON.parse(sessionStorage.getItem("FormData")) : [];
+      this.FormData = sessionStorage.getItem("FormData") !== null ? JSON.parse(sessionStorage.getItem("FormData")) : {};
     },
 
     render: function () {
@@ -27,20 +27,26 @@
         } else {
           $('[name="' + obj.name + '"]').val(obj.value);
         }
-      });
 
+        // custom show/hide
+        if (obj.value === "0") {
+          $('[data-dependant-field="' + obj.name + '"]')
+            .hide()
+            .find('[required]').removeAttr('required');
+        }
+      });
       moj.Events.trigger('LabelSelect.render');
     },
 
     saveField: function (e) {
       var $el = $(e.target),
-          field = {};
+          data = {};
 
-      field.name =  $el.attr('name');
-      field.value = $el.val();
-      field.type = $el.attr('type');
+      data.name =  $el.attr('name');
+      data.value = $el.val();
+      data.type = $el.attr('type');
 
-      this.FormData.push(field);
+      this.FormData[$el.attr('name')] = data;
       sessionStorage.setItem("FormData", JSON.stringify(this.FormData));
     }
   };
