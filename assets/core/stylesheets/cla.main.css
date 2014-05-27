@@ -318,7 +318,7 @@ section ol li {
     .FormRow .FormRow-label--odd {
       background-color: #f1f1f1; }
   .FormRow .FormRow-inner {
-    padding: 10px 60px 0;
+    padding: 10px 35px 0;
     margin: 10px 0 0; }
     .FormRow .FormRow-inner label {
       display: block;
@@ -404,6 +404,11 @@ section ol li {
       .FormRow textarea {
         font-size: 20px;
         line-height: 1.2; } }
+  .FormRow input[type=radio],
+  .FormRow input[type=checkbox] {
+    margin: 0 20px 0 0;
+    position: relative;
+    top: -2px; }
   .FormRow input.FormRow-field--l,
   .FormRow textarea.FormRow-field--l {
     width: 420px; }
