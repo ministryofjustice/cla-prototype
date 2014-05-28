@@ -13,32 +13,32 @@ prev: your-finances.html
 
 <form method="get" action="{{ page.next }}" class="js-FieldHelp">
   <section>
-    <h2 id="your_income-label" class="FormBlock-label">Your income</h2>
+    <h2 id="your_income-label" class="FormBlock-label">You</h2>
 
     <div class="FormBlock FormBlock--grey" aria-labelledby="your_income-label" role="group">
       <div class="FormRow Grid cf">
         <label for="id_your_income-earnings" id="id_your_income-earnings-label" class="Grid-col Grid-col--1-3">
           <span class="FormRow-label">
-            Earnings per month
+            Monthly earnings
           </span>
           <span class="FormRow-prefix">£</span>
-          <input id="id_your_income-earnings" max="9999999999" min="0" name="your_income-earnings" step="0.01" type="number" required required data-fail-limit="1000">
+          <input id="id_your_income-earnings" max="9999999999" min="0" name="your_income-earnings" step="0.01" type="number" required required data-fail-limit="800">
         </label>
         <div class="Grid-col Grid-col--2-3">
-          <p class="Help-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, purus id ullamcorper porttitor, magna mauris.</p>
+          <p class="Help-text">Your total money earned before tax. Check your most recent payslips.</p>
         </div>     
       </div>
 
       <div class="FormRow Grid cf">
         <label for="id_your_income-other_income" id="id_your_income-other_income-label" class="Grid-col Grid-col--1-3">
           <span class="FormRow-label">
-            Other income per month
+            Other monthly income
           </span>
           <span class="FormRow-prefix">£</span>
           <input id="id_your_income-other_income" max="9999999999" min="0" name="your_income-other_income" step="0.01" type="number" required>
         </label>
         <div class="Grid-col Grid-col--2-3">
-          <p class="Help-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, purus id ullamcorper porttitor, magna mauris.</p>
+          <p class="Help-text">Include child benefit, pensions, tax credits, income from investments, maintenance payments and employee-benefits, such as company car and fuel allowances.</p>
         </div>
       </div>
 
@@ -64,32 +64,32 @@ prev: your-finances.html
   </section>
 
   <section data-dependant-field="your_details-has_partner">
-    <h2 id="partners_income-label" class="FormBlock-label">Your partner's income</h2>
+    <h2 id="partners_income-label" class="FormBlock-label">Your partner</h2>
 
     <div class="FormBlock FormBlock--grey" aria-labelledby="partners_income-label" role="group">
       <div class="FormRow Grid cf">
         <label for="id_partners_income-earnings" id="id_partners_income-earnings-label" class="Grid-col Grid-col--1-3">
           <span class="FormRow-label">
-            Earnings per month
+            Monthly earnings
           </span>
           <span class="FormRow-prefix">£</span>
-          <input id="id_partners_income-earnings" max="9999999999" min="0" name="partners_income-earnings" step="0.01" type="number" required>
+          <input id="id_partners_income-earnings" max="9999999999" min="0" name="partners_income-earnings" step="0.01" type="number">
         </label>
         <div class="Grid-col Grid-col--2-3">
-          <p class="Help-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, purus id ullamcorper porttitor, magna mauris.</p>
+          <p class="Help-text">Your partner's total money earned before tax. We need this to work out your household income.</p>
         </div>
       </div>
 
       <div class="FormRow Grid cf">
         <label for="id_partners_income-other_income" id="id_partners_income-other_income-label" class="Grid-col Grid-col--1-3">
           <span class="FormRow-label">
-            Other income per month
+            Other monthly income
           </span>
           <span class="FormRow-prefix">£</span>
           <input id="id_partners_income-other_income" max="9999999999" min="0" name="partners_income-other_income" step="0.01" type="number" required>
         </label>
         <div class="Grid-col Grid-col--2-3">
-          <p class="Help-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, purus id ullamcorper porttitor, magna mauris.</p>
+          <p class="Help-text">Include child benefit, pensions, tax credits, income from investments, maintenance payments and employee-benefits, such as company car and fuel allowances.</p>
         </div>
       </div>
 
@@ -115,7 +115,7 @@ prev: your-finances.html
   </section>
 
   <section data-dependant-field="your_details-has_children">
-    <h2 id="dependants-label" class="FormBlock-label">Dependants</h2>
+    <h2 id="dependants-label" class="FormBlock-label">How many children in your household?</h2>
 
     <div class="FormBlock FormBlock--grey" aria-labelledby="dependants-label" role="group">
 
