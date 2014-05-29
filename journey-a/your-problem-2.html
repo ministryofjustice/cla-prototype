@@ -10,31 +10,37 @@ prev: your-problem.html
   <h1>Your problem Step 2</h1>
 </header>
 
-<form action="{{ page.next }}" method="get" class="js-LabelSelect js-LabelFocus">
+<form action="{{ page.next }}" method="get" class="">
   <p id="id_your_problem-step2-label">What is your problem about? Choose what is putting you at immediate risk.</p>
 
   <div class="FormBlock FormBlock--grey">
-    <div class="FormRow FormRow--group">
-      <label for="id_your_problem-step2_0" class="FormRow-label FormRow-label--odd">
-        <input type="radio" name="your_problem-step2" id="id_your_problem-step2_0" value="violence" class="js-Conditional" required>Violence and abuse at home
+    <div class="FormRow">
+      <label for="id_your_problem-step2_0" class="FormRow-label">
+        <input type="radio" name="your_problem-step2" id="id_your_problem-step2_0" value="violence" class="js-Conditional" required="required">Violence and abuse at home
       </label>
     </div>
 
-    <div class="FormRow FormRow--group">
+    <div class="FormRow">
       <label for="id_your_problem-step2_1" class="FormRow-label">
         <input type="radio" name="your_problem-step2" id="id_your_problem-step2_1" value="housing" class="js-Conditional">Housing, eviction and homelessness
       </label>
     </div>
 
-    <div class="FormRow FormRow--group">
-      <label for="id_your_problem-step2_2" class="FormRow-label FormRow-label--odd">
+    <div class="FormRow">
+      <label for="id_your_problem-step2_2" class="FormRow-label">
         <input type="radio" name="your_problem-step2" id="id_your_problem-step2_2" value="debt" class="js-Conditional">Debt, money problems and bankruptcy
       </label>
     </div>
 
-    <div class="FormRow FormRow--group">
+    <div class="FormRow">
       <label for="id_your_problem-step2_3" class="FormRow-label">
         <input type="radio" name="your_problem-step2" id="id_your_problem-step2_3" value="marriage" class="js-Conditional">Family, marriage, separation and children
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-step2_4" class="FormRow-label">
+        <input type="radio" name="your_problem-step2" id="id_your_problem-step2_4" value="immigration" class="js-Conditional">Applying for asylum or permission to stay in the UK
       </label>
     </div>
   </div>
