@@ -11,12 +11,20 @@
 
     bindEvents: function () {
       this.$options
-        .on('focus', function () {
-          $(this).parents('.FormRow').addClass('Help');
-        })
-        .on('focusout', function () {
-          $('.Help').removeClass('Help');
-        });
+        .on('focus', this.onFocus)
+        .on('focusout', this.onFocusOut);
+    },
+
+    onFocus: function () {
+      var $parent = $(this).parents('.FormRow');
+
+      if ($parent.find('.Help-text').length > 0) {
+        $parent.addClass('Help');
+      }
+    },
+
+    onFocusOut: function () {
+      $('.Help').removeClass('Help');
     },
 
     cacheEls: function () {
