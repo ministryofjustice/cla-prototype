@@ -62,9 +62,11 @@
   <!--[if IE 7]><link href="{{ site.baseurl }}/assets/core/stylesheets/cla.main-ie7.css" media="screen" rel="stylesheet"><![endif]-->
   <!--[if IE 8]><link href="{{ site.baseurl }}/assets/core/stylesheets/cla.main-ie8.css" media="screen" rel="stylesheet"><![endif]-->
 
+  <link href="{{ site.baseurl }}/assets/prototype/stylesheets/prototype.css" media="screen" rel="stylesheet">
+
   </head>
 
-  <body class="service alpha js-enabled details {{ page.body_class }}" data-next-step="{{ page.next }}">
+  <body class="service alpha js-enabled details {{ page.body_class }}" data-next-step="{{ page.next }}" data-current-step="{{ page.current }}">
     <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     <div id="skiplink-container">

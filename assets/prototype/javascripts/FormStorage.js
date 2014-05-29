@@ -23,30 +23,41 @@
     },
 
     render: function () {
+      var that = this;
+
       $.each(this.formData, function(i, obj) {
         if (obj.type === "radio" || obj.type === "checkbox") {
           $('[name="' + obj.name + '"][value="' + obj.value + '"]').prop('checked', true);
         } else {
           $('[name="' + obj.name + '"]').val(obj.value);
         }
+      });
 
-        // custom show/hide
-        if (obj.value === "0") {
-          $('[data-dependant-field="' + obj.name + '"]')
-            .hide()
-            .find('[required]').removeAttr('required');
+      $('[data-dependant-field]').each(function (i, el) {
+        var $el = $(el),
+            field = $el.data('dependant-field'),
+            val = $el.data('dependant-value');
+
+        if (
+          (that.formData[field] === undefined) || 
+          (val !== undefined && that.formData[field].value !== val) || 
+          (val === undefined && that.formData[field].value === "0")
+        ) {
+          $el.hide().find('[required]').removeAttr('required');
         }
       });
 
       moj.Events.trigger('LabelSelect.render');
 
       this.checkElig();
+      this.checkDiagnosis();
     },
 
     onFieldChange: function (e) {
       var $el = $(e.target);
 
       this.saveField($el);
+      this.checkDiagnosis();
       this.checkElig();
     },
 
@@ -60,6 +71,10 @@
 
       this.formData[el.attr('name')] = data;
       sessionStorage.setItem('FormData', JSON.stringify(this.formData));
+    },
+
+    checkDiagnosis: function () {
+      
     },
 
     checkElig: function () {

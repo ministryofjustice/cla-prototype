@@ -1,5 +1,6 @@
 ---
 layout: default
+current: your-problem-3
 next: your-details.html
 prev: your-problem-2.html
 ---
@@ -7,29 +8,99 @@ prev: your-problem-2.html
 {% include progress-nav-b.html step=1 %}
 
 <header class="PageHeader">
-  <h1>Your problem Step 3</h1>
+  <h1>Your problem</h1>
 </header>
 
 <form action="{{ page.next }}" method="get" class="js-LabelSelect js-LabelFocus">
-  <p id="id_your_problem-step3-label">What is your problem about? Choose what is putting you at immediate risk.</p>
+  <p id="id_your_problem-step3-label">Tell us more about your situation by choosing one of the following statements.</p>
 
   <div class="FormBlock FormBlock--grey">
-    <div class="FormRow FormRow--group">
-      <label for="id_your_problem-step3_5" class="FormRow-label">
-        <input type="radio" name="your_problem-step3" id="id_your_problem-step3_5" value="benefits" class="js-Conditional" required="required">Welfare benefits appeals
-      </label>
+    <div data-dependant-field="your_problem-step2" data-dependant-value="being_evicted">
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3a_1" class="FormRow-label FormRow-label--odd">
+          <input type="radio" name="your_problem-step3a" id="id_your_problem-step3a_1" value="benefits" class="js-Conditional" required="required">I have received an official eviction letter
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3a_2" class="FormRow-label">
+          <input type="radio" name="your_problem-step3a" id="id_your_problem-step3a_2" value="police" class="js-Conditional">My landlord has told me to leave my home
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3a_3" class="FormRow-label FormRow-label--odd">
+          <input type="radio" name="your_problem-step3a" id="id_your_problem-step3a_3" value="police" class="js-Conditional">I am due in court about my eviction
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3a_4" class="FormRow-label">
+          <input type="radio" name="your_problem-step3a" id="id_your_problem-step3a_4" value="health" class="js-Conditional">The court has told me to leave my home
+        </label>
+      </div>
     </div>
 
-    <div class="FormRow FormRow--group">
-      <label for="id_your_problem-step3_6" class="FormRow-label FormRow-label--odd">
-        <input type="radio" name="your_problem-step3" id="id_your_problem-step3_6" value="police" class="js-Conditional">In trouble with the police
-      </label>
+    <div data-dependant-field="your_problem-step2" data-dependant-value="homeless">
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3b_1" class="FormRow-label FormRow-label--odd">
+          <input type="radio" name="your_problem-step3b" id="id_your_problem-step3b_1" value="benefits" class="js-Conditional" required="required">I am rough sleeping
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3b_2" class="FormRow-label">
+          <input type="radio" name="your_problem-step3b" id="id_your_problem-step3b_2" value="police" class="js-Conditional">I am in temporary accommodation
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3b_3" class="FormRow-label FormRow-label--odd">
+          <input type="radio" name="your_problem-step3b" id="id_your_problem-step3b_3" value="police" class="js-Conditional">I can’t stay with my family anymore
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3b_4" class="FormRow-label">
+          <input type="radio" name="your_problem-step3b" id="id_your_problem-step3b_4" value="health" class="js-Conditional">My landlord has changed the locks
+        </label>
+      </div>
     </div>
 
-    <div class="FormRow FormRow--group">
-      <label for="id_your_problem-step3_7" class="FormRow-label">
-        <input type="radio" name="your_problem-step3" id="id_your_problem-step3_7" value="health" class="js-Conditional">Mental health, discrimination, disability and other issues
-      </label>
+    <div data-dependant-field="your_problem-step2" data-dependant-value="cant_pay">
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3c_1" class="FormRow-label FormRow-label--odd">
+          <input type="radio" name="your_problem-step3c" id="id_your_problem-step3c_1" value="benefits" class="js-Conditional" required="required">I have received a possession order
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3c_2" class="FormRow-label">
+          <input type="radio" name="your_problem-step3c" id="id_your_problem-step3c_2" value="police" class="js-Conditional">The mortgage company wants to reclaim my property
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3c_3" class="FormRow-label FormRow-label--odd">
+          <input type="radio" name="your_problem-step3c" id="id_your_problem-step3c_3" value="police" class="js-Conditional">I could lose my property to pay back money I owe
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3c_4" class="FormRow-label">
+          <input type="radio" name="your_problem-step3c" id="id_your_problem-step3c_4" value="health" class="js-Conditional">I am being made bankrupt and my home is at risk
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--group">
+        <label for="id_your_problem-step3c_5" class="FormRow-label FormRow-label--odd">
+          <input type="radio" name="your_problem-step3c" id="id_your_problem-step3c_5" value="health" class="js-Conditional">I am due in court about my eviction
+        </label>
+      </div>
+    </div>
+
+    <div class="">
+
     </div>
   </div>
 
