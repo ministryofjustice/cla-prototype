@@ -11,218 +11,194 @@ prev: your-income.html
   <p>Whether or not you qualify for legal aid depends on how much money you and your partner earn. To find out if you’re financially eligible, please answer these questions as honestly and fully as you can.</p>
 </header>
 
-<form method="get" action="{{ page.next }}">
+<form method="get" action="{{ page.next }}" class="js-FieldHelp">
   <section>
     <h2 id="your_allowances-label" class="FormBlock-label">Your expenses</h2>
 
-    <div class="FormBlock FormBlock--grey Grid js-SubTotal" aria-labelledby="your_allowances-label" role="group">
-      <div class="FieldGroup">
-        <h3 class="FieldGroup-label">Housing costs</h3>
+    <div class="FormBlock FormBlock--grey Grid" aria-labelledby="your_allowances-label" role="group">
+      <div class="FormRow FormRow--help cf" data-dependant-field="your_details-own_property">
+        <label for="id_your_allowances-mortgage" id="id_your_allowances-mortgage-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
+            Mortgage
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-mortgage" max="9999999999" min="0" name="your_allowances-mortgage" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
+        </label>
 
-        <div class="FormRow FormRow--help cf" data-dependant-field="your_details-own_property">
-          <label for="id_your_allowances-mortgage" id="id_your_allowances-mortgage-label">
-            <span class="FormRow-label Grid-col Grid-col--2-3">
-              Mortgage
-            </span>
-            <span class="Grid-col Grid-col--1-3">
-              <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-              <input id="id_your_allowances-mortgage" max="9999999999" min="0" name="your_allowances-mortgage" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-              <span class="FormRow-help">per month</span>
-            </span>
-          </label>
-        </div>
-
-        <div class="FormRow FormRow--help cf">
-          <label for="id_your_allowances-rent" id="id_your_allowances-rent-label">
-            <span class="FormRow-label Grid-col Grid-col--2-3">
-              Rent
-            </span>
-            <span class="Grid-col Grid-col--1-3">
-              <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-              <input id="id_your_allowances-rent" max="9999999999" min="0" name="your_allowances-rent" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-              <span class="FormRow-help">per month</span>
-            </span>
-          </label>
+        <div class="Grid-col Grid-col--2-3">
+          <p class="Help-text">Include child benefit, pensions, tax credits, income from investments, maintenance payments and employee-benefits, such as company car and fuel allowances.</p>
         </div>
       </div>
 
       <div class="FormRow FormRow--help cf">
-        <label for="id_your_allowances-tax" id="id_your_allowances-tax-label">
-          <span class="FormRow-label Grid-col Grid-col--2-3">
+        <label for="id_your_allowances-rent" id="id_your_allowances-rent-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
+            Rent
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-rent" max="9999999999" min="0" name="your_allowances-rent" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
+        </label>
+
+        <div class="Grid-col Grid-col--2-3">
+          <p class="Help-text">Include child benefit, pensions, tax credits, income from investments, maintenance payments and employee-benefits, such as company car and fuel allowances.</p>
+        </div>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_your_allowances-tax" id="id_your_allowances-tax-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
             Tax
           </span>
-          <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-            <input id="id_your_allowances-tax" max="9999999999" min="0" name="your_allowances-tax" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-            <span class="FormRow-help">per month</span>
-          </span>
+
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-tax" max="9999999999" min="0" name="your_allowances-tax" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
         </label>
       </div>
 
       <div class="FormRow FormRow--help cf">
-        <label for="id_your_allowances-ni" id="id_your_allowances-ni-label">
-          <span class="FormRow-label Grid-col Grid-col--2-3">
+        <label for="id_your_allowances-ni" id="id_your_allowances-ni-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
             National Insurance
           </span>
-          <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-            <input id="id_your_allowances-ni" max="9999999999" min="0" name="your_allowances-ni" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-            <span class="FormRow-help">per month</span>
-          </span>
+
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-ni" max="9999999999" min="0" name="your_allowances-ni" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
         </label>
       </div>
 
       <div class="FormRow FormRow--help cf">
-        <label for="id_your_allowances-maintenance" id="id_your_allowances-maintenance-label">
-          <span class="FormRow-label Grid-col Grid-col--2-3">
+        <label for="id_your_allowances-maintenance" id="id_your_allowances-maintenance-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
             Maintenance
           </span>
-          <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-            <input id="id_your_allowances-maintenance" max="9999999999" min="0" name="your_allowances-maintenance" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-            <span class="FormRow-help">per month</span>
-          </span>
+
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-maintenance" max="9999999999" min="0" name="your_allowances-maintenance" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
         </label>
       </div>
 
       <div class="FormRow FormRow--help cf">
-        <label for="id_your_allowances-childcare" id="id_your_allowances-childcare-label">
-          <span class="FormRow-label Grid-col Grid-col--2-3">
+        <label for="id_your_allowances-childcare" id="id_your_allowances-childcare-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
             Childcare
           </span>
-          <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-            <input id="id_your_allowances-childcare" max="9999999999" min="0" name="your_allowances-childcare" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-            <span class="FormRow-help">per month</span>
-          </span>
+
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-childcare" max="9999999999" min="0" name="your_allowances-childcare" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
         </label>
       </div>
 
       <div class="FormRow FormRow--help cf">
-        <label for="id_your_allowances-criminal_legalaid_contributions" id="id_your_allowances-criminal_legalaid_contributions-label">
-          <span class="FormRow-label Grid-col Grid-col--2-3">
+        <label for="id_your_allowances-criminal_legalaid_contributions" id="id_your_allowances-criminal_legalaid_contributions-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
             Payments being made towards a contribution order
           </span>
-          <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-            <input id="id_your_allowances-criminal_legalaid_contributions" max="9999999999" min="0" name="your_allowances-criminal_legalaid_contributions" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-            <span class="FormRow-help">per month</span>
-          </span>
-        </label>
-      </div>
 
-      <p class="SubTotal cf">
-        <span class="Grid-col Grid-col--1-3 Grid-colPush--2-3">
-          <span class="SubTotal-symbol">£</span>0.00
-        </span>
-      </p>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-criminal_legalaid_contributions" max="9999999999" min="0" name="your_allowances-criminal_legalaid_contributions" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
+        </label>
+
+        <div class="Grid-col Grid-col--2-3">
+          <p class="Help-text">Include child benefit, pensions, tax credits, income from investments, maintenance payments and employee-benefits, such as company car and fuel allowances.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section data-dependant-field="your_details-has_partner">
     <h2 id="partners_allowances-label" class="FormBlock-label">Your partner's expenses</h2>
 
-    <div class="FormBlock FormBlock--grey Grid js-SubTotal" aria-labelledby="partners_allowances-label" role="group">
-      <div class="FieldGroup">
-        <h3 class="FieldGroup-label">Housing costs</h3>
+    <div class="FormBlock FormBlock--grey Grid" aria-labelledby="partners_allowances-label" role="group">
+      <div class="FormRow FormRow--help cf">
+        <label for="id_partners_allowances-mortgage" id="id_partners_allowances-mortgage-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
+            Mortgage
+          </span>
 
-        <div class="FormRow FormRow--help cf">
-          <label for="id_partners_allowances-mortgage" id="id_partners_allowances-mortgage-label">
-            <span class="FormRow-label Grid-col Grid-col--2-3">
-              Mortgage
-            </span>
-            <span class="Grid-col Grid-col--1-3">
-              <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-              <input id="id_partners_allowances-mortgage" max="9999999999" min="0" name="partners_allowances-mortgage" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-              <span class="FormRow-help">per month</span>
-            </span>
-          </label>
-        </div>
-
-        <div class="FormRow FormRow--help cf">
-          <label for="id_partners_allowances-rent" id="id_partners_allowances-rent-label">
-            <span class="FormRow-label Grid-col Grid-col--2-3">
-              Rent
-            </span>
-            <span class="Grid-col Grid-col--1-3">
-              <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-              <input id="id_partners_allowances-rent" max="9999999999" min="0" name="partners_allowances-rent" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-              <span class="FormRow-help">per month</span>
-            </span>
-          </label>
-        </div>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-mortgage" max="9999999999" min="0" name="partners_allowances-mortgage" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
+        </label>
       </div>
 
       <div class="FormRow FormRow--help cf">
-        <label for="id_partners_allowances-tax" id="id_partners_allowances-tax-label">
-          <span class="FormRow-label Grid-col Grid-col--2-3">
+        <label for="id_partners_allowances-rent" id="id_partners_allowances-rent-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
+            Rent
+          </span>
+
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-rent" max="9999999999" min="0" name="partners_allowances-rent" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_partners_allowances-tax" id="id_partners_allowances-tax-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
             Tax
           </span>
-          <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-            <input id="id_partners_allowances-tax" max="9999999999" min="0" name="partners_allowances-tax" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-            <span class="FormRow-help">per month</span>
-          </span>
+
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-tax" max="9999999999" min="0" name="partners_allowances-tax" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
         </label>
       </div>
 
       <div class="FormRow FormRow--help cf">
-        <label for="id_partners_allowances-ni" id="id_partners_allowances-ni-label">
-          <span class="FormRow-label Grid-col Grid-col--2-3">
+        <label for="id_partners_allowances-ni" id="id_partners_allowances-ni-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
             National Insurance
           </span>
-          <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-            <input id="id_partners_allowances-ni" max="9999999999" min="0" name="partners_allowances-ni" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-            <span class="FormRow-help">per month</span>
-          </span>
+
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-ni" max="9999999999" min="0" name="partners_allowances-ni" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
         </label>
       </div>
 
       <div class="FormRow FormRow--help cf">
-        <label for="id_partners_allowances-maintenance" id="id_partners_allowances-maintenance-label">
-          <span class="FormRow-label Grid-col Grid-col--2-3">
+        <label for="id_partners_allowances-maintenance" id="id_partners_allowances-maintenance-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
             Maintenance
           </span>
-          <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-            <input id="id_partners_allowances-maintenance" max="9999999999" min="0" name="partners_allowances-maintenance" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-            <span class="FormRow-help">per month</span>
-          </span>
+
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-maintenance" max="9999999999" min="0" name="partners_allowances-maintenance" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
         </label>
       </div>
 
       <div class="FormRow FormRow--help cf">
-        <label for="id_partners_allowances-childcare" id="id_partners_allowances-childcare-label">
-          <span class="FormRow-label Grid-col Grid-col--2-3">
+        <label for="id_partners_allowances-childcare" id="id_partners_allowances-childcare-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
             Childcare
           </span>
-          <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-            <input id="id_partners_allowances-childcare" max="9999999999" min="0" name="partners_allowances-childcare" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-            <span class="FormRow-help">per month</span>
-          </span>
+
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-childcare" max="9999999999" min="0" name="partners_allowances-childcare" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
         </label>
       </div>
 
       <div class="FormRow FormRow--help cf">
-        <label for="id_partners_allowances-criminal_legalaid_contributions" id="id_partners_allowances-criminal_legalaid_contributions-label">
-          <span class="FormRow-label Grid-col Grid-col--2-3">
+        <label for="id_partners_allowances-criminal_legalaid_contributions" id="id_partners_allowances-criminal_legalaid_contributions-label" class="Grid-col Grid-col--1-3">
+          <span class="FormRow-label">
             Payments being made towards a contribution order
           </span>
-          <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
-            <input id="id_partners_allowances-criminal_legalaid_contributions" max="9999999999" min="0" name="partners_allowances-criminal_legalaid_contributions" step="0.01" type="number" class="FormRow-field--1-3-help" required="required">
-            <span class="FormRow-help">per month</span>
-          </span>
+
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-criminal_legalaid_contributions" max="9999999999" min="0" name="partners_allowances-criminal_legalaid_contributions" step="0.01" type="number" required="required" class="FormRow-field--1-3-help">
+          <span class="FormRow-help">per month</span>
         </label>
       </div>
-
-      <p class="SubTotal cf">
-        <span class="Grid-col Grid-col--1-3 Grid-colPush--2-3">
-          <span class="SubTotal-symbol">£</span>0.00
-        </span>
-      </p>
     </div>
   </section>
 
