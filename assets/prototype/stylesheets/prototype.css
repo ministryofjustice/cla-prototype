@@ -23,7 +23,7 @@ section ul {
   line-height: 1.1em;
 }
 
-.form-hint {
+.FormRow-inlineHelp {
   display: block;
   color: #6f777b;
   margin-bottom: 5px;
