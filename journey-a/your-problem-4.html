@@ -1,0 +1,40 @@
+---
+layout: default
+current: your-problem-3
+next: about-the-case.html
+prev: your-problem-3.html
+---
+
+{% include progress-nav-b.html step=1 %}
+
+<header class="PageHeader">
+  <h1>Your problem</h1>
+</header>
+
+<form action="{{ page.next }}" method="get">
+  <p id="id_your_problem-step3-label">Tell us more about your situation by choosing one of the following statements.</p>
+
+  <div class="FormBlock FormBlock--grey">
+    <div data-dependant-field="your_problem-step3e" data-dependant-value="safety_improv">
+      {% include problem-housing-4a.html option="a" id="safety_improv" %}
+    </div>
+
+    <div data-dependant-field="your_problem-step3e" data-dependant-value="safety_ill">
+      {% include problem-housing-4a.html id="safety_ill" %}
+    </div>
+
+    <div data-dependant-field="your_problem-step3e" data-dependant-value="safety_inj">
+      {% include problem-housing-4a.html id="safety_inj" %}
+    </div>
+
+    <div data-dependant-field="your_problem-step3e" data-dependant-value="safety_fam">
+      {% include problem-housing-4a.html id="safety_fam" %}
+    </div>
+
+    <div data-dependant-field="your_problem-step3e" data-dependant-value="safety_fam_inj">
+      {% include problem-housing-4a.html id="safety_fam_inj" %}
+    </div>
+  </div>
+
+  {% include form-actions.html %}
+</form>

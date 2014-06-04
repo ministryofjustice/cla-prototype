@@ -678,9 +678,6 @@ section ol li {
   -webkit-font-smoothing: antialiased;
   cursor: pointer;
   color: white;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
   line-height: 1.31579;
@@ -754,9 +751,6 @@ section ol li {
     -webkit-font-smoothing: antialiased;
     cursor: pointer;
     color: #0b0c0c;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
     line-height: 1.31579;
@@ -828,9 +822,6 @@ section ol li {
     -webkit-font-smoothing: antialiased;
     cursor: pointer;
     color: white;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
     line-height: 1.31579;
