@@ -15,7 +15,7 @@
 <section class="SummaryBlock">
   <h2 class="SummaryBlock-heading">Your money</h2>
   <ul class="SummaryBlock-list">
-    <div data-dependant-field="your_details-own_property">
+    <div data-dependant-field="your_details-own_property" data-dependant-value="1">
       <li>You have a property</li>
       <li>It is worth £<span data-type="number" data-item-value="property-0-worth"></span> with £<span data-type="number" data-item-value="property-0-mortgage_left"></span> left to pay on the mortgage</li>
       <li>You own <span data-type="number" data-item-value="property-0-share"></span>%</li>
@@ -26,7 +26,7 @@
     <li>You have £<span data-type="number" data-item-value="your_savings-valuable_items"></span> in valuable items</li>
     <li>You have £<span data-type="number" data-item-value="your_savings-money_owed"></span> owed to you</li>
 
-    <div data-dependant-field="your_details-has_partner">
+    <div data-dependant-field="your_details-has_partner" data-dependant-value="1">
       <li>Your partner has £<span data-type="number" data-item-value="partners_savings-bank"></span> in a bank or building society</li>
       <li>Your partner has £<span data-type="number" data-item-value="partners_savings-investments"></span> in investments, shares, ISAs</li>
       <li>Your partner has £<span data-type="number" data-item-value="partners_savings-valuable_items"></span> in valuable items</li>
@@ -44,11 +44,11 @@
   <ul class="SummaryBlock-list">
     <li>Your earnings: £<span data-type="number" data-item-value="your_income-earnings"></span></li>
     <li>Your other income: £<span data-type="number" data-item-value="your_income-other_income"></span></li>
-    <li>You are <span data-dependant-field="your_income-self_employed">not</span> self employed</li>
-    <div data-dependant-field="your_details-has_partner">
+    <li>You are <span data-dependant-field="your_income-self_employed" data-dependant-value="0">not</span> self employed</li>
+    <div data-dependant-field="your_details-has_partner" data-dependant-value="1">
       <li>Your partner's earnings: £<span data-type="number" data-item-value="partners_income-earnings"></span></li>
       <li>Your partner's other income: £<span data-type="number" data-item-value="partners_income-other_income"></span></li>
-      <li>Your partner is <span data-dependant-field="partners_income-self_employed">not</span> self employed</li>
+      <li>Your partner is <span data-dependant-field="partners_income-self_employed" data-dependant-value="0">not</span> self employed</li>
     </div>
   </ul>
 
@@ -60,7 +60,9 @@
 <section class="SummaryBlock">
   <h2 class="SummaryBlock-heading">Your costs</h2>
   <ul class="SummaryBlock-list">
-    <li>Your mortgage: £<span data-type="number" data-item-value="your_allowances-mortgage"></span></li>
+    <div data-dependant-field="your_details-own_property" data-dependant-value="1">
+      <li>Your mortgage: £<span data-type="number" data-item-value="your_allowances-mortgage"></span></li>
+    </div>
     <li>Your rent: £<span data-type="number" data-item-value="your_allowances-rent"></span></li>
     <li>Your National Insurance: £<span data-type="number" data-item-value="your_allowances-ni"></span></li>
     <li>Your tax: £<span data-type="number" data-item-value="your_allowances-tax"></span></li>
@@ -68,7 +70,7 @@
     <li>Your childcare: £<span data-type="number" data-item-value="your_allowances-childcare"></span></li>
     <li>Your payments being made towards a contribution order: £<span data-type="number" data-item-value="your_allowances-criminal_legalaid_contributions"></span></li>
 
-    <div data-dependant-field="your_details-has_partner">
+    <div data-dependant-field="your_details-has_partner" data-dependant-value="1">
       <li>Your partner's mortgage: £<span data-type="number" data-item-value="partners_allowances-mortgage"></span></li>
       <li>Your partner's rent: £<span data-type="number" data-item-value="partners_allowances-rent"></span></li>
       <li>Your partner's National Insurance: £<span data-type="number" data-item-value="partners_allowances-ni"></span></li>

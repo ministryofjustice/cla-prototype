@@ -37,7 +37,6 @@
         var $el = $(el),
             field = $el.data('dependant-field'),
             val = $el.data('dependant-value');
-
         if (
           that.formData[field] !== undefined && 
           that.formData[field].value.toString() === val.toString()
