@@ -1,0 +1,86 @@
+---
+layout: default
+body_class: v-Result
+next: summary.html
+---
+
+{% include progress-nav-b.html step=4 %}
+
+<form action="{{ page.next }}" method="get">
+  <p>To finish applying for Legal Aid, you need to fill in your personal details</p>
+
+  <fieldset class="FormBlock FormBlock--grey">
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-title" id="id_contact_details-title-label">
+        <span class="FormRow-label">
+          Title
+        </span>
+        <select id="id_contact_details-title" name="contact_details-title" required="required">
+          <option value="mr">Mr</option>
+          <option value="mrs">Mrs</option>
+          <option value="miss">Miss</option>
+          <option value="ms">Ms</option>
+          <option value="dr">Dr</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-full_name" id="id_contact_details-full_name-label">
+        <span class="FormRow-label">
+          Full name
+        </span>
+        <input class="FormRow-field--l" id="id_contact_details-full_name" maxlength="300" name="contact_details-full_name" type="text" required="required">
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-postcode" id="id_contact_details-postcode-label">
+        <span class="FormRow-label">
+          Postcode
+        </span>
+        <input id="id_contact_details-postcode" maxlength="10" name="contact_details-postcode" type="text" required="required">
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-street" id="id_contact_details-street-label">
+        <span class="FormRow-label">
+          Address
+        </span>
+        <textarea class="FormRow-field--l" cols="21" id="id_contact_details-street" name="contact_details-street" rows="4" required="required"></textarea>
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-town" id="id_contact_details-town-label">
+        <span class="FormRow-label">
+          Town/city
+        </span>
+        <input class="FormRow-field--l" id="id_contact_details-town" maxlength="100" name="contact_details-town" type="text" required="required">
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-mobile_phone" id="id_contact_details-mobile_phone-label">
+        <span class="FormRow-label">
+          Mobile Phone
+        </span>
+        <input id="id_contact_details-mobile_phone" maxlength="20" name="contact_details-mobile_phone" type="text">
+      </label>
+    </div>
+
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-home_phone" id="id_contact_details-home_phone-label">
+        <span class="FormRow-label">
+          Home Phone
+        </span>
+        <input id="id_contact_details-home_phone" maxlength="20" name="contact_details-home_phone" type="text">
+      </label>
+    </div>
+  </fieldset>
+
+  <div class="FormActions">
+    <button type="submit" class="Button">Apply for legal aid</button>
+  </div>
+</form>
