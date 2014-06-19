@@ -47,6 +47,20 @@
         }
       });
 
+      console.log(that.formData);
+
+      $('[data-item-value]').each(function (i, el) {
+        var $el = $(el),
+            field = $el.data('item-value'),
+            value = that.formData[field] !== undefined ? that.formData[field].value : '-';
+
+        if ($el.data('type') === 'number') {
+          value = parseInt(value).toFixed(2);
+        }
+
+        $el.html(value);
+      });
+
       moj.Events.trigger('LabelSelect.render');
 
       this.checkElig();

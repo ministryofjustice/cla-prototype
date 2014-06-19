@@ -6,9 +6,12 @@ next: summary.html
 
 {% include progress-nav-b.html step=3 %}
 
-<form action="{{ page.next }}" method="get">
-  <p>To finish applying for Legal Aid, you need to fill in your personal details</p>
+<header class="PageHeader">
+  <h1>Your contact details</h1>
+  <p>Please provide the following information so we can contact you about your application for legal aid.</p>
+</header>
 
+<form action="{{ page.next }}" method="get">
   <fieldset class="FormBlock FormBlock--grey">
     <div class="FormRow FormRow--inline cf">
       <label for="id_contact_details-title" id="id_contact_details-title-label">
@@ -88,6 +91,6 @@ next: summary.html
   </fieldset>
 
   <div class="FormActions">
-    <button type="submit" class="Button">Apply for legal aid</button>
+    <button type="submit" class="Button">Continue</button>
   </div>
 </form>

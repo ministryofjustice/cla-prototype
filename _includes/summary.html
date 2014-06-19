@@ -1,24 +1,37 @@
 <section class="SummaryBlock">
-  <h2 class="SummaryBlock-heading">Details you've already given</h2>
+  <h2 class="SummaryBlock-heading">About you</h2>
   <ul class="SummaryBlock-list">
     <li>You are looking for help about your home</li>
-    <li>You don't live with a partner</li>
-    <li>You or your partner are not on Income Support benefits</li>
-    <li>You don't have children dependent on you</li>
-    <li>You or your partner are not 60 or over</li>
+    <li>You <span data-dependant-field="your_details-has_partner" data-dependant-value="0">don't</span> live with a partner</li>
+    <li>You or your partner are <span data-dependant-field="your_details-has_benefits" data-reverse>not</span> on Income Support benefits</li>
+    <li>You <span data-dependant-field="your_details-has_children" data-reverse>don't</span> have children dependent on you</li>
+    <li>You or your partner are <span data-dependant-field="your_details-older_than_sixty" data-reverse>not</span> 60 or over</li>
   </ul>
   {% if include.editable %}
-  <a href="your-problem.html" class="SummaryBlock-edit">Change these answers</a>
+  <a href="your-details.html" class="SummaryBlock-edit">Change these answers</a>
   {% endif %}
 </section>
 
 <section class="SummaryBlock">
-  <h2 class="SummaryBlock-heading">Your finances</h2>
+  <h2 class="SummaryBlock-heading">Your money</h2>
   <ul class="SummaryBlock-list">
-    <li>You don't have any money saved in a bank or building society</li>
-    <li>You don't have any money in investments, shares, ISAs</li>
-    <li>You don't have any valuable items</li>
-    <li>You don't have any money owned to you</li>
+    <div data-dependant-field="your_details-own_property">
+      <li>You have a property</li>
+      <li>It is worth £<span data-type="number" data-item-value="property-0-worth"></span> with £<span data-type="number" data-item-value="property-0-mortgage_left"></span> left to pay on the mortgage</li>
+      <li>You own <span data-item-value="property-0-share"></span>%</li>
+    </div>
+
+    <li>You have £<span data-type="number" data-item-value="your_savings-bank"></span> in a bank or building society</li>
+    <li>You have £<span data-type="number" data-item-value="your_savings-investments"></span> in investments, shares, ISAs</li>
+    <li>You have £<span data-type="number" data-item-value="your_savings-valuable_items"></span> in valuable items</li>
+    <li>You have £<span data-type="number" data-item-value="your_savings-money_owed"></span> owed to you</li>
+
+    <div data-dependant-field="your_details-has_partner">
+      <li>Your partner has £<span data-type="number" data-item-value="partners_savings-bank"></span> in a bank or building society</li>
+      <li>Your partner has £<span data-type="number" data-item-value="partners_savings-investments"></span> in investments, shares, ISAs</li>
+      <li>Your partner has £<span data-type="number" data-item-value="partners_savings-valuable_items"></span> in valuable items</li>
+      <li>Your partner has £<span data-type="number" data-item-value="partners_savings-money_owed"></span> owed to them</li>
+    </div>
   </ul>
 
   {% if include.editable %}
@@ -29,12 +42,14 @@
 <section class="SummaryBlock">
   <h2 class="SummaryBlock-heading">Your income</h2>
   <ul class="SummaryBlock-list">
-    <li>Your earnings: £910.51</li>
-    <li>You are not self employed</li>
-    <li>You don't have any other income</li>
-    <li>Your partner doesn't have earnings</li>
-    <li>Your partner is not self employed</li>
-    <li>Your partner doesn't have any other income</li>
+    <li>Your earnings: £<span data-type="number" data-item-value="your_income-earnings"></span></li>
+    <li>Your other income: £<span data-type="number" data-item-value="your_income-other_income"></span></li>
+    <li>You are <span data-dependant-field="your_income-self_employed">not</span> self employed</li>
+    <div data-dependant-field="your_details-has_partner">
+      <li>Your partner's earnings: £<span data-type="number" data-item-value="partners_income-earnings"></span></li>
+      <li>Your partner's other income: £<span data-type="number" data-item-value="partners_income-other_income"></span></li>
+      <li>Your partner is <span data-dependant-field="partners_income-self_employed">not</span> self employed</li>
+    </div>
   </ul>
 
   {% if include.editable %}
@@ -43,13 +58,25 @@
 </section>
 
 <section class="SummaryBlock">
-  <h2 class="SummaryBlock-heading">Your expenses</h2>
+  <h2 class="SummaryBlock-heading">Your costs</h2>
   <ul class="SummaryBlock-list">
-    <li>Your mortgage or rent: £0.00</li>
-    <li>Your National Insurance and tax: £0.00</li>
-    <li>Your maintenance: £0.00</li>
-    <li>Your childcare: £0.00</li>
-    <li>Your payments being made towards a contribution order: £0.00</li>
+    <li>Your mortgage: £<span data-type="number" data-item-value="your_allowances-mortgage"></span></li>
+    <li>Your rent: £<span data-type="number" data-item-value="your_allowances-rent"></span></li>
+    <li>Your National Insurance: £<span data-type="number" data-item-value="your_allowances-ni"></span></li>
+    <li>Your tax: £<span data-type="number" data-item-value="your_allowances-tax"></span></li>
+    <li>Your maintenance: £<span data-type="number" data-item-value="your_allowances-maintenance"></span></li>
+    <li>Your childcare: £<span data-type="number" data-item-value="your_allowances-childcare"></span></li>
+    <li>Your payments being made towards a contribution order: £<span data-type="number" data-item-value="your_allowances-criminal_legalaid_contributions"></span></li>
+
+    <div data-dependant-field="your_details-has_partner">
+      <li>Your partner's mortgage: £<span data-type="number" data-item-value="partners_allowances-mortgage"></span></li>
+      <li>Your partner's rent: £<span data-type="number" data-item-value="partners_allowances-rent"></span></li>
+      <li>Your partner's National Insurance: £<span data-type="number" data-item-value="partners_allowances-ni"></span></li>
+      <li>Your partner's tax: £<span data-type="number" data-item-value="partners_allowances-tax"></span></li>
+      <li>Your partner's maintenance: £<span data-type="number" data-item-value="partners_allowances-maintenance"></span></li>
+      <li>Your partner's childcare: £<span data-type="number" data-item-value="partners_allowances-childcare"></span></li>
+      <li>Your partner's payments being made towards a contribution order: £<span data-type="number" data-item-value="partners_allowances-criminal_legalaid_contributions"></span></li>
+    </div>
   </ul>
 
   {% if include.editable %}
