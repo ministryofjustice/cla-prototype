@@ -1,5 +1,5 @@
 <nav>
-  <ol class="ProgressIndicator" role="progressbar" aria-valuetext="Step 1 of 4">
+  <ol class="ProgressIndicator" role="progressbar" aria-valuetext="Step 1 of 3">
     <li class="ProgressIndicator-step{% if include.step == 1 %} is-active{% endif %}{% if include.step == 2 %} is-previous{% endif %}{% if include.step > 1 %} is-complete{% endif %}">
       {% if include.step > 1 %}
           <a href="your-problem.html" class="ProgressIndicator-tick">Your Problem</a>
@@ -9,19 +9,12 @@
     </li>
     <li class="ProgressIndicator-step{% if include.step == 2 %} is-active{% endif %}{% if include.step == 3 %} is-previous{% endif %}{% if include.step > 2 %} is-complete{% endif %}">
       {% if include.step > 2 %}
-        <a href="your-details.html" class="ProgressIndicator-tick">Your Details</a>
-      {% else %}
-        Your Details
-      {% endif %}
-    </li>
-    <li class="ProgressIndicator-step{% if include.step == 3 %} is-active{% endif %}{% if include.step == 4 %} is-previous{% endif %}{% if include.step > 3 %} is-complete{% endif %}">
-      {% if include.step > 3 %}
         <a href="your-finances.html" class="ProgressIndicator-tick">Your Finances</a>
       {% else %}
         Your Finances
       {% endif %}
     </li>
-    <li class="ProgressIndicator-step{% if include.step == 4 %} is-active{% endif %}{% if include.step > 4 %} is-complete{% endif %}">
+    <li class="ProgressIndicator-step{% if include.step == 3 %} is-active{% endif %}{% if include.step > 3 %} is-complete{% endif %}">
       {% if include.step > 4 %}
         <a href="result.html" class="ProgressIndicator-tick">Result</a>
       {% else %}
