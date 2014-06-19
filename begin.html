@@ -1,19 +1,27 @@
 ---
 layout: default
-body_class: v-StartPage
-next: your-details.html
-prev: your-problem-2.html
+body_class: 
+next: your-finances.html
+prev: your-details.html
 ---
 
+{% include progress-nav-b.html step=3 %}
+
 <header class="PageHeader">
-  <h1>Before you start</h1>
+  <h1>Your finances</h1>
 </header>  
 
-<p>You're about to check if you can get legal aid.</p>
+<p>By answering a series of questions you're about to check if you can get legal aid. You must provide detailed information about your income, your savings, your property, any benefits you receive and also your partner's details.</p>
 
-<p>We'll take you through a series of questions that will provide us with information about whether you qualify for this service. Take time to answer the questions as fully and as accurately as possible.</p>
+<p>Before you start this section you'll need the following items:</p>
 
-<p>If you do not qualify for legal aid, we'll offer you advice on where to get help.</p>
+<ul>
+   <li>your most recent pay-slips</li>
+   <li>your most recent bank statements</li>
+   <li>details of any benefits you receive</li>
+ </ul>
+
+ <p>If you qualify for legal aid you will get to speak to an advisor. If you do not qualify we'll offer you suggestions on where to get help.</p>
 
 <div class="Notice">
   <p>This checker is for non-criminal cases only. If you've been charged with a crime ask your solicitor about legal aid.</p>
@@ -24,6 +32,6 @@ prev: your-problem-2.html
 </div>
 
 <p>
-  <a href="{{ page.next }}" class="Button" role="button">Start</a>
+  <a href="{{ page.next }}" class="Button" role="button">Continue</a>
   <a href="{{ page.prev }}">Go back to previous step</a>
 </p>
