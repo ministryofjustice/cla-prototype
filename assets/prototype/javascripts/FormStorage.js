@@ -48,8 +48,6 @@
         }
       });
 
-      console.log(that.formData);
-
       $('[data-item-value]').each(function (i, el) {
         var $el = $(el),
             field = $el.data('item-value'),
