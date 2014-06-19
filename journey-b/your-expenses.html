@@ -1,0 +1,182 @@
+---
+layout: default
+next: eligible.html
+prev: your-income.html
+---
+
+{% include progress-nav-b.html step=3 %}
+
+<header class="PageHeader">
+  <h1>Your expenses</h1>
+  <p>To get legal aid we need to know what you and your partner spend your money on each month. Take time to answer these questions as fully and accurately as possible.</p>
+</header>
+
+<form method="get" action="{{ page.next }}">
+  <section>
+    <h2 id="your_allowances-label" class="FormBlock-label">You</h2>
+
+    <div class="FormBlock FormBlock--grey" aria-labelledby="your_allowances-label" role="group">
+      <div class="FormRow FormRow--help cf" data-dependant-field="your_details-own_property">
+        <label for="id_your_allowances-mortgage" id="id_your_allowances-mortgage-label">
+          <span class="FormRow-label">
+            Mortgage
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-mortgage" max="9999999999" min="0" name="your_allowances-mortgage" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_your_allowances-rent" id="id_your_allowances-rent-label">
+          <span class="FormRow-label">
+            Rent
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-rent" max="9999999999" min="0" name="your_allowances-rent" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_your_allowances-tax" id="id_your_allowances-tax-label">
+          <span class="FormRow-label">
+            Tax
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-tax" max="9999999999" min="0" name="your_allowances-tax" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_your_allowances-ni" id="id_your_allowances-ni-label">
+          <span class="FormRow-label">
+            National Insurance
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-ni" max="9999999999" min="0" name="your_allowances-ni" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_your_allowances-maintenance" id="id_your_allowances-maintenance-label">
+          <span class="FormRow-label">
+            Maintenance
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-maintenance" max="9999999999" min="0" name="your_allowances-maintenance" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_your_allowances-childcare" id="id_your_allowances-childcare-label">
+          <span class="FormRow-label">
+            Childcare
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-childcare" max="9999999999" min="0" name="your_allowances-childcare" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_your_allowances-criminal_legalaid_contributions" id="id_your_allowances-criminal_legalaid_contributions-label">
+          <span class="FormRow-label">
+            Contribution order
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_your_allowances-criminal_legalaid_contributions" max="9999999999" min="0" name="your_allowances-criminal_legalaid_contributions" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section data-dependant-field="your_details-has_partner">
+    <h2 id="partners_allowances-label" class="FormBlock-label">Your partner</h2>
+
+    <div class="FormBlock FormBlock--grey" aria-labelledby="partners_allowances-label" role="group">
+      <div class="FormRow FormRow--help cf">
+        <label for="id_partners_allowances-mortgage" id="id_partners_allowances-mortgage-label">
+          <span class="FormRow-label">
+            Mortgage
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-mortgage" max="9999999999" min="0" name="partners_allowances-mortgage" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_partners_allowances-rent" id="id_partners_allowances-rent-label">
+          <span class="FormRow-label">
+            Rent
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-rent" max="9999999999" min="0" name="partners_allowances-rent" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_partners_allowances-tax" id="id_partners_allowances-tax-label">
+          <span class="FormRow-label">
+            Tax
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-tax" max="9999999999" min="0" name="partners_allowances-tax" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_partners_allowances-ni" id="id_partners_allowances-ni-label">
+          <span class="FormRow-label">
+            National Insurance
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-ni" max="9999999999" min="0" name="partners_allowances-ni" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_partners_allowances-maintenance" id="id_partners_allowances-maintenance-label">
+          <span class="FormRow-label">
+            Maintenance
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-maintenance" max="9999999999" min="0" name="partners_allowances-maintenance" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_partners_allowances-childcare" id="id_partners_allowances-childcare-label">
+          <span class="FormRow-label">
+            Childcare
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-childcare" max="9999999999" min="0" name="partners_allowances-childcare" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+
+      <div class="FormRow FormRow--help cf">
+        <label for="id_partners_allowances-criminal_legalaid_contributions" id="id_partners_allowances-criminal_legalaid_contributions-label">
+          <span class="FormRow-label">
+            Contribution order
+          </span>
+          <span class="FormRow-prefix">£</span>
+          <input id="id_partners_allowances-criminal_legalaid_contributions" max="9999999999" min="0" name="partners_allowances-criminal_legalaid_contributions" step="0.01" type="number" required="required">
+          <span class="FormRow-help">each month</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  {% include form-actions.html %}
+</form>

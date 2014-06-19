@@ -4,7 +4,7 @@ next: your-income.html
 prev: your-details.html
 ---
 
-{% include progress-nav.html step=3 %}
+{% include progress-nav-b.html step=3 %}
 
 <header class="PageHeader">
   <h1>Your finances</h1>
@@ -13,7 +13,7 @@ prev: your-details.html
 <p>Whether or not you qualify for legal aid depends on how much money you and your partner have. To find out if you’re financially eligible, please answer these questions as honestly and fully as you can.</p>
 
 <form method="get" action="{{ page.next }}">
-  <section>
+  <section data-dependant-field="your_details-own_property">
     <input id="id_property-TOTAL_FORMS" name="property-TOTAL_FORMS" type="hidden" value="1">
     <input id="id_property-INITIAL_FORMS" name="property-INITIAL_FORMS" type="hidden" value="0">
     <input id="id_property-MAX_NUM_FORMS" name="property-MAX_NUM_FORMS" type="hidden" value="20">
@@ -29,7 +29,7 @@ prev: your-details.html
             How much is it worth?
           </span>
           <span class="FormRow-prefix">£</span>
-          <input id="id_property-0-worth" max="9999999999" min="0" name="property-0-worth" step="0.01" type="number" required>
+          <input id="id_property-0-worth" max="9999999999" min="0" name="property-0-worth" step="0.01" type="number" required="required" data-fail-limit="100000">
         </label>
       </div>
 
@@ -39,7 +39,7 @@ prev: your-details.html
             How much is left to pay on the mortgage?
           </span>
           <span class="FormRow-prefix">£</span>
-          <input id="id_property-0-mortgage_left" max="9999999999" min="0" name="property-0-mortgage_left" step="0.01" type="number" required>
+          <input id="id_property-0-mortgage_left" max="9999999999" min="0" name="property-0-mortgage_left" step="0.01" type="number" required="required">
         </label>
       </div>
 
@@ -49,7 +49,7 @@ prev: your-details.html
         </p>
 
         <label for="id_property-0-owner_0" class="FormRow-option">
-          <input type="radio" name="property-0-owner" id="id_property-0-owner_0" value="1" required>Owned by me
+          <input type="radio" name="property-0-owner" id="id_property-0-owner_0" value="1" required="required">Owned by me
         </label>
 
         <label for="id_property-0-owner_1" class="FormRow-option">
@@ -63,7 +63,7 @@ prev: your-details.html
         </p>
 
         <label for="id_property-0-disputed_0" class="FormRow-option">
-          <input type="radio" name="property-0-disputed" id="id_property-0-disputed_0" value="1" required>Yes
+          <input type="radio" name="property-0-disputed" id="id_property-0-disputed_0" value="1" required="required">Yes
         </label>
 
         <label for="id_property-0-disputed_1" class="FormRow-option">
@@ -76,14 +76,10 @@ prev: your-details.html
           <span class="FormRow-label">
             What is your share of the property?
           </span>
-          <input class="FormRow-field--s" id="id_property-0-share" max="100" min="0" name="property-0-share" type="number" required>
+          <input class="FormRow-field--s" id="id_property-0-share" max="100" min="0" name="property-0-share" type="number" required="required">
           <span class="FormRow-suffix">%</span>
         </label>
       </div>
-    </div>
-
-    <div class="FormBlock-actions">
-      <button class="Button Button--secondary" type="button" name="submit" value="add-property">Add another property</button>
     </div>
   </section>
 
@@ -97,8 +93,8 @@ prev: your-details.html
             Do you have any money saved in a bank or building society?
           </span>
           <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix">£</span>
-            <input id="id_your_savings-bank" max="9999999999" min="0" name="your_savings-bank" step="0.01" type="number" required>
+            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
+            <input id="id_your_savings-bank" max="9999999999" min="0" name="your_savings-bank" step="0.01" type="number" required="required" class="FormRow-field--1-3">
           </span>
         </label>
       </div>
@@ -109,8 +105,8 @@ prev: your-details.html
             Do you have any investments, shares, ISAs?
           </span>
           <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix">£</span>
-            <input id="id_your_savings-investments" max="9999999999" min="0" name="your_savings-investments" step="0.01" type="number" required>
+            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
+            <input id="id_your_savings-investments" max="9999999999" min="0" name="your_savings-investments" step="0.01" type="number" required="required" class="FormRow-field--1-3">
           </span>
         </label>
       </div>
@@ -118,11 +114,11 @@ prev: your-details.html
       <div class="FormRow cf">
         <label for="id_your_savings-valuable_items" id="id_your_savings-valuable_items-label">
           <span class="Grid-col Grid-col--2-3">
-            Do you have any valuable items over £££ each?
+            Do you have any valuable items over £500 each?
           </span>
           <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix">£</span>
-            <input id="id_your_savings-valuable_items" max="9999999999" min="0" name="your_savings-valuable_items" step="0.01" type="number" required>
+            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
+            <input id="id_your_savings-valuable_items" max="9999999999" min="0" name="your_savings-valuable_items" step="0.01" type="number" required="required" class="FormRow-field--1-3">
           </span>
         </label>
       </div>
@@ -133,15 +129,15 @@ prev: your-details.html
             Do you have any money owed to you?
           </span>
           <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix">£</span>
-            <input id="id_your_savings-money_owed" max="9999999999" min="0" name="your_savings-money_owed" step="0.01" type="number" required>
+            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
+            <input id="id_your_savings-money_owed" max="9999999999" min="0" name="your_savings-money_owed" step="0.01" type="number" required="required" class="FormRow-field--1-3">
           </span>
         </label>
       </div>
     </div>
   </section>
 
-  <section class="Grid">
+  <section class="Grid" data-dependant-field="your_details-has_partner">
     <h2 id="partners_savings-label" class="FormBlock-label">Your partner's savings</h2>
 
     <div class="FormBlock FormBlock--grey" aria-labelledby="partners_savings-label" role="group">
@@ -151,8 +147,8 @@ prev: your-details.html
             Do you have any money saved in a bank or building society?
           </span>
           <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix">£</span>
-            <input id="id_partners_savings-bank" max="9999999999" min="0" name="partners_savings-bank" step="0.01" type="number" required>
+            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
+            <input id="id_partners_savings-bank" max="9999999999" min="0" name="partners_savings-bank" step="0.01" type="number" required="required" class="FormRow-field--1-3">
           </span>
         </label>
       </div>
@@ -163,8 +159,8 @@ prev: your-details.html
             Do you have any investments, shares, ISAs?
           </span>
           <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix">£</span>
-            <input id="id_partners_savings-investments" max="9999999999" min="0" name="partners_savings-investments" step="0.01" type="number" required>
+            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
+            <input id="id_partners_savings-investments" max="9999999999" min="0" name="partners_savings-investments" step="0.01" type="number" required="required" class="FormRow-field--1-3">
           </span>
         </label>
       </div>
@@ -172,11 +168,11 @@ prev: your-details.html
       <div class="FormRow cf">
         <label for="id_partners_savings-valuable_items" id="id_partners_savings-valuable_items-label">
           <span class="Grid-col Grid-col--2-3">
-            Do you have any valuable items over £££ each?
+            Do you have any valuable items over £500 each?
           </span>
           <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix">£</span>
-            <input id="id_partners_savings-valuable_items" max="9999999999" min="0" name="partners_savings-valuable_items" step="0.01" type="number" required>
+            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
+            <input id="id_partners_savings-valuable_items" max="9999999999" min="0" name="partners_savings-valuable_items" step="0.01" type="number" required="required" class="FormRow-field--1-3">
           </span>
         </label>
       </div>
@@ -187,16 +183,13 @@ prev: your-details.html
             Do you have any money owed to you?
           </span>
           <span class="Grid-col Grid-col--1-3">
-            <span class="FormRow-prefix">£</span>
-            <input id="id_partners_savings-money_owed" max="9999999999" min="0" name="partners_savings-money_owed" step="0.01" type="number" required>
+            <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
+            <input id="id_partners_savings-money_owed" max="9999999999" min="0" name="partners_savings-money_owed" step="0.01" type="number" required="required" class="FormRow-field--1-3">
           </span>
         </label>
       </div>
     </div>
   </section>
 
-  <div class="FormActions">
-    <button type="submit" class="Button">Next step</button>
-    <a href="{{ page.prev }}">Go back to previous step</a>
-  </div>
+  {% include form-actions.html %}
 </form>

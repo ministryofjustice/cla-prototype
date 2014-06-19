@@ -1,10 +1,10 @@
 ---
 layout: default
 next: your-finances.html
-prev: your-problem.html
+prev: your-problem-4.html
 ---
 
-{% include progress-nav.html step=2 %}
+{% include progress-nav-b.html step=2 %}
 
 <header class="PageHeader">
   <h1>Your details</h1>
@@ -25,7 +25,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-has_partner_0" class="FormRow-option">
-        <input type="radio" name="your_details-has_partner" id="id_your_details-has_partner_0" value="1" required>Yes
+        <input type="radio" name="your_details-has_partner" id="id_your_details-has_partner_0" value="1" required="required">Yes
       </label>
 
       <label for="id_your_details-has_partner_1" class="FormRow-option">
@@ -46,7 +46,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-has_benefits_0" class="FormRow-option">
-        <input type="radio" name="your_details-has_benefits" id="id_your_details-has_benefits_0" value="1" required>Yes
+        <input type="radio" name="your_details-has_benefits" id="id_your_details-has_benefits_0" value="1" required="required">Yes
       </label>
 
       <label for="id_your_details-has_benefits_1" class="FormRow-option">
@@ -67,7 +67,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-has_children_0" class="FormRow-option">
-        <input type="radio" name="your_details-has_children" id="id_your_details-has_children_0" value="1" required>Yes
+        <input type="radio" name="your_details-has_children" id="id_your_details-has_children_0" value="1" required="required">Yes
       </label>
 
       <label for="id_your_details-has_children_1" class="FormRow-option">
@@ -77,7 +77,7 @@ prev: your-problem.html
 
     <div class="FormRow cf FormRow--details" role="radiogroup" aria-labelledby="id_your_details-caring_responsibilities-label">
       <p class="FormRow-label" id="id_your_details-caring_responsibilities-label">
-        Do you any other caring responsibilities?
+        Do you have any other caring responsibilities?
       </p>
 
       <details>
@@ -88,7 +88,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-caring_responsibilities_0" class="FormRow-option">
-        <input type="radio" name="your_details-caring_responsibilities" id="id_your_details-caring_responsibilities_0" value="1" required>Yes
+        <input type="radio" name="your_details-caring_responsibilities" id="id_your_details-caring_responsibilities_0" value="1" required="required">Yes
       </label>
 
       <label for="id_your_details-caring_responsibilities_1" class="FormRow-option">
@@ -109,7 +109,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-own_property_0" class="FormRow-option">
-        <input type="radio" name="your_details-own_property" id="id_your_details-own_property_0" value="1" required>Yes
+        <input type="radio" name="your_details-own_property" id="id_your_details-own_property_0" value="1" required="required">Yes
       </label>
 
       <label for="id_your_details-own_property_1" class="FormRow-option">
@@ -130,7 +130,7 @@ prev: your-problem.html
       </details>
 
       <label for="id_your_details-risk_homeless_0" class="FormRow-option">
-        <input type="radio" name="your_details-risk_homeless" id="id_your_details-risk_homeless_0" value="1" required>Yes
+        <input type="radio" name="your_details-risk_homeless" id="id_your_details-risk_homeless_0" value="1" required="required">Yes
       </label>
 
       <label for="id_your_details-risk_homeless_1" class="FormRow-option">
@@ -144,7 +144,7 @@ prev: your-problem.html
       </p>
 
       <label for="id_your_details-older_than_sixty_0" class="FormRow-option">
-        <input type="radio" name="your_details-older_than_sixty" id="id_your_details-older_than_sixty_0" value="1" required>Yes
+        <input type="radio" name="your_details-older_than_sixty" id="id_your_details-older_than_sixty_0" value="1" required="required">Yes
       </label>
 
       <label for="id_your_details-older_than_sixty_1" class="FormRow-option">
@@ -152,9 +152,6 @@ prev: your-problem.html
       </label>
     </div>
   </div>
-  
-  <div class="FormActions">
-    <button type="submit" class="Button">Next step</button>
-    <a href="{{ page.prev }}">Go back to previous step</a>
-  </div>
+
+  {% include form-actions.html %}
 </form>

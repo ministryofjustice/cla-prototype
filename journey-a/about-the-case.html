@@ -1,0 +1,42 @@
+---
+layout: default
+body_class: v-Result
+next: eligible.html
+prev: your-problem-4.html
+---
+
+{% include progress-nav-a.html step=3 %}
+
+<header class="PageHeader">
+  <h1>Tell us about your problem</h1>
+</header>
+
+<form action="{{ page.next }}" method="get">
+
+  <fieldset class="FormBlock">
+    <div class="FormRow cf">
+      <label for="id_extra-notes" id="id_extra-notes-label">
+        <span class="FormRow-label">
+          Describe what has happened in your own words. Include important details and events. This information will help us assess your situation accurately.
+        </span>
+        <textarea class=" form-control" cols="80" id="id_extra-notes" name="extra-notes" rows="5" required="required"></textarea>
+      </label>
+    </div>
+
+    <div class="FormRow cf">
+      <label for="dates" id="dates-label">
+        <span class="FormRow-label">
+          Provide key dates and give details of any notices, letters or previous legal help you’ve received about your problem.
+        </span>
+        <textarea class=" form-control" cols="80" id="dates" name="dates" rows="5" required="required"></textarea>
+      </label>
+    </div>
+  </fieldset>
+  
+  <br>
+
+  <div class="FormActions">
+    <button type="submit" class="Button">Next step</button>
+    <a href="{{ page.prev }}">Go back to previous step</a>
+  </div>
+</form>

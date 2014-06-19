@@ -1,0 +1,202 @@
+---
+layout: default
+current: your-problem-3
+next: your-problem-4.html
+prev: your-problem-2.html
+---
+
+{% include progress-nav-a.html step=3 %}
+
+<header class="PageHeader">
+  <h1>Your problem</h1>
+</header>
+
+<form action="{{ page.next }}" method="get">
+  <p id="id_your_problem-step3-label">Tell us more about your situation by choosing one of the following statements.</p>
+
+  <div class="FormBlock FormBlock--grey">
+    <div data-dependant-field="your_problem-step2" data-dependant-value="being_evicted">
+      <div class="FormRow">
+        <label for="id_your_problem-step3a_1" class="FormRow-label">
+          <input type="radio" name="your_problem-step3a" id="id_your_problem-step3a_1" value="evic_letter" class="js-Conditional" required="required">I have received an official eviction letter
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3a_2" class="FormRow-label">
+          <input type="radio" name="your_problem-step3a" id="id_your_problem-step3a_2" value="evic_landlord" class="js-Conditional">My landlord has told me to leave my home
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3a_3" class="FormRow-label">
+          <input type="radio" name="your_problem-step3a" id="id_your_problem-step3a_3" value="evic_court" class="js-Conditional">I am due in court about my eviction
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3a_4" class="FormRow-label">
+          <input type="radio" name="your_problem-step3a" id="id_your_problem-step3a_4" value="evic_leave" class="js-Conditional">The court has told me to leave my home
+        </label>
+      </div>
+    </div>
+
+    <div data-dependant-field="your_problem-step2" data-dependant-value="homeless">
+      <div class="FormRow">
+        <label for="id_your_problem-step3b_1" class="FormRow-label">
+          <input type="radio" name="your_problem-step3b" id="id_your_problem-step3b_1" value="homeless_rough" class="js-Conditional" required="required">I am rough sleeping
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3b_2" class="FormRow-label">
+          <input type="radio" name="your_problem-step3b" id="id_your_problem-step3b_2" value="homeless_temp" class="js-Conditional">I am in temporary accommodation
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3b_3" class="FormRow-label">
+          <input type="radio" name="your_problem-step3b" id="id_your_problem-step3b_3" value="homeless_fam" class="js-Conditional">I can’t stay with my family anymore
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3b_4" class="FormRow-label">
+          <input type="radio" name="your_problem-step3b" id="id_your_problem-step3b_4" value="homeless_locks" class="js-Conditional">My landlord has changed the locks
+        </label>
+      </div>
+    </div>
+
+    <div data-dependant-field="your_problem-step2" data-dependant-value="cant_pay">
+      <div class="FormRow">
+        <label for="id_your_problem-step3c_1" class="FormRow-label">
+          <input type="radio" name="your_problem-step3c" id="id_your_problem-step3c_1" value="pay_poss_order" class="js-Conditional" required="required">I have received a possession order
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3c_2" class="FormRow-label">
+          <input type="radio" name="your_problem-step3c" id="id_your_problem-step3c_2" value="pay_reclaim" class="js-Conditional">The mortgage company wants to reclaim my property
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3c_3" class="FormRow-label">
+          <input type="radio" name="your_problem-step3c" id="id_your_problem-step3c_3" value="pay_debt" class="js-Conditional">I could lose my property to pay back money I owe
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3c_4" class="FormRow-label">
+          <input type="radio" name="your_problem-step3c" id="id_your_problem-step3c_4" value="pay_risk" class="js-Conditional">I am being made bankrupt and my home is at risk
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3c_5" class="FormRow-label">
+          <input type="radio" name="your_problem-step3c" id="id_your_problem-step3c_5" value="pay_evic" class="js-Conditional">I am due in court about my eviction
+        </label>
+      </div>
+    </div>
+
+    <div data-dependant-field="your_problem-step2" data-dependant-value="asbo">
+      <div class="FormRow">
+        <label for="id_your_problem-step3d_1" class="FormRow-label">
+          <input type="radio" name="your_problem-step3d" id="id_your_problem-step3d_1" value="asbo_landlord" class="js-Conditional" required="required">I have received a letter from my landlord about an antisocial behaviour order (ASBO) or antisocial behaviour injunction (ASBI)
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3d_2" class="FormRow-label">
+          <input type="radio" name="your_problem-step3d" id="id_your_problem-step3d_2" value="asbo_court" class="js-Conditional">I have received a letter from the court about an ASBO or ASBI
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3d_3" class="FormRow-label">
+          <input type="radio" name="your_problem-step3d" id="id_your_problem-step3d_3" value="asbo_appeal" class="js-Conditional">I want to appeal about an ASBO or ASBI in court
+        </label>
+      </div>
+    </div>
+
+    <div data-dependant-field="your_problem-step2" data-dependant-value="safety">
+      <div class="FormRow">
+        <label for="id_your_problem-step3e_1" class="FormRow-label">
+          <input type="radio" name="your_problem-step3e" id="id_your_problem-step3e_1" value="safety_improv" class="js-Conditional" required="required">My landlord won’t improve my living conditions
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3e_2" class="FormRow-label">
+          <input type="radio" name="your_problem-step3e" id="id_your_problem-step3e_2" value="safety_ill" class="js-Conditional">My living conditions are making me ill
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3e_3" class="FormRow-label">
+          <input type="radio" name="your_problem-step3e" id="id_your_problem-step3e_3" value="safety_inj" class="js-Conditional">I have been injured because of my living conditions
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3e_4" class="FormRow-label">
+          <input type="radio" name="your_problem-step3e" id="id_your_problem-step3e_4" value="safety_fam" class="js-Conditional">A family member is ill because of our living conditions
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3e_5" class="FormRow-label">
+          <input type="radio" name="your_problem-step3e" id="id_your_problem-step3e_5" value="safety_fam_inj" class="js-Conditional">A family member has been injured because of our living conditions
+        </label>
+      </div>
+    </div>
+
+    <div data-dependant-field="your_problem-step2" data-dependant-value="threat">
+      <div class="FormRow">
+        <label for="id_your_problem-step3f_1" class="FormRow-label">
+          <input type="radio" name="your_problem-step3f" id="id_your_problem-step3f_1" value="threat_verb" class="js-Conditional" required="required">My landlord has threatened me verbally
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3f_2" class="FormRow-label">
+          <input type="radio" name="your_problem-step3f" id="id_your_problem-step3f_2" value="threat_phys" class="js-Conditional">My landlord has threatened me physically
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3f_3" class="FormRow-label">
+          <input type="radio" name="your_problem-step3f" id="id_your_problem-step3f_3" value="threat_neighbour_verb" class="js-Conditional">My neighbour has threatened me verbally
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3f_4" class="FormRow-label">
+          <input type="radio" name="your_problem-step3f" id="id_your_problem-step3f_4" value="threat_neighbour_phys" class="js-Conditional">My neighbour has threatened me physically
+        </label>
+      </div>
+    </div>
+
+    <div data-dependant-field="your_problem-step2" data-dependant-value="evicted">
+      <div class="FormRow">
+        <label for="id_your_problem-step3g_1" class="FormRow-label">
+          <input type="radio" name="your_problem-step3g" id="id_your_problem-step3g_1" value="evicted_late_court" class="js-Conditional" required="required">I have already been to court because I was late with my rent
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3g_2" class="FormRow-label">
+          <input type="radio" name="your_problem-step3g" id="id_your_problem-step3g_2" value="evicted_late" class="js-Conditional">I am behind with my rent but I have not been to court
+        </label>
+      </div>
+
+      <div class="FormRow">
+        <label for="id_your_problem-step3g_3" class="FormRow-label">
+          <input type="radio" name="your_problem-step3g" id="id_your_problem-step3g_3" value="evicted_locks" class="js-Conditional">My landlord has changed the locks and I’m unable to enter my home
+        </label>
+      </div>
+    </div>
+  </div>
+
+  {% include form-actions.html %}
+</form>

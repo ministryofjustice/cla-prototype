@@ -1,0 +1,88 @@
+---
+layout: default
+current: your-problem
+next: your-problem-2.html
+prev: your-finances.html
+---
+
+{% include progress-nav-a.html step=3 %}
+
+<header class="PageHeader">
+  <h1>Your problem</h1>
+</header>
+
+<form action="{{ page.next }}" method="get" class="">
+  <p id="id_your_problem-category-label">Which of the following statements describes your situation?</p>
+
+  <div class="FormBlock FormBlock--grey">
+    <div class="FormRow">
+      <label for="id_your_problem-category_1" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_1" value="housing" class="js-Conditional">I have a problem with where I live
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_0" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_0" value="violence" class="js-Conditional" required="required">I am suffering abuse in my home
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_2" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_2" value="debt" class="js-Conditional">I owe money
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_4" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_4" value="immigration" class="js-Conditional">I need permission to stay in the UK
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_3" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_3" value="marriage" class="js-Conditional">I have a problem with my family situation
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_6" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_6" value="police" class="js-Conditional">I am in trouble with the police
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_5" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_5" value="benefits" class="js-Conditional">I have a problem with my benefits
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_7" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_7" value="health" class="js-Conditional">I am being discriminated against
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_8" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_8" value="none" data-conditional-el="conditional-none" class="js-Conditional" aria-control="conditional-none">None of the above
+      </label>
+
+      <div id="conditional-none" class="Conditional" aria-expanded="false" aria-hidden="true" style="display: none;">
+        <p class="Conditional-label">
+          <strong>If your case does not match any of the above:</strong>
+        </p>
+        <div class="FormRow-inner">
+          <label for="id_your_problem-your_problem_notes">Please give us any additional details about your problem that may be relevant:</label>
+
+          <textarea cols="80" id="id_your_problem-your_problem_notes" name="your_problem-your_problem_notes" rows="5"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <p>If possible, please choose one of the categories above. If you’re really not sure or it doesn’t appear above, you can ask for a call back here.</p>
+
+  {% include form-actions.html %}
+</form>

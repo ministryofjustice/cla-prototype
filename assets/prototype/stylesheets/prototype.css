@@ -1,0 +1,30 @@
+body {
+  background: #dee0e2;
+  height: 100%;
+}
+html {
+  height: 100%;
+}
+
+section ol,
+section ul {
+  margin: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.Notice p {
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.Help-text {
+  line-height: 1.1em;
+}
+
+.FormRow-inlineHelp {
+  display: block;
+  color: #6f777b;
+  margin-bottom: 5px;
+}

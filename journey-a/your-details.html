@@ -1,0 +1,157 @@
+---
+layout: default
+next: your-income.html
+prev: 
+---
+
+{% include progress-nav-a.html step=1 %}
+
+<header class="PageHeader">
+  <h1>Your details</h1>
+</header>
+
+<form action="{{ page.next }}" method="get">
+  <div class="FormBlock FormBlock--grey">
+    <div class="FormRow cf FormRow--details" role="radiogroup" aria-labelledby="id_your_details-has_partner-label">
+      <p class="FormRow-label" id="id_your_details-has_partner-label">
+        Do you have a partner?
+      </p>
+
+      <details>
+        <summary role="button" aria-expanded="false">More info</summary>
+        <div>
+          <p>Legal aid is calculated on both you and your partner's money. A 'partner' is a person you're married to or a person you live with as if you're married</p>
+        </div>
+      </details>
+
+      <label for="id_your_details-has_partner_0" class="FormRow-option">
+        <input type="radio" name="your_details-has_partner" id="id_your_details-has_partner_0" value="1" required="required">Yes
+      </label>
+
+      <label for="id_your_details-has_partner_1" class="FormRow-option">
+        <input type="radio" name="your_details-has_partner" id="id_your_details-has_partner_1" value="0">No
+      </label>
+    </div>
+
+    <div class="FormRow cf FormRow--details" role="radiogroup" aria-labelledby="id_your_details-has_benefits-label">
+      <p class="FormRow-label" id="id_your_details-has_benefits-label">
+        Are you or your partner on any benefits?
+      </p>
+
+      <details>
+        <summary role="button" aria-expanded="false">More info</summary>
+        <div>
+          <p>Legal aid is based on how much money you have so any benefits you get must be taken into account</p>
+        </div>
+      </details>
+
+      <label for="id_your_details-has_benefits_0" class="FormRow-option">
+        <input type="radio" name="your_details-has_benefits" id="id_your_details-has_benefits_0" value="1" required="required">Yes
+      </label>
+
+      <label for="id_your_details-has_benefits_1" class="FormRow-option">
+        <input type="radio" name="your_details-has_benefits" id="id_your_details-has_benefits_1" value="0">No
+      </label>
+    </div>
+
+    <div class="FormRow cf FormRow--details" role="radiogroup" aria-labelledby="id_your_details-has_children-label">
+      <p class="FormRow-label" id="id_your_details-has_children-label">
+        Do you have children?
+      </p>
+
+      <details>
+        <summary role="button" aria-expanded="false">More info</summary>
+        <div>
+          <p>Your childcare costs will be taken into account provided you can give the right evidence</p>
+        </div>
+      </details>
+
+      <label for="id_your_details-has_children_0" class="FormRow-option">
+        <input type="radio" name="your_details-has_children" id="id_your_details-has_children_0" value="1" required="required">Yes
+      </label>
+
+      <label for="id_your_details-has_children_1" class="FormRow-option">
+        <input type="radio" name="your_details-has_children" id="id_your_details-has_children_1" value="0">No
+      </label>
+    </div>
+
+    <div class="FormRow cf FormRow--details" role="radiogroup" aria-labelledby="id_your_details-caring_responsibilities-label">
+      <p class="FormRow-label" id="id_your_details-caring_responsibilities-label">
+        Do you have any other caring responsibilities?
+      </p>
+
+      <details>
+        <summary role="button" aria-expanded="false">More info</summary>
+        <div>
+          <p>Other care costs will be taken into account provided you can give the right evidence</p>
+        </div>
+      </details>
+
+      <label for="id_your_details-caring_responsibilities_0" class="FormRow-option">
+        <input type="radio" name="your_details-caring_responsibilities" id="id_your_details-caring_responsibilities_0" value="1" required="required">Yes
+      </label>
+
+      <label for="id_your_details-caring_responsibilities_1" class="FormRow-option">
+        <input type="radio" name="your_details-caring_responsibilities" id="id_your_details-caring_responsibilities_1" value="0">No
+      </label>
+    </div>
+
+    <div class="FormRow cf FormRow--details" role="radiogroup" aria-labelledby="id_your_details-own_property-label">
+      <p class="FormRow-label" id="id_your_details-own_property-label">
+        Do you or your partner own a property?
+      </p>
+
+      <details>
+        <summary role="button" aria-expanded="false">More info</summary>
+        <div>
+          <p>Legal aid is based on how much money you have. That means any property you own must be considered, even if you don't live in it. Your 'home' is where you live as your only or main residence and includes caravans, houseboats or other vehicles</p>
+        </div>
+      </details>
+
+      <label for="id_your_details-own_property_0" class="FormRow-option">
+        <input type="radio" name="your_details-own_property" id="id_your_details-own_property_0" value="1" required="required">Yes
+      </label>
+
+      <label for="id_your_details-own_property_1" class="FormRow-option">
+        <input type="radio" name="your_details-own_property" id="id_your_details-own_property_1" value="0">No
+      </label>
+    </div>
+
+    <div class="FormRow cf FormRow--details" role="radiogroup" aria-labelledby="id_your_details-risk_homeless-label">
+      <p class="FormRow-label" id="id_your_details-risk_homeless-label">
+        Are you at immediate risk of losing your home or becoming homeless?
+      </p>
+
+      <details>
+        <summary role="button" aria-expanded="false">More info</summary>
+        <div>
+          <p>Legal aid is generally available if you are at immediate risk of becoming homeless. Your 'home' is where you live as your only or main residence and includes caravans, houseboats or other vehicles</p>
+        </div>
+      </details>
+
+      <label for="id_your_details-risk_homeless_0" class="FormRow-option">
+        <input type="radio" name="your_details-risk_homeless" id="id_your_details-risk_homeless_0" value="1" required="required">Yes
+      </label>
+
+      <label for="id_your_details-risk_homeless_1" class="FormRow-option">
+        <input type="radio" name="your_details-risk_homeless" id="id_your_details-risk_homeless_1" value="0">No
+      </label>
+    </div>
+
+    <div class="FormRow cf" role="radiogroup" aria-labelledby="id_your_details-older_than_sixty-label">
+      <p class="FormRow-label" id="id_your_details-older_than_sixty-label">
+        Are you or your partner aged 60 or over?
+      </p>
+
+      <label for="id_your_details-older_than_sixty_0" class="FormRow-option">
+        <input type="radio" name="your_details-older_than_sixty" id="id_your_details-older_than_sixty_0" value="1" required="required">Yes
+      </label>
+
+      <label for="id_your_details-older_than_sixty_1" class="FormRow-option">
+        <input type="radio" name="your_details-older_than_sixty" id="id_your_details-older_than_sixty_1" value="0">No
+      </label>
+    </div>
+  </div>
+
+  {% include form-actions.html %}
+</form>
