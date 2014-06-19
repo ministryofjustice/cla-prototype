@@ -3,9 +3,9 @@
   <ul class="SummaryBlock-list">
     <li>You are looking for help about your home</li>
     <li>You <span data-dependant-field="your_details-has_partner" data-dependant-value="0">don't</span> live with a partner</li>
-    <li>You or your partner are <span data-dependant-field="your_details-has_benefits" data-reverse>not</span> on Income Support benefits</li>
-    <li>You <span data-dependant-field="your_details-has_children" data-reverse>don't</span> have children dependent on you</li>
-    <li>You or your partner are <span data-dependant-field="your_details-older_than_sixty" data-reverse>not</span> 60 or over</li>
+    <li>You <span data-dependant-field="your_details-has_partner" data-dependant-value="1">or your partner</span> are <span data-dependant-field="your_details-has_benefits" data-dependant-value="0">not</span> on Income Support benefits</li>
+    <li>You <span data-dependant-field="your_details-has_children" data-dependant-value="0">don't</span> have children dependent on you</li>
+    <li>You <span data-dependant-field="your_details-has_partner" data-dependant-value="1">or your partner</span> are <span data-dependant-field="your_details-older_than_sixty" data-dependant-value="0">not</span> 60 or over</li>
   </ul>
   {% if include.editable %}
   <a href="your-details.html" class="SummaryBlock-edit">Change these answers</a>
@@ -18,7 +18,7 @@
     <div data-dependant-field="your_details-own_property">
       <li>You have a property</li>
       <li>It is worth £<span data-type="number" data-item-value="property-0-worth"></span> with £<span data-type="number" data-item-value="property-0-mortgage_left"></span> left to pay on the mortgage</li>
-      <li>You own <span data-item-value="property-0-share"></span>%</li>
+      <li>You own <span data-type="number" data-item-value="property-0-share"></span>%</li>
     </div>
 
     <li>You have £<span data-type="number" data-item-value="your_savings-bank"></span> in a bank or building society</li>

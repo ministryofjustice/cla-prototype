@@ -39,10 +39,11 @@
             val = $el.data('dependant-value');
 
         if (
-          (that.formData[field] === undefined) || 
-          (val !== undefined && that.formData[field].value !== val) || 
-          (val === undefined && that.formData[field].value === "0")
+          that.formData[field] !== undefined && 
+          that.formData[field].value.toString() === val.toString()
         ) {
+          // do nothing
+        } else {
           $el.hide().find('[required]').removeAttr('required');
         }
       });
