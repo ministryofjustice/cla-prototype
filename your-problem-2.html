@@ -7,12 +7,12 @@ prev: your-problem.html
 
 {% include progress-nav-b.html step=1 %}
 
-<header class="PageHeader">
-  <h1>Your problem</h1>
-</header>
+<div data-dependant-field="your_problem-category" data-dependant-value="housing">
+  <header class="PageHeader">
+    <h1>Your problem</h1>
+  </header>
 
-<form action="{{ page.next }}" method="get" class="">
-  <div data-dependant-field="your_problem-category" data-dependant-value="housing">
+  <form action="{{ page.next }}" method="get" class="">
     <p id="id_your_problem-step2-label">Choose <strong>one</strong> of the following statements. You'll be able to tell us more about your problem in your own words later.</p>
 
     <div class="FormBlock FormBlock--grey">
@@ -60,18 +60,36 @@ prev: your-problem.html
         </div>
       </div>
     </div>
-  </div>
 
-  <fieldset class="FormBlock" data-dependant-field="your_problem-category" data-dependant-value="none">
-    <div class="FormRow cf">
-      <label for="your_problem-extra_notes">
-        <span class="FormRow-label">
-          Please tell us about your issue
-        </span>
-        <textarea class="form-control" cols="80" id="your_problem-extra_notes" name="your_problem-extra_notes" rows="5" required="required"></textarea>
-      </label>
+    {% include form-actions.html %}
+  </form>
+</div>
+
+<div data-dependant-field="your_problem-category" data-dependant-value="none">
+  <header class="PageHeader">
+    <h1>I have a different problem</h1>
+  </header>
+
+  <form action="{{ page.next }}" method="get" class="">
+    <fieldset class="FormBlock">
+      <p>Remember, you can only get civil legal aid if you are at immediate risk of serious harm, losing your home and have very limited money.</p>
+
+      <div class="FormRow cf">
+        <label for="your_problem-extra_notes">
+          <span class="FormRow-label">
+            Tell us more about your problem in your own words here, include important details and events
+          </span>
+          <textarea class="form-control" cols="80" id="your_problem-extra_notes" name="your_problem-extra_notes" rows="5" required="required"></textarea>
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="FormActions">
+      <button type="submit" class="Button">Next step</button>
+      {% if page.prev %}
+      <a href="{{ page.prev }}">Go back to previous step</a>
+      {% endif %}
     </div>
-  </fieldset>
+  </form>
+</div>
 
-  {% include form-actions.html %}
-</form>
