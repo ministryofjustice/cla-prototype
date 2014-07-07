@@ -5,7 +5,9 @@ next: begin.html
 prev: your-problem.html
 ---
 
+{% comment %}
 {% include progress-nav-b.html step=1 %}
+{% endcomment %}
 
 <div data-dependant-field="your_problem-category" data-dependant-value="housing">
   <header class="PageHeader">
@@ -60,7 +62,11 @@ prev: your-problem.html
         </div>
       </div>
     </div>
-
+  </form>
+    
+  <form action="http://0.0.0.0:8002/checker/your_problem/" method="post" class="">
+    <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_problem">
+    <input type="hidden" name="your_problem-category" id="id_your_problem-category_1" value="housing">
     {% include form-actions.html %}
   </form>
 </div>
@@ -83,6 +89,11 @@ prev: your-problem.html
         </label>
       </div>
     </fieldset>
+  </form>
+    
+  <form action="http://0.0.0.0:8002/checker/your_problem/" method="post" class="">
+    <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_problem">
+    <input type="hidden" name="your_problem-category" id="id_your_problem-category_1" value="housing">
 
     <div class="FormActions">
       <button type="submit" class="Button">Next step</button>
