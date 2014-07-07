@@ -1,0 +1,71 @@
+---
+layout: default
+current: your-problem
+next: your-problem-2.html
+prev: 
+---
+
+{% include progress-nav-b.html step=1 %}
+
+<header class="PageHeader">
+  <h1>Your problem</h1>
+</header>
+
+<form action="{{ page.next }}" method="get" class="">
+  <p id="id_your_problem-category-label">Tell us about your problem by choosing <strong>one</strong> of the statements below. If you have more than one problem, choose the statement that's putting you at the most immediate risk.</p>
+
+  <div class="FormBlock FormBlock--grey">
+    <div class="FormRow">
+      <label for="id_your_problem-category_1" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_1" value="housing">I have a problem with where I live
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_0" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_0" value="violence" required="required">I am suffering abuse in my home
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_2" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_2" value="debt">I owe money
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_4" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_4" value="immigration">I need permission to stay in the UK
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_3" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_3" value="marriage">I have a problem with my family situation
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_5" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_5" value="benefits">I have a problem with my benefits
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_7" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_7" value="health">I am being discriminated against
+      </label>
+    </div>
+
+    <div class="FormRow">
+      <label for="id_your_problem-category_8" class="FormRow-label">
+        <input type="radio" name="your_problem-category" id="id_your_problem-category_8" value="none">I have a different problem
+      </label>
+    </div>
+  </div>
+
+
+  <p>If you qualify for legal aid you will have the chance to speak to someone about your problem.</p>
+
+  {% include form-actions.html %}
+</form>

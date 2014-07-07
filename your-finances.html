@@ -1,19 +1,19 @@
 ---
 layout: default
-next: your-income.html
-prev: your-details.html
+next: eligible.html
+prev: your-expenses.html
 ---
 
-{% include progress-nav-b.html step=3 %}
+{% include progress-nav-b.html step=2 %}
 
 <header class="PageHeader">
-  <h1>Your finances</h1>
+  <h1>Your money</h1>
 </header>
 
 <p>Whether or not you qualify for legal aid depends on how much money you and your partner have. To find out if you’re financially eligible, please answer these questions as honestly and fully as you can.</p>
 
 <form method="get" action="{{ page.next }}">
-  <section data-dependant-field="your_details-own_property">
+  <section data-dependant-field="your_details-own_property" data-dependant-value="1">
     <input id="id_property-TOTAL_FORMS" name="property-TOTAL_FORMS" type="hidden" value="1">
     <input id="id_property-INITIAL_FORMS" name="property-INITIAL_FORMS" type="hidden" value="0">
     <input id="id_property-MAX_NUM_FORMS" name="property-MAX_NUM_FORMS" type="hidden" value="20">
@@ -90,7 +90,7 @@ prev: your-details.html
       <div class="FormRow cf">
         <label for="id_your_savings-bank" id="id_your_savings-bank-label">
           <span class="Grid-col Grid-col--2-3">
-            Do you have any money saved in a bank or building society?
+            How much money do you have saved in a bank or building society?
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
@@ -102,7 +102,7 @@ prev: your-details.html
       <div class="FormRow cf">
         <label for="id_your_savings-investments" id="id_your_savings-investments-label">
           <span class="Grid-col Grid-col--2-3">
-            Do you have any investments, shares, ISAs?
+            What is the total value of any investments (shares or ISAs) you have?
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
@@ -114,7 +114,7 @@ prev: your-details.html
       <div class="FormRow cf">
         <label for="id_your_savings-valuable_items" id="id_your_savings-valuable_items-label">
           <span class="Grid-col Grid-col--2-3">
-            Do you have any valuable items over £500 each?
+            What is the total value of any items you have worth over £500?
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
@@ -126,7 +126,7 @@ prev: your-details.html
       <div class="FormRow cf">
         <label for="id_your_savings-money_owed" id="id_your_savings-money_owed-label">
           <span class="Grid-col Grid-col--2-3">
-            Do you have any money owed to you?
+            How much money do you have owed to you?
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
@@ -137,14 +137,14 @@ prev: your-details.html
     </div>
   </section>
 
-  <section class="Grid" data-dependant-field="your_details-has_partner">
+  <section class="Grid" data-dependant-field="your_details-has_partner" data-dependant-value="1">
     <h2 id="partners_savings-label" class="FormBlock-label">Your partner's savings</h2>
 
     <div class="FormBlock FormBlock--grey" aria-labelledby="partners_savings-label" role="group">
       <div class="FormRow cf">
         <label for="id_partners_savings-bank" id="id_partners_savings-bank-label">
           <span class="Grid-col Grid-col--2-3">
-            Do you have any money saved in a bank or building society?
+            How much money does your partner have saved in a bank or building society?
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
@@ -156,7 +156,7 @@ prev: your-details.html
       <div class="FormRow cf">
         <label for="id_partners_savings-investments" id="id_partners_savings-investments-label">
           <span class="Grid-col Grid-col--2-3">
-            Do you have any investments, shares, ISAs?
+            What is the total value of any investments (shares or ISAs) your partner has?
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
@@ -168,7 +168,7 @@ prev: your-details.html
       <div class="FormRow cf">
         <label for="id_partners_savings-valuable_items" id="id_partners_savings-valuable_items-label">
           <span class="Grid-col Grid-col--2-3">
-            Do you have any valuable items over £500 each?
+            What is the total value of any items your partner has worth over £500?
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix FormRow-prefix--1-3">£</span>
@@ -180,7 +180,7 @@ prev: your-details.html
       <div class="FormRow cf">
         <label for="id_partners_savings-money_owed" id="id_partners_savings-money_owed-label">
           <span class="Grid-col Grid-col--2-3">
-            Do you have any money owed to you?
+            How much money does your partner have owed to them?
           </span>
           <span class="Grid-col Grid-col--1-3">
             <span class="FormRow-prefix FormRow-prefix--1-3">£</span>

@@ -28,3 +28,7 @@ section ul {
   color: #6f777b;
   margin-bottom: 5px;
 }
+
+.v-Confirmation .PageHeader {
+  padding-bottom: 20px;
+}

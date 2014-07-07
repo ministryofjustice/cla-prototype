@@ -1,15 +1,17 @@
 ---
 layout: default
 body_class: v-Result
-next: eligible.html
-prev: your-problem-4.html
+next: about-you.html
+prev: your-expenses.html
 ---
 
-{% include progress-nav-a.html step=3 %}
+{% include progress-nav-b.html step=3 %}
 
 <header class="PageHeader">
-  <h1>Tell us about your problem</h1>
+  <h1 class="TextIcon TextIcon--tick">You might be able to get Legal Aid</h1>
 </header>
+
+<h2>Tell us about your problem</h2>
 
 <form action="{{ page.next }}" method="get">
 
@@ -17,7 +19,7 @@ prev: your-problem-4.html
     <div class="FormRow cf">
       <label for="id_extra-notes" id="id_extra-notes-label">
         <span class="FormRow-label">
-          Describe what has happened in your own words. Include important details and events. This information will help us assess your situation accurately.
+          We need you to tell us more about what has happened in your own words, include important dates and events. This information will help our advisor assess your situation accurately.
         </span>
         <textarea class=" form-control" cols="80" id="id_extra-notes" name="extra-notes" rows="5" required="required"></textarea>
       </label>

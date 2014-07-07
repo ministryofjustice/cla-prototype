@@ -37,14 +37,26 @@
         var $el = $(el),
             field = $el.data('dependant-field'),
             val = $el.data('dependant-value');
-
         if (
-          (that.formData[field] === undefined) || 
-          (val !== undefined && that.formData[field].value !== val) || 
-          (val === undefined && that.formData[field].value === "0")
+          that.formData[field] !== undefined && 
+          that.formData[field].value.toString() === val.toString()
         ) {
+          // do nothing
+        } else {
           $el.hide().find('[required]').removeAttr('required');
         }
+      });
+
+      $('[data-item-value]').each(function (i, el) {
+        var $el = $(el),
+            field = $el.data('item-value'),
+            value = that.formData[field] !== undefined ? that.formData[field].value : '-';
+
+        if ($el.data('type') === 'number') {
+          value = parseInt(value).toFixed(2);
+        }
+
+        $el.html(value);
       });
 
       moj.Events.trigger('LabelSelect.render');

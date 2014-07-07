@@ -1,19 +1,17 @@
 ---
 layout: default
 body_class: v-Result
-next: confirmation.html
-prev: 
+next: summary.html
 ---
 
-{% include progress-nav-b.html step=4 %}
+{% include progress-nav-b.html step=3 %}
 
 <header class="PageHeader">
-  <h1 class="TextIcon TextIcon--tick">You might be able to get Legal Aid</h1>
+  <h1>Your contact details</h1>
+  <p>Please provide the following information so we can contact you about your application for legal aid.</p>
 </header>
 
 <form action="{{ page.next }}" method="get">
-  <p>To finish applying for Legal Aid, you need to fill in your personal details</p>
-
   <fieldset class="FormBlock FormBlock--grey">
     <div class="FormRow FormRow--inline cf">
       <label for="id_contact_details-title" id="id_contact_details-title-label">
@@ -35,7 +33,7 @@ prev:
         <span class="FormRow-label">
           Full name
         </span>
-        <input class="FormRow-field--l" id="id_contact_details-full_name" maxlength="300" name="contact_details-full_name" type="text" required="required">
+        <input class="FormRow-field--l" id="id_contact_details-full_name" maxlength="300" name="contact_details-full_name" type="text" required="required" autocomplete="off">
       </label>
     </div>
 
@@ -44,7 +42,7 @@ prev:
         <span class="FormRow-label">
           Postcode
         </span>
-        <input id="id_contact_details-postcode" maxlength="10" name="contact_details-postcode" type="text" required="required">
+        <input id="id_contact_details-postcode" maxlength="10" name="contact_details-postcode" type="text" required="required" autocomplete="off">
       </label>
     </div>
 
@@ -62,43 +60,37 @@ prev:
         <span class="FormRow-label">
           Town/city
         </span>
-        <input class="FormRow-field--l" id="id_contact_details-town" maxlength="100" name="contact_details-town" type="text" required="required">
+        <input class="FormRow-field--l" id="id_contact_details-town" maxlength="100" name="contact_details-town" type="text" required="required" autocomplete="off">
       </label>
     </div>
 
     <div class="FormRow FormRow--inline cf">
       <label for="id_contact_details-mobile_phone" id="id_contact_details-mobile_phone-label">
         <span class="FormRow-label">
-          Mobile Phone
+          Contact number
         </span>
-        <input id="id_contact_details-mobile_phone" maxlength="20" name="contact_details-mobile_phone" type="text">
+        <input id="id_contact_details-mobile_phone" maxlength="20" name="contact_details-mobile_phone" type="text" autocomplete="off">
       </label>
     </div>
 
     <div class="FormRow FormRow--inline cf">
-      <label for="id_contact_details-home_phone" id="id_contact_details-home_phone-label">
+      <label for="id_contact_details-email" id="id_contact_details-email-label">
         <span class="FormRow-label">
-          Home Phone
+          Email address
         </span>
-        <input id="id_contact_details-home_phone" maxlength="20" name="contact_details-home_phone" type="text">
+        <input id="id_contact_details-email" name="contact_details-email" type="email" autocomplete="off">
       </label>
     </div>
-  </fieldset>
 
-  <fieldset class="FormBlock">
-    <div class="FormRow cf">
-      <label for="id_extra-notes" id="id_extra-notes-label">
-        <span class="FormRow-label">
-          Additional details about your problem
-        </span>
-        <textarea class=" form-control" cols="80" id="id_extra-notes" name="extra-notes" rows="5" required="required"></textarea>
+    <div class="FormRow FormRow--inline cf">
+      <label for="id_contact_details-can_email" id="id_contact_details-can_email-label">
+        <span class="FormRow-label"></span>
+        <input id="id_contact_details-can_email" maxlength="20" name="contact_details-can_email" type="checkbox"> Please tick if we can email you
       </label>
     </div>
   </fieldset>
 
   <div class="FormActions">
-    <button type="submit" class="Button">Apply for legal aid</button>
+    <button type="submit" class="Button">Continue</button>
   </div>
 </form>
-
-{% include summary.html editable=true %}

@@ -1,0 +1,96 @@
+---
+layout: default
+current: your-problem-2
+next: begin.html
+prev: your-problem.html
+---
+
+{% include progress-nav-b.html step=1 %}
+
+<div data-dependant-field="your_problem-category" data-dependant-value="housing">
+  <header class="PageHeader">
+    <h1>Your problem</h1>
+  </header>
+
+  <form action="{{ page.next }}" method="get" class="">
+    <p id="id_your_problem-step2-label">Choose <strong>one</strong> of the following statements. You'll be able to tell us more about your problem in your own words later.</p>
+
+    <div class="FormBlock FormBlock--grey">
+      <div>
+        <div class="FormRow">
+          <label for="id_your_problem-step2_0" class="FormRow-label">
+            <input type="radio" name="your_problem-step2" id="id_your_problem-step2_0" value="being_evicted" required="required">I am being evicted
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2_1" class="FormRow-label">
+            <input type="radio" name="your_problem-step2" id="id_your_problem-step2_1" value="homeless">I am homeless
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2_2" class="FormRow-label">
+            <input type="radio" name="your_problem-step2" id="id_your_problem-step2_2" value="cant_pay">I can't pay my rent/mortgage and may become homeless
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2_3" class="FormRow-label">
+            <input type="radio" name="your_problem-step2" id="id_your_problem-step2_3" value="asbo">I have been accused of anti social behaviour
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2_4" class="FormRow-label">
+            <input type="radio" name="your_problem-step2" id="id_your_problem-step2_4" value="safety">My rented home is in bad condition and isn't safe
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2_5" class="FormRow-label">
+            <input type="radio" name="your_problem-step2" id="id_your_problem-step2_5" value="threat">I am being threatened by my neighbour or landlord
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2_6" class="FormRow-label">
+            <input type="radio" name="your_problem-step2" id="id_your_problem-step2_6" value="evicted">My landlord has thrown me out
+          </label>
+        </div>
+      </div>
+    </div>
+
+    {% include form-actions.html %}
+  </form>
+</div>
+
+<div data-dependant-field="your_problem-category" data-dependant-value="none">
+  <header class="PageHeader">
+    <h1>I have a different problem</h1>
+  </header>
+
+  <form action="{{ page.next }}" method="get" class="">
+    <fieldset class="FormBlock">
+      <p>Remember, you can only get civil legal aid if you are at immediate risk of serious harm, losing your home and have very limited money.</p>
+
+      <div class="FormRow cf">
+        <label for="your_problem-extra_notes">
+          <span class="FormRow-label">
+            Tell us more about your problem in your own words here, include important details and events
+          </span>
+          <textarea class="form-control" cols="80" id="your_problem-extra_notes" name="your_problem-extra_notes" rows="5" required="required"></textarea>
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="FormActions">
+      <button type="submit" class="Button">Next step</button>
+      <a href="#" class="Button Button--secondary">Quit</a>
+      {% if page.prev %}
+      <a href="{{ page.prev }}">Go back to previous step</a>
+      {% endif %}
+    </div>
+  </form>
+</div>
+
