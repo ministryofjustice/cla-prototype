@@ -17,13 +17,20 @@
     },
 
     cacheEls: function () {
-      this.$form = $('form');
+      this.$forms = $('form');
       this.formData = sessionStorage.getItem('FormData') !== null ? JSON.parse(sessionStorage.getItem('FormData')) : {};
       this.journey = sessionStorage.getItem('journey');
     },
 
     render: function () {
       var that = this;
+
+      // set original attrs on forms
+      this.$forms.each(function(i, el){
+        $(el)
+          .attr('data-original-action', $(el).attr('action'))
+          .attr('data-original-method', $(el).attr('method'));
+      });
 
       $.each(this.formData, function(i, obj) {
         if (obj.type === "radio" || obj.type === "checkbox") {
@@ -96,21 +103,27 @@
         if (obj.limit !== undefined && obj.value > obj.limit) {
           eligible = false;
         }
+
+        if (
+          (obj.name === "your_problem-step2b") &&
+          (obj.value === "loan_credit" || obj.value === "unpaid_bill")
+        ) { 
+          eligible = false;
+        }
       });
 
-      // Journey A
-      if (this.journey === 'A') {
-        if (!eligible) {
-          this.$form.attr('action', 'ineligible.html');
-        } else {
-          this.$form.attr('action', $('body').data('next-step'));
-        }
-      } 
-      // Journey B
-      else {
-        if (this.$form.attr('action') === 'eligible.html' && !eligible) {
-          this.$form.attr('action', 'ineligible.html');
-        }
+      if (!eligible) {
+        this.$forms.each(function(i, el){
+          $(el)
+            .attr('action', 'ineligible.html')
+            .attr('method', 'get');
+        });
+      } else {
+        this.$forms.each(function(i, el){
+          $(el)
+            .attr('action', $(el).data('original-action'))
+            .attr('method', $(el).data('original-method'));
+        });
       }
     }
   };
