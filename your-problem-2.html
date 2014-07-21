@@ -5,7 +5,9 @@ next: begin.html
 prev: your-problem.html
 ---
 
+{% comment %}
 {% include progress-nav-b.html step=1 %}
+{% endcomment %}
 
 <div data-dependant-field="your_problem-category" data-dependant-value="housing">
   <header class="PageHeader">
@@ -60,19 +62,75 @@ prev: your-problem.html
         </div>
       </div>
     </div>
+  </form>
+    
+  <form action="http://0.0.0.0:8002/checker/your_problem/" method="post" class="">
+    <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_problem">
+    <input type="hidden" name="your_problem-category" id="id_your_problem-category_1" value="housing">
+    {% include form-actions.html %}
+  </form>
+</div>
 
+<div data-dependant-field="your_problem-category" data-dependant-value="debt">
+  <header class="PageHeader">
+    <h1>Your problem</h1>
+  </header>
+
+  <form action="{{ page.next }}" method="get" class="">
+    <p id="id_your_problem-step2b-label">Choose <strong>one</strong> of the following statements. You'll be able to tell us more about your problem in your own words later.</p>
+
+    <div class="FormBlock FormBlock--grey">
+      <div>
+        <div class="FormRow">
+          <label for="id_your_problem-step2b_0" class="FormRow-label">
+            <input type="radio" name="your_problem-step2b" id="id_your_problem-step2b_0" value="loan_credit" required="required">I owe money on a loan or credit card payment
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2b_1" class="FormRow-label">
+            <input type="radio" name="your_problem-step2b" id="id_your_problem-step2b_1" value="bankrupt_homerisk">I am being made bankrupt and my home is at risk
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2b_2" class="FormRow-label">
+            <input type="radio" name="your_problem-step2b" id="id_your_problem-step2b_2" value="lose_property">I could lose my property to pay back money I owe
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2b_3" class="FormRow-label">
+            <input type="radio" name="your_problem-step2b" id="id_your_problem-step2b_3" value="mortgage_risk">I owe money on my mortgage and my home is at risk
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2b_4" class="FormRow-label">
+            <input type="radio" name="your_problem-step2b" id="id_your_problem-step2b_4" value="unpaid_bill">I have a bill to pay and I don’t have the money
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+    
+  <form action="http://0.0.0.0:8002/checker/your_problem/" method="post" class="debt-frm">
+    <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_problem">
+    <input type="hidden" name="your_problem-category" id="id_your_problem-category_2" value="debt">
     {% include form-actions.html %}
   </form>
 </div>
 
 <div data-dependant-field="your_problem-category" data-dependant-value="none">
   <header class="PageHeader">
-    <h1>I have a different problem</h1>
+    <h1>Tell us about your problem</h1>
   </header>
+
+  <p>What is putting you at immediate risk? Enter your problem here to see if you can get legal aid and find out where to go next for help.</p>
 
   <form action="{{ page.next }}" method="get" class="">
     <fieldset class="FormBlock">
-      <p>Remember, you can only get civil legal aid if you are at immediate risk of serious harm, losing your home and have very limited money.</p>
+      <p>Remember you can only get civil legal aid if you are at <strong>immediate risk of serious harm</strong>, <strong>losing your home</strong> and <strong>have very limited money</strong>.</p>
 
       <div class="FormRow cf">
         <label for="your_problem-extra_notes">
@@ -83,6 +141,11 @@ prev: your-problem.html
         </label>
       </div>
     </fieldset>
+  </form>
+    
+  <form action="http://0.0.0.0:8002/checker/your_problem/" method="post" class="">
+    <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_problem">
+    <input type="hidden" name="your_problem-category" id="id_your_problem-category_1" value="housing">
 
     <div class="FormActions">
       <button type="submit" class="Button">Next step</button>
