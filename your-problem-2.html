@@ -15,7 +15,8 @@ prev: your-problem.html
   </header>
 
   <form action="{{ page.next }}" method="get" class="">
-    <p id="id_your_problem-step2-label">Choose <strong>one</strong> of the following statements. You'll be able to tell us more about your problem in your own words later.</p>
+    <p id="id_your_problem-step2-label">Choose <strong>one</strong> of the following statements.
+      <br>You'll be able to tell us more about your problem in your own words later.</p>
 
     <div class="FormBlock FormBlock--grey">
       <div>
@@ -71,13 +72,47 @@ prev: your-problem.html
   </form>
 </div>
 
+<div data-dependant-field="your_problem-category" data-dependant-value="violence">
+  <header class="PageHeader">
+    <h1>Your problem</h1>
+  </header>
+
+  <form action="{{ page.next }}" method="get" class="">
+    <p id="id_your_problem-step2c-label">Choose <strong>one</strong> of the following statements.
+      <br>You'll be able to tell us more about your problem in your own words later.</p>
+
+    <div class="FormBlock FormBlock--grey">
+      <div>
+        <div class="FormRow">
+          <label for="id_your_problem-step2c_0" class="FormRow-label">
+            <input type="radio" name="your_problem-step2c" id="id_your_problem-step2c_0" value="hurt" required="required">My partner has hurt me and is abusive
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2c_1" class="FormRow-label">
+            <input type="radio" name="your_problem-step2c" id="id_your_problem-step2c_1" value="child_hurt">My partner has hurt my child and is abusive
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+    
+  <form action="http://0.0.0.0:8002/checker/your_problem/" method="post" class="">
+    <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_problem">
+    <input type="hidden" name="your_problem-category" id="id_your_problem-category_1" value="housing">
+    {% include form-actions.html %}
+  </form>
+</div>
+
 <div data-dependant-field="your_problem-category" data-dependant-value="debt">
   <header class="PageHeader">
     <h1>Your problem</h1>
   </header>
 
   <form action="{{ page.next }}" method="get" class="">
-    <p id="id_your_problem-step2b-label">Choose <strong>one</strong> of the following statements. You'll be able to tell us more about your problem in your own words later.</p>
+    <p id="id_your_problem-step2b-label">Choose <strong>one</strong> of the following statements.
+      <br>You'll be able to tell us more about your problem in your own words later.</p>
 
     <div class="FormBlock FormBlock--grey">
       <div>
@@ -108,6 +143,75 @@ prev: your-problem.html
         <div class="FormRow">
           <label for="id_your_problem-step2b_4" class="FormRow-label">
             <input type="radio" name="your_problem-step2b" id="id_your_problem-step2b_4" value="unpaid_bill">I have a bill to pay and I don’t have the money
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+    
+  <form action="http://0.0.0.0:8002/checker/your_problem/" method="post" class="debt-frm">
+    <input id="id_checker_wizard-current_step" name="checker_wizard-current_step" type="hidden" value="your_problem">
+    <input type="hidden" name="your_problem-category" id="id_your_problem-category_2" value="debt">
+    {% include form-actions.html %}
+  </form>
+</div>
+
+<div data-dependant-field="your_problem-category" data-dependant-value="marriage">
+  <header class="PageHeader">
+    <h1>Your problem</h1>
+  </header>
+
+  <form action="{{ page.next }}" method="get" class="">
+    <p id="id_your_problem-step2d-label">Choose <strong>one</strong> of the following statements.
+      <br>You'll be able to tell us more about your problem in your own words later.</p>
+
+    <div class="FormBlock FormBlock--grey">
+      <div>
+        <div class="FormRow">
+          <label for="id_your_problem-step2d_0" class="FormRow-label">
+            <input type="radio" name="your_problem-step2d" id="id_your_problem-step2d_0" value="disagree_children" required="required">I need help with a disagreement about children, money or property with my ex partner
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2d_1" class="FormRow-label">
+            <input type="radio" name="your_problem-step2d" id="id_your_problem-step2d_1" value="child_taken">My child has been taken into care
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2d_2" class="FormRow-label">
+            <input type="radio" name="your_problem-step2d" id="id_your_problem-step2d_2" value="child_almost_taken">I’m worried my child will be taken into care
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2d_3" class="FormRow-label">
+            <input type="radio" name="your_problem-step2d" id="id_your_problem-step2d_3" value="child_poorly_lookedafter">My child is in care and isn’t being looked after properly
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2d_4" class="FormRow-label">
+            <input type="radio" name="your_problem-step2d" id="id_your_problem-step2d_4" value="divorcing">I am divorcing or splitting up with my partner
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2d_5" class="FormRow-label">
+            <input type="radio" name="your_problem-step2d" id="id_your_problem-step2d_5" value="child_taken_no_permission">My child has been taken by their other parent without my permission
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2d_6" class="FormRow-label">
+            <input type="radio" name="your_problem-step2d" id="id_your_problem-step2d_6" value="forced_marriage">I am trying to stop a forced marriage
+          </label>
+        </div>
+
+        <div class="FormRow">
+          <label for="id_your_problem-step2d_7" class="FormRow-label">
+            <input type="radio" name="your_problem-step2d" id="id_your_problem-step2d_7" value="maintenance_order_abroad">I want a court to enforce a maintenance order made in another country
           </label>
         </div>
       </div>

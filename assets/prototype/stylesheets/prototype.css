@@ -28,7 +28,17 @@ section ul {
   color: #6f777b;
   margin-bottom: 5px;
 }
+.FormRow-prompt {
+  display: block;
+  color: #6f777b;
+  margin: 0;
+  padding-left: 35px;
+}
 
 .v-Confirmation .PageHeader {
   padding-bottom: 20px;
+}
+
+.u-mute {
+  color: #6f777b;
 }

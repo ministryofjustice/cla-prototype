@@ -105,9 +105,9 @@
         }
 
         if (
-          (obj.name === "your_problem-step2b") &&
-          (obj.value === "loan_credit" || obj.value === "unpaid_bill")
-        ) { 
+          ((obj.name === "your_problem-step2b") && (obj.value === "loan_credit" || obj.value === "unpaid_bill")) ||
+          ((obj.name === "your_problem-step2d") && (obj.value === "divorcing"))
+        ) {
           eligible = false;
         }
       });
