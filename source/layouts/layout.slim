@@ -1,0 +1,22 @@
+doctype html
+html ng-app="CLA"
+  head
+    meta charset='utf-8'
+    title = current_page.data.title || yield_content(:page_title) || 'Civil Legal Advice'
+    meta name='viewport' content='width=device-width'
+    = stylesheet_link_tag 'styles'
+    = include_stylesheets(current_page.data.stylesheets || current_page.data.stylesheet)
+
+  body class="#{yield_content(:body_class)}"
+    = partial 'header'
+
+    #wrapper
+      main#content role="main" ng-controller="MainCtrl"
+        .inner-block = partial 'phase-banner'
+        section.inner-block(ui-view autoscroll)
+          == yield
+
+    = partial 'footer'
+
+    = javascript_include_tag 'libs', 'app'
+    = include_javascripts(current_page.data.javascripts || current_page.data.javascripts)

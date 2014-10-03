@@ -1,0 +1,9 @@
+- required = required || true
+- name = name || nil
+- model = model || name
+
+dl
+  dd
+    label.m-block
+      => check_box_tag name, 'ng-model' => model, 'ng-required' => required
+      = label

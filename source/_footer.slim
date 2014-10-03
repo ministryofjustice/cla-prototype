@@ -1,0 +1,19 @@
+footer#footer.group.js-footer role='contentinfo'
+  .footer-wrapper
+    .footer-meta
+      .footer-meta-inner
+        ul
+          li = link_to 'Help', '/help'
+          li = link_to 'Cookies', '/help/cookies'
+          li = link_to 'Feedback', '/feedback'
+          li = link_to 'Cymraeg', '/cymraeg'
+          li Built by the #{link_to 'MOJ Digital Services', 'https://gds.blog.gov.uk/'}
+
+        .open-government-licence
+          h2 = link_to 'http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2'
+            = image_tag '/assets/images/open-government-licence-2x.png', alt: 'OGL'
+
+          p All content is available under the #{link_to 'Open Government Licence v2.0', 'http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2'}, except where otherwise stated
+
+      .copyright
+        = link_to '&copy; Crown copyright', 'http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm'

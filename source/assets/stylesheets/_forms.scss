@@ -1,0 +1,129 @@
+button,
+.button {
+  @include button;
+}
+
+fieldset {
+  border: solid $grey-2;
+  border-width: 1px 0;
+  padding: 0;
+  background: #f6f6f6;
+  margin-bottom: 30px;
+
+  &.m-zebra > :nth-child(odd) {
+    background: rgba(black, .05);
+  }
+}
+
+.form-control {
+  @include box-sizing(border-box);
+  @include core-19;
+  border: 1px solid $grey-2;
+  padding: 4px;
+  background: $white;
+  border-radius: 0;
+
+  &:focus {
+    outline: 3px solid $yellow;
+  }
+
+  &.m-full {
+    width: 100%;
+  }
+
+  &.m-xlarge {
+    width: 70%;
+  }
+
+  &.m-large {
+    width: 40%;
+  }
+
+  &.m-small {
+    width: 20%;
+  }
+
+  &.m-xsmall {
+    width: 12%;
+  }
+}
+
+select.form-control {
+  height: 35px;
+}
+
+form {
+  margin: 20px 0;
+
+  h4,
+  h3 {
+    margin: 10px 0;
+  }
+
+  dl {
+    margin: 0;
+
+    &.m-inline {
+      @include clearfix;
+
+      dt,
+      dd {
+        padding: 20px 30px;
+      }
+
+      dt {
+        float: left;
+        width: 20%;
+
+        label {
+          padding-top: 6px;
+        }
+
+        @include media(mobile) {
+          float: none;
+          width: auto;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+
+  dl + dl dt {
+    padding-top: 10px;
+  }
+
+  dt {
+    padding: 20px 30px 0;
+
+    > label {
+      padding: 0;
+    }
+  }
+
+  dd {
+    margin: 0;
+    padding: 20px 30px;
+
+    > label.m-block {
+      padding: 20px 30px;
+      margin: -20px -30px;
+    }
+  }
+
+  dt + dd {
+    padding-top: 10px;
+  }
+
+  label {
+    display: inline-block;
+    padding: 5px 10px;
+  }
+
+  label.m-block {
+    display: block;
+
+    &:active {
+      background: $yellow-50;
+    }
+  }
+}

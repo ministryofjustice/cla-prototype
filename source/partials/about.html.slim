@@ -1,0 +1,25 @@
+h1 About me
+
+form name="aboutForm" ng-submit="submit(aboutForm)"
+  fieldset.m-zebra
+    dl ng-repeat="item in meData"
+      dt ng-repeat="(name, label) in item"
+        | {{ label|removeTextOnCondition : me.has_partner == 0 : 'or your partner' }}
+      dd ng-repeat="(name, label) in item"
+        label: input>(
+          type="radio"
+          value="1"
+          name="{{name}}"
+          ng-model="me[name]"
+          ng-required="true"
+        )  Yes
+
+        label: input>(
+          type="radio"
+          value="0"
+          name="{{name}}"
+          ng-model="me[name]"
+          ng-required="true"
+        )  No
+
+  p.action: button Next step

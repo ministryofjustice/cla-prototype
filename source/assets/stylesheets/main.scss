@@ -1,0 +1,111 @@
+html {
+  background: $grey-3;
+}
+
+body {
+  @include core-19;
+  background: $white;
+  color: $text-colour;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.phase-banner {
+  @include phase-banner(beta);
+}
+
+#content {
+  @include outer-block;
+  min-height: 300px;
+
+  .inner-block {
+    @include inner-block(margin);
+  }
+}
+
+section {
+  padding: 30px 0;
+
+  > header {
+    margin-bottom: 30px;
+  }
+
+  .subheading {
+    @include core-24;
+  }
+}
+
+.action {
+  margin: 30px 0 0;
+}
+
+
+.notice,
+.error {
+  margin: 30px 0;
+  border-left: 3px solid $yellow;
+  background-color: lighten($yellow-25, 3);
+  padding: 12px 30px;
+
+  p {
+    @include core-16;
+    padding: 6px 0;
+  }
+}
+
+.error {
+  border-left-color: $red;
+  background-color: lighten($red-25, 3);
+}
+
+.box {
+  margin: 30px 0;
+
+  h4 {
+    margin: 0 0 10px;
+  }
+
+  > ul {
+    background: $grey-4;
+    padding: 30px 30px 30px 60px;
+    margin: 0;
+
+    li {
+      margin: 10px 0;
+    }
+
+    ul {
+      margin: 10px 0;
+    }
+  }
+}
+
+
+.callouts {
+  margin: 30px 0;
+}
+
+dl.callout {
+  @include clearfix;
+  padding-left: 270px;
+  margin: 0;
+
+  &:nth-child(odd) {
+    background: rgba(black, .05);
+  }
+
+  dt,
+  dd {
+    padding: 20px;
+    margin: 0;
+  }
+
+  dt {
+    float: left;
+    font-weight: bold;
+    padding-right: 50px;
+    width: 200px;
+    margin-left: -270px;
+  }
+}

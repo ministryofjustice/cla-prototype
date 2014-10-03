@@ -1,0 +1,6 @@
+- has_partner: Do you have a partner?
+- has_benefits: Are you or your partner on any benefits?
+- has_children: Do you or your partner have children?
+- caring_responsibilities: Are you a carer for anyone else not your children?
+- own_property: Do you or your partner own a property?
+- older_than_sixty: Are you or your partner aged 60 or over?

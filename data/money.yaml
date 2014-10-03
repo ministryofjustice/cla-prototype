@@ -1,0 +1,44 @@
+benefits:
+  - income_support: Income Support
+  - job_seekers: Income-based Jobseeker’s Allowance
+  - universal_credit: Guarantee Credit or Universal Credit
+  - employment_allowance: Income-Related Employment and Support Allowance
+  - nass_benefit: National Asylum Support Service benefit
+  - none_of_above: None of the above
+
+properties:
+  -
+    - worth: How much is the property worth?
+    - mortgage_left: How much is left to pay on the mortgage?
+    - share: What share of the property do you own?
+    - is_main: Are you currently living at this property?
+    - is_disputed: Is the property disputed? (e.g. as part of the financial settlement of a divorce)
+
+savings:
+  - bank: How much money do you have saved in a bank or building society?
+  - investments: What is the total value of any investments, shares or ISAs you have?
+  - valuable_items: What is the total value of any valuable items you have worth over £500 each?
+  - money_owed: How much money is owed to you?
+
+partners_savings:
+  - bank: How much money does your partner have saved in a bank or building society?
+  - investments: What is the total value of any investments, shares or ISAs your partner has?
+  - valuable_items: What is the total value of any valuable items your partner has worth over £500 each?
+  - money_owed: How much money is owed to them?
+
+coming_in:
+  - earnings: Wages
+  - tax_paid: Tax paid
+  - ni: National Insurance contributions paid
+  - benefits: Benefits
+  - tax_credits: Tax credits
+  - child_benefits: Child Benefit
+  - maintenance_received: Maintenance received
+  - pension: Pension received
+
+going_out:
+  - mortgage: Mortgage
+  - rent: Rent
+  - maintenance: Maintenance
+  - childcare: Childcare
+  - contribution_order: Contribution order

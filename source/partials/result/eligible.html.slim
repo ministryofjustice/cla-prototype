@@ -1,0 +1,69 @@
+---
+title:
+---
+
+h1 You might be able to get legal aid
+
+form name="applicationForm" ng-submit="submit(applicationForm)"
+  p Please provide the following information so we can contact you about your application for legal aid.
+  fieldset
+    dl.m-inline
+      dt
+        = label_tag :title
+      dd
+        select#title.form-control(
+          ng-options="title for title in titles"
+          ng-model="applicant.title"
+          ng-required="true"
+        )
+    dl.m-inline
+      dt
+        = label_tag :full_name
+      dd
+        input#full_name.form-control.m-xlarge(
+          ng-model="applicant.full_name"
+          ng-required="true"
+        )
+    dl.m-inline
+      dt
+        = label_tag :postcode
+      dd
+        input#postcode.form-control.m-large(
+          ng-model="applicant.postcode"
+          ng-required="true"
+        )
+    dl.m-inline
+      dt
+        = label_tag :address
+      dd
+        textarea#address.form-control.m-xlarge(
+          rows="4"
+          ng-model="applicant.address"
+          ng-required="true"
+        )
+    dl.m-inline
+      dt
+        = label_tag :contact_number
+      dd
+        input#contact_number.form-control.m-large(
+          ng-model="applicant.contact_number"
+          ng-required="true"
+        )
+    dl.m-inline
+      dt
+        = label_tag :email_address
+      dd
+        input#email_address.form-control.m-xlarge(
+          ng-model="applicant.email_address"
+          ng-required="true"
+        )
+    dl
+      dt
+        = label_tag :extra_notes, caption: 'If you want to tell us more about your legal problem, you can do it here (optional):'
+      dd
+        textarea#extra_notes.form-control.m-full(
+          rows="5"
+          ng-model="applicant.extra_notes"
+        )
+
+  p.action: button Submit

@@ -1,0 +1,18 @@
+form(name="benefitsForm" ng-submit="submit(benefitsForm)" novalidate)
+  h4 My benefits
+  p Are you (or your partner) on any of these benefits?
+
+  .error(scroll-to ng-if="submitted && benefitsForm.$invalid")
+    p Please select at least one option
+
+  fieldset.m-zebra
+    dl ng-repeat="b in moneyData.benefits"
+      dd ng-repeat="(name, label) in b"
+        label.m-block
+          input(
+            type="checkbox"
+            ng-model="money.benefits[name]"
+            ng-required="!anySelected(money.benefits)"
+          )  {{label}}
+
+  p.action: button Next step

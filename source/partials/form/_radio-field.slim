@@ -1,0 +1,8 @@
+- optional = optional || nil
+- name = name || nil
+- model = model || name
+
+dl
+  dd: label.m-block
+    => radio_button_tag name, value: value, 'ng-model' => model, required: !optional
+    = label

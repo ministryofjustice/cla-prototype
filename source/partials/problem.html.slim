@@ -1,0 +1,24 @@
+---
+areas_of_law:
+---
+
+h1 My problem
+
+form name="problemForm" ng-submit="submit(problemForm)"
+  p What is your problem about? Choose what is putting you or your family at immediate risk.
+
+  fieldset.m-zebra
+    dl ng-repeat="c in categoriesData"
+      dd ng-repeat="(name, label) in c"
+        label.m-block: input>(
+          type="radio"
+          value="{{name}}"
+          name="category"
+          ng-model="category.selected"
+          ng-required="true"
+        )  {{label}}
+
+  p Please note: if you have more than one legal problem, you can complete the tool more than once.
+  p If you’re really not sure what to choose, ask us to #{link_to 'call you back'}.
+
+  p.action: button Next step

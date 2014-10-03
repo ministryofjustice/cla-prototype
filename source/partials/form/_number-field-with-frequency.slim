@@ -1,0 +1,12 @@
+- required = required || true
+- name = name || nil
+
+dl
+  dt
+    = label_tag "#{name}_0", caption: label
+  dd
+    => number_field_tag "#{name}_0", id: "#{name}_0", max: 2500000, min: 0,
+       'ng-required' => required, class: 'form-control m-small'
+
+    = select_tag "#{name}_1", options: ['per week', '4 weekly', 'per month', 'per year'],
+      selected: 'per month', class: 'form-control'
