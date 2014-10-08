@@ -109,3 +109,14 @@ dl.callout {
     margin-left: -270px;
   }
 }
+
+
+button.reset {
+  @include position(absolute, 10px 20px null null);
+  background: rgba(white, .2);
+  box-shadow: none;
+
+  &:hover {
+    background: rgba(white, .3);
+  }
+}
