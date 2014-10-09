@@ -1,0 +1,26 @@
+markdown:
+  # What do you need help with?
+
+  Choose what is putting you or your family at immediate risk.
+
+.notice
+  p If you have more than one problem, you can complete the checker more than once.
+  p If you’re really not sure what to choose, ask us to call you back.
+
+
+form name="problemForm" ng-submit="submit(problemForm)"
+  fieldset
+    dl ng-repeat="field in categories.list"
+      dd
+        label.m-block
+          input>(
+            type="radio"
+            value="{{field.name}}"
+            name="category"
+            ng-model="categories.selected"
+            ng-required="true"
+          )
+          span {{field.label}}
+          help-text field="field"
+
+  p.action: button.button Next step

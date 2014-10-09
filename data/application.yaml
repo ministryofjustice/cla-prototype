@@ -1,0 +1,36 @@
+# -
+#   name: extra_notes
+#   label: In your own words, please tell us more about your problem (optional)
+#   type: textarea
+#   size: full
+#   optional: true
+#   rows: 7
+-
+  name: title
+  label: Title
+  type: text
+  inline_help: Mr, Mrs, Ms, etc.
+-
+  name: full_name
+  label: Full name
+  type: text
+  size: xlarge
+-
+  name: postcode
+  label: Postcode
+  type: text
+-
+  name: address
+  label: Address
+  type: textarea
+  size: xlarge
+-
+  name: contact_number
+  label: Contact phone number
+  type: text
+-
+  name: contact_time_prefefence
+  label: When can we call you?
+  type: text
+  optional: true
+  size: large

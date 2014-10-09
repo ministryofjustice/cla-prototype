@@ -1,67 +1,73 @@
 app.factory('decision', function($state, storage) {
   return {
-    _checkBenefits: function() {
-      var money = storage.get('money');
-
-      if(!money || !money.benefits) {
+    checkBenefits: function(benefits) {
+      if(!benefits) {
         return;
       }
 
-      var validBenefits = _.pick(money.benefits, function(v, k) {
-        return k !== 'none_of_above' && v === true;
-      });
-
       // Any valid benefit selected
-      this.isEligible = !money.benefits.none_of_above && _.any(validBenefits);
+      this.isEligible = !_.any(benefits, {
+        name: 'none_of_above', value: true
+      }) && _.any(benefits, { value: true });
     },
 
     isEligible: false,
 
-    checkEligibility: function() {
-      return this._checkBenefits();
-    },
-
-    nextStep: function(currentForm, rootScope) {
+    nextStep: function(currentForm, scope) {
       if(currentForm.$invalid) {
         return;
       }
 
-      this.checkEligibility();
-
-      if(this.isEligible) {
-        $state.go('result', { id: 'eligible' });
-        return;
-      }
+      var stage = 'income'; // fall back on non-skippable
 
       switch(currentForm.$name) {
-        case 'aboutForm':
-          var stateId = 'savings'; // fall back on non-skippable
+        case 'problemForm':
+          $state.go('checker', { stage: 'about' });
+          break;
 
-          if (rootScope.has_benefits) {
-            stateId = 'benefits';
-          } else if (rootScope.own_property) {
-            stateId = 'property';
+        case 'aboutForm':
+          if (scope.has_benefits) {
+            stage = 'benefits';
+          } else if (scope.own_property) {
+            stage = 'property';
+          } else if (scope.has_savings) {
+            stage = 'savings';
           }
 
-          $state.go('money.section', { id: stateId });
+          $state.go('checker', { stage: stage });
           break;
 
         case 'benefitsForm':
-          $state.go('money.section', {
-            id: rootScope.own_property ? 'property' : 'savings'
-          });
+          this.checkBenefits(scope.benefits);
+
+          if(this.isEligible) {
+            $state.go('result', { id: 'eligible' });
+            return;
+          }
+
+          if (scope.own_property) {
+            stage = 'property';
+          } else if (scope.has_savings) {
+            stage = 'savings';
+          }
+
+          $state.go('checker', { stage: stage });
           break;
 
         case 'propertyForm':
-          $state.go('money.section', { id: 'savings' });
+          if (scope.has_savings) {
+            stage = 'savings';
+          }
+
+          $state.go('checker', { stage: stage });
           break;
 
         case 'savingsForm':
-          $state.go('money.section', { id: 'coming-in' });
+          $state.go('checker', { stage: 'income' });
           break;
 
         case 'moneyInForm':
-          $state.go('money.section', { id: 'going-out' });
+          $state.go('checker', { stage: 'outgoings' });
           break;
 
         case 'moneyOutForm':

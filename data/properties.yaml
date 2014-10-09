@@ -1,0 +1,46 @@
+-
+  -
+    name: worth
+    label: How much is the property worth?
+    type: number
+    prefix: '£'
+    # value: 0
+    inline_help: Use your own estimate
+  -
+    name: mortgage_left
+    label: How much is left to pay on the mortgage?
+    type: number
+    prefix: '£'
+    # value: 0
+    inline_help: Include the full amount owing, even if the property has shared ownership
+  -
+    name: is_main
+    label: Are you living at this property?
+    type: radio
+    inline_help: If you are separated and no longer live in the property you own, please answer ‘no’.
+    options: &yes-no
+      - value: 1
+        label: 'Yes'
+      - value: 0
+        label: 'No'
+  -
+    name: share
+    label: What share of the property do you own?
+    suffix: '%'
+    type: number
+    # value: 0
+    inline_help: If you’re the only owner, put 100
+    more_info: |
+      If you are the only owner of the property, your share of it is 100%. A couple who owns their home as joint owners own 50% of the property each.
+
+      You might also own a share in your home (eg 25%) as part of a shared ownership scheme run by a housing corporation.
+  -
+    name: is_disputed
+    label: Is the property disputed?
+    type: radio
+    inline_help: eg as part of the financial settlement of a divorce
+    more_info: |
+      A disputed property is one whose ownership is disputed by someone eg an ex-partner wants
+      to claim a share in it as part of a divorce or separation, or a creditor or mortgage company
+      wants to force the sale of it to repay a debt.
+    options: *yes-no

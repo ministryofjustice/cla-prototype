@@ -1,18 +1,7 @@
-button,
-.button {
-  @include button;
-}
-
 fieldset {
-  border: solid $grey-2;
-  border-width: 1px 0;
+  border: 0;
   padding: 0;
-  background: #f6f6f6;
   margin-bottom: 30px;
-
-  &.m-zebra > :nth-child(odd) {
-    background: rgba(black, .05);
-  }
 }
 
 .form-control {
@@ -29,6 +18,7 @@ fieldset {
 
   &.m-full {
     width: 100%;
+    display: block;
   }
 
   &.m-xlarge {
@@ -61,14 +51,15 @@ form {
   }
 
   dl {
-    margin: 0;
+    margin: 0 0 1px;
+    background: $grey-4;
 
     &.m-inline {
       @include clearfix;
 
       dt,
       dd {
-        padding: 20px 30px;
+        padding: 10px 20px;
       }
 
       dt {
@@ -88,12 +79,9 @@ form {
     }
   }
 
-  dl + dl dt {
-    padding-top: 10px;
-  }
-
   dt {
-    padding: 20px 30px 0;
+    padding: 20px 20px 0 20px;
+    position: relative;
 
     > label {
       padding: 0;
@@ -102,11 +90,17 @@ form {
 
   dd {
     margin: 0;
-    padding: 20px 30px;
+    padding: 20px;
 
     > label.m-block {
-      padding: 20px 30px;
-      margin: -20px -30px;
+      padding: 20px 20px 20px 40px;
+      margin: -20px;
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin: 5px 0 0 -24px;
+        float: left;
+      }
     }
   }
 
@@ -125,5 +119,9 @@ form {
     &:active {
       background: $yellow-50;
     }
+  }
+
+  button {
+    font-weight: bold;
   }
 }

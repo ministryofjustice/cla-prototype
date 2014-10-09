@@ -1,6 +1,9 @@
 //= require lodash
+//= require showdown/compressed/showdown
 //= require angular
 //= require angular-resource
 //= require angular-cookies
 //= require angular-ui-router
+//= require angular-sanitize
 //= require angularLocalStorage
+//= require angular-markdown-directive/markdown

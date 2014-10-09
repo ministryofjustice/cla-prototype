@@ -3,67 +3,52 @@ title:
 ---
 
 h1 You might be able to get legal aid
+p
+  ' Based on the answers you have given, you might be financially eligible for legal aid.
+  ' But we don’t know yet whether your problem is covered.
 
 form name="applicationForm" ng-submit="submit(applicationForm)"
-  p Please provide the following information so we can contact you about your application for legal aid.
+  dl style="margin-bottom: 30px"
+    dt
+      = label_tag 'extra_notes', caption: 'In your own words, please tell us more about your problem (optional)'
+    dd
+      textarea.form-control(
+        id="extra_notes"
+        rows="7"
+        class="m-full"
+        ng-model="application[5].extra_notes"
+      )
+
+  h3 Next step
+  p You’ll need to speak to an operator who can help you apply for legal aid. Please submit your details so that they call you back.
+
   fieldset
-    dl.m-inline
+    dl ng-repeat="field in application"
       dt
-        = label_tag :title
+        = label_tag '{{field.name}}', caption: '{{field.label}}'
+        help-text field="field"
       dd
-        select#title.form-control(
-          ng-options="title for title in titles"
-          ng-model="applicant.title"
-          ng-required="true"
+        input.form-control(
+          id="{{field.name}}"
+          type="{{field.type}}"
+          class="m-{{field.size || 'normal'}}"
+          ng-if="field.type == 'text'"
+          ng-model="field.value"
+          ng-required="{{!field.optional}}"
         )
-    dl.m-inline
-      dt
-        = label_tag :full_name
-      dd
-        input#full_name.form-control.m-xlarge(
-          ng-model="applicant.full_name"
-          ng-required="true"
-        )
-    dl.m-inline
-      dt
-        = label_tag :postcode
-      dd
-        input#postcode.form-control.m-large(
-          ng-model="applicant.postcode"
-          ng-required="true"
-        )
-    dl.m-inline
-      dt
-        = label_tag :address
-      dd
-        textarea#address.form-control.m-xlarge(
-          rows="4"
-          ng-model="applicant.address"
-          ng-required="true"
-        )
-    dl.m-inline
-      dt
-        = label_tag :contact_number
-      dd
-        input#contact_number.form-control.m-large(
-          ng-model="applicant.contact_number"
-          ng-required="true"
-        )
-    dl.m-inline
-      dt
-        = label_tag :email_address
-      dd
-        input#email_address.form-control.m-xlarge(
-          ng-model="applicant.email_address"
-          ng-required="true"
-        )
-    dl
-      dt
-        = label_tag :extra_notes, caption: 'If you want to tell us more about your legal problem, you can do it here (optional):'
-      dd
-        textarea#extra_notes.form-control.m-full(
-          rows="5"
-          ng-model="applicant.extra_notes"
+        textarea.form-control(
+          id="{{field.name}}"
+          rows="{{field.rows || 4}}"
+          class="m-{{field.size || 'normal'}}"
+          ng-if="field.type == 'textarea'"
+          ng-required="{{!field.optional}}"
         )
 
-  p.action: button Submit
+  .notice
+    h4 What happens next
+    p
+      ' If the operator you speak to believes you can get legal aid,
+      ' they will find you specialist legal help, like a phone call with a solicitor
+      ' or support from a family mediation service.
+
+  p.action: button.button Submit

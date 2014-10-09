@@ -14,6 +14,7 @@
     "angularLocalStorage": "~0.1.8",
     "angular-resource": "~1.2.26",
     "lodash": "~2.4.1",
-    "angular-ui-router": "~0.2.11"
+    "angular-ui-router": "~0.2.11",
+    "angular-markdown-directive": "~0.3.0"
   }
 }

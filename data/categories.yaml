@@ -1,18 +1,61 @@
-- violence: Violence and abuse at home
-- housing: Housing, eviction and homelessness
-- debt: Debt, money problems and bankruptcy
-- family: Family, marriage, separation and children,
-- immigration: Applying for asylum or permission to stay in the UK
-- benefits: Welfare benefits appeals
-- education: Education
-- discrimination: Discrimination, disability and other issues
-- consumer: Consumer Issues
-- pi: Personal Injury
-- publiclaw: Public Law
-- commcare: Community Care
-- clinneg: Clinical Negligence
-- mentalhealth: Mental Health
-- aap: Actions Against the Police
-- crime: Crime/Criminal Law
-- employment: Employment
-- none: None of the above
+list:
+  -
+    name: violence
+    label: Violence or abuse at home
+    inline_help: Domestic violence, child abuse, harassment by an ex-partner
+  -
+    name: housing
+    label: Housing
+    inline_help: Eviction, homelessness, losing your home, rent arrears
+  -
+    name: debt
+    label: Debt
+    inline_help: Money problems, bankruptcy, repossession
+  -
+    name: family
+    label: Family
+    inline_help: Divorce, separation, contact with children
+  -
+    name: immigration
+    label: Applying for asylum or permission to stay in the UK
+  -
+    name: benefits
+    label: Welfare benefits appeals
+  -
+    name: education
+    label: Education
+    inline_help: Special educational needs, problems with school places, exclusions, learning difficulties
+  -
+    name: aap
+    label: Trouble with the police
+  -
+    name: discrimination
+    label: Discrimination
+    inline_help: Being treated unfairly because of your race, sex, sexual orientation etc
+  -
+    name: consumer
+    label: Consumer issues
+  -
+    name: pi
+    label: Personal injury
+  -
+    name: publiclaw
+    label: Public law
+  -
+    name: commcare
+    label: Community care
+  -
+    name: clinneg
+    label: Clinical negligence
+  -
+    name: mentalhealth
+    label: Mental health
+  -
+    name: crime
+    label: Crime, criminal law
+  -
+    name: employment
+    label: Employment
+  -
+    name: none
+    label: Any other problem

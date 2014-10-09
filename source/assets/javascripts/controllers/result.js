@@ -1,8 +1,5 @@
 app.controller('ResultCtrl', function($scope, $state, storage) {
-  storage.bind($scope, 'applicant', { defaultValue: {}});
-
-  $scope.titles = ['Mr', 'Mrs', 'Miss', 'Ms', 'Dr'];
-  $scope.applicant.title = $scope.titles[0];
+  storage.bind($scope, 'application', { defaultValue: FORM_DATA.application });
 
   $scope.submit = function() {
     $scope.submitted = true;

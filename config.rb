@@ -23,12 +23,12 @@ activate :autoprefixer
 
 page "/partials/*", :layout => false
 
-ready do
-  resources_for('/partials').each do |resource|
-    filename = resource.url.match(/partials\/(.*)\.html$/)[1]
-    redirect "#{filename}/index.html", to: "/#/#{filename}"
-  end
-end
+# ready do
+#   resources_for('/partials').each do |resource|
+#     filename = resource.url.match(/partials\/(.*)\.html$/)[1]
+#     redirect "#{filename}/index.html", to: "/#/#{filename}"
+#   end
+# end
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {

@@ -1,0 +1,79 @@
+- me:
+  -
+    name: bank
+    label: Money saved in a bank or building society
+    type: number
+    prefix: '£'
+    value: 0
+  -
+    name: investments
+    label: Total value of investments, shares or ISAs
+    type: number
+    prefix: '£'
+    value: 0
+    more_info: This includes all types of investments, including shares, bonds and ISAs.
+  -
+    name: valuable_items
+    label: Total value of valuable items worth over £500 each
+    type: number
+    prefix: '£'
+    value: 0
+    more_info: |
+      Include any single item you own worth over £500, but:
+
+      * NOT household furniture and effects, unless they’re exceptionally valuable
+      * NOT tools of your trade (eg computers for a graphic designer, carpentry tools for a carpenter)
+      * NOT the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
+
+      For classic cars, luxury vehicles and valuable household furniture and effects,
+      give the price the item would sell for if you sold it today.
+  -
+    name: money_owed
+    label: Money owed to you
+    type: number
+    prefix: '£'
+    value: 0
+    inline_help: Money you have lent to someone else
+    more_info: >
+      We need to know about any money that is owed to you because this can affect whether you can get legal aid.
+      Money owed to you includes money owed by friends and relatives as well as businesses and other people.
+
+- partner:
+  -
+    name: bank
+    label: Money saved in a bank or building society
+    type: number
+    prefix: '£'
+    value: 0
+  -
+    name: investments
+    label: Total value of investments, shares or ISAs
+    type: number
+    prefix: '£'
+    value: 0
+    more_info: This includes all types of investments, including shares, bonds and ISAs.
+  -
+    name: valuable_items
+    label: Total value of valuable items worth over £500 each
+    type: number
+    prefix: '£'
+    value: 0
+    more_info: |
+      Include any single item your partner owns worth over £500, but:
+
+      * NOT household furniture and effects, unless they’re exceptionally valuable
+      * NOT tools of your partner’s trade (eg computers for a graphic designer, carpentry tools for a carpenter)
+      * NOT the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
+
+      For classic cars, luxury vehicles and valuable household furniture and effects,
+      give the price the item would sell for if you sold it today.
+  -
+    name: money_owed
+    label: Money owed to your partner
+    type: number
+    prefix: '£'
+    value: 0
+    inline_help: Money your partner has lent to someone else
+    more_info: >
+      We need to know about any money that is owed to your partner because this can affect whether you can get legal aid.
+      Money owed to your partner includes money owed by friends and relatives as well as businesses and other people.

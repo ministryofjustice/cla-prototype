@@ -1,0 +1,24 @@
+-
+  name: income_support
+  label: Income Support
+  type: checkbox
+-
+  name: job_seekers
+  label: Income-based Jobseeker’s Allowance
+  type: checkbox
+-
+  name: universal_credit
+  label: Guarantee Credit or Universal Credit
+  type: checkbox
+-
+  name: employment_allowance
+  label: Income-related Employment and Support Allowance
+  type: checkbox
+-
+  name: nass_benefit
+  label: National Asylum Support Service benefit
+  type: checkbox
+-
+  name: none_of_above
+  label: None of the above
+  type: checkbox

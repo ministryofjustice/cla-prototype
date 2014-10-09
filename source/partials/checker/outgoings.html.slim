@@ -1,0 +1,59 @@
+h1 Your outgoings
+
+p
+  | We need to know about certain things you spend your money on, so please answer these questions as fully and accurately as you can.
+
+form name="moneyOutForm" ng-submit="submit(moneyOutForm)"
+  div(
+    ng-repeat="item in outgoings"
+    ng-if="item.me || item.partner && has_partner"
+  )
+    h3 ng-if="item.partner" Your partner
+
+    fieldset ng-repeat="set in item"
+      / Tax & NI
+      dl(
+        ng-repeat="field in set"
+        ng-if="is_working && (field.name == 'tax_paid' || field.name == 'ni')"
+      )
+        dt
+          = label_tag '{{field.name}}', caption: '{{field.label}}'
+          help-text field="field"
+        dd ng-repeat="(name, label) in item"
+          input.form-control.m-small>(
+            type="{{field.type}}"
+            id="{{field.name}}"
+            max="250000"
+            min="0"
+            ng-model="field.value"
+            ng-required="true"
+          )
+
+          select.form-control(
+            ng-model="field.frequency.value"
+            ng-options="o.name as o.label for o in field.frequency.options"
+          )
+      / All other outglings
+      dl(
+        ng-repeat="field in set"
+        ng-if="field.name != 'tax_paid' && field.name != 'ni'"
+      )
+        dt
+          = label_tag '{{field.name}}', caption: '{{field.label}}'
+          help-text field="field"
+        dd ng-repeat="(name, label) in item"
+          input.form-control.m-small>(
+            type="{{field.type}}"
+            id="{{field.name}}"
+            max="250000"
+            min="0"
+            ng-model="field.value"
+            ng-required="true"
+          )
+
+          select.form-control(
+            ng-model="field.frequency.value"
+            ng-options="o.name as o.label for o in field.frequency.options"
+          )
+
+  p.action: button.button Next step

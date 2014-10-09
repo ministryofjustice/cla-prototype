@@ -1,9 +1,0 @@
-- required = required || true
-- name = name || nil
-
-dl
-  dt
-    = label_tag name, caption: label
-  dd
-    = number_field_tag name, id: name, max: 2500000, min: 0,
-      'ng-required' => required, class: "form-control m-small"

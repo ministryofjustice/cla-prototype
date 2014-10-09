@@ -11,12 +11,15 @@ html ng-app="CLA"
     = partial 'header'
 
     #wrapper
-      main#content role="main" ng-controller="MainCtrl"
+      main#content role="main"
         .inner-block = partial 'phase-banner'
         section.inner-block(ui-view autoscroll)
           == yield
 
     = partial 'footer'
+
+    javascript:
+      FORM_DATA = #{data.to_h.tap { |h| h.delete('page') }.to_json};
 
     = javascript_include_tag 'libs', 'app'
     = include_javascripts(current_page.data.javascripts || current_page.data.javascripts)

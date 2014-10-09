@@ -1,0 +1,18 @@
+-
+  name: old
+  label: Dependants aged 16 or over
+  type: radio
+  options: &yes-no
+    - value: 1
+      label: 'Yes'
+    - value: 0
+      label: 'No'
+  more_info: >
+    A dependent is someone who lives with you and who you support financially.
+    This could be an ill or disabled relative or a young person you get Child Benefit for.
+-
+  name: young
+  label: Children aged 15 or under
+  type: radio
+  options: *yes-no
+  inline_help: Only include children who live with you

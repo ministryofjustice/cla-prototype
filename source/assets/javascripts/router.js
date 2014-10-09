@@ -8,29 +8,19 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider, $uiVi
 
   $stateProvider
     .state('start', {
-      url: ''
+      url: '',
+      templateUrl: './partials/start-page.html'
     })
-    .state('problem', {
-      url: '/problem',
-      templateUrl: './partials/problem.html',
-      controller: 'ProblemCtrl'
+    .state('threshold', {
+      url: '/threshold',
+      templateUrl: './partials/threshold.html'
     })
-    .state('about', {
-      url: '/about',
-      templateUrl: './partials/about.html',
-      controller: 'AboutCtrl'
-    })
-    .state('money', {
-      abstract: true,
-      url: '/money',
-      controller: 'MoneyCtrl',
-      templateUrl: './partials/money.html'
-    })
-    .state('money.section', {
-      url: '/:id',
+    .state('checker', {
+      url: '/checker/:stage',
       templateUrl: function($stateParams) {
-        return './partials/money/' + $stateParams.id + '.html';
+        return './partials/checker/' + $stateParams.stage + '.html';
       },
+      controller: 'CheckerCtrl',
       onEnter: scrollToTop
     })
     .state('result', {

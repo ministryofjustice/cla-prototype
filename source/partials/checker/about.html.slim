@@ -1,0 +1,32 @@
+h1 About you
+
+form name="aboutForm" ng-submit="submit(aboutForm)"
+  fieldset
+    dl ng-repeat="field in about"
+      dt
+        span {{ field.label|removeTextOnCondition : !has_partner : 'or your partner' }}
+        help-text field="field"
+      dd
+        label ng-repeat="option in field.options"
+          input>(
+            type="{{field.type}}"
+            name="{{field.name}}"
+            value="{{option.value}}"
+            ng-model="field.value"
+            ng-required="true"
+          )  {{option.label}}
+        div(
+          style="margin-top:5px"
+          ng-if="field.name == 'has_children' && has_children || field.name == 'caring_responsibilities' && is_caring"
+        )
+          label for="number_of_children" How many?
+          input#number_of_children.form-control.m-xsmall>(
+            type="number"
+            ng-model="field.sub_value"
+            value="0"
+            min="1"
+            max="15"
+            ng-required="true"
+          )
+
+  p.action: button.button Next step

@@ -1,6 +1,64 @@
-- has_partner: Do you have a partner?
-- has_benefits: Are you or your partner on any benefits?
-- has_children: Do you or your partner have children?
-- caring_responsibilities: Are you a carer for anyone else not your children?
-- own_property: Do you or your partner own a property?
-- older_than_sixty: Are you or your partner aged 60 or over?
+-
+  name: has_partner
+  label: Do you have a partner?
+  type: radio
+  inline_help: Your partner is your husband, wife, civil partner or someone you live with as if you’re married
+  options: &yes-no
+    - value: 1
+      label: 'Yes'
+    - value: 0
+      label: 'No'
+-
+  name: has_benefits
+  label: Are you or your partner on any benefits?
+  type: radio
+  more_info: Please answer ‘yes’ if you get any benefits at all
+  inline_help: Being on some benefits can help you qualify for legal aid
+  options: *yes-no
+-
+  name: has_children
+  label: Do you or your partner have children?
+  type: radio
+  inline_help: Aged 15 or under, who live with you
+  options: *yes-no
+
+-
+  name: caring_responsibilities
+  label: Do you have any dependants aged 16 or over?
+  type: radio
+  inline_help: People who you live with and support financially
+  more_info: |
+    People you live with and support financially.
+
+    This could be an ill or disabled relative or a young person you get Child Benefit for.
+  options: *yes-no
+-
+  name: has_savings
+  label: Do you or your partner have any savings, investments or any valuables?
+  type: radio
+  inline_help: Items worth over £500 each
+  more_info: |
+    A valuable item is any one item you own worth over £500, but NOT
+
+    * household furniture and effects, unless they’re exceptionally valuable
+    * tools of your trade (eg computers for a graphic designer, carpentry tools for a carpenter)
+    * the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
+
+  options: *yes-no
+-
+  name: own_property
+  label: Do you or your partner own any property in the UK?
+  type: radio
+  inline_help: eg house, flat, caravan, boat
+  options: *yes-no
+-
+  name: is_working
+  label: Are you or your partner doing paid work?
+  type: radio
+  inline_help: This includes working for yourself
+  options: *yes-no
+-
+  name: older_than_sixty
+  label: Are you or your partner aged 60 or over?
+  type: radio
+  options: *yes-no

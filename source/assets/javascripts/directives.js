@@ -22,3 +22,20 @@ app.directive('resetStorage', function($state, storage) {
     }
   };
 });
+
+app.directive('helpText', function() {
+  return {
+    restrict: 'E',
+    replace: true,
+    templateUrl: './partials/-help-text.html',
+    scope: {
+      field: '='
+    },
+    link: function(scope, elem, attr) {
+      if(scope.field.inline_help || scope.field.more_info) {
+        return;
+      }
+      elem.remove();
+    }
+  };
+});

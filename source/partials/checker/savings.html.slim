@@ -1,0 +1,25 @@
+h1 Your savings
+
+form name="savingsForm" ng-submit="submit(savingsForm)"
+  div ng-repeat="item in savings" ng-if="item.me || item.partner && has_partner"
+    h3 ng-if="item.partner" Your partner
+    fieldset ng-repeat="set in item"
+      dl ng-repeat="field in set"
+        dt
+          = label_tag '{{field.name}}', caption: '{{field.label}}'
+          help-text field="field"
+        dd
+          label.field-label.prefix(
+            for="{{field.name}}"
+            ng-if="field.prefix"
+          )  {{field.prefix}}
+          input.form-control.m-small>(
+            type="{{field.type}}"
+            min="0"
+            id="{{field.name}}"
+            max="250000"
+            ng-model="field.value"
+            ng-required="true"
+        )
+
+  p.action: button.button Next step
