@@ -7,11 +7,11 @@
     value: 0
   -
     name: investments
-    label: Total value of investments, shares or ISAs
+    label: Total value of investments
     type: number
     prefix: '£'
     value: 0
-    more_info: This includes all types of investments, including shares, bonds and ISAs.
+    inline_help: This includes shares, bonds and ISAs
   -
     name: valuable_items
     label: Total value of valuable items worth over £500 each
@@ -47,11 +47,11 @@
     value: 0
   -
     name: investments
-    label: Total value of investments, shares or ISAs
+    label: Total value of investments
     type: number
     prefix: '£'
     value: 0
-    more_info: This includes all types of investments, including shares, bonds and ISAs.
+    inline_help: This includes shares, bonds and ISAs
   -
     name: valuable_items
     label: Total value of valuable items worth over £500 each
@@ -66,7 +66,7 @@
       * NOT the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
 
       For classic cars, luxury vehicles and valuable household furniture and effects,
-      give the price the item would sell for if you sold it today.
+      give the price the item would sell for today.
   -
     name: money_owed
     label: Money owed to your partner

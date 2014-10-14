@@ -5,7 +5,7 @@ form name="moneyInForm" ng-submit="submit(moneyInForm)"
     ng-repeat="item in income"
     ng-if="item.me || item.partner && has_partner"
   )
-    h3 ng-if="item.partner" Your partner
+    h3 ng-if="item.partner" Your partner’s income
     fieldset ng-repeat="set in item"
       / Wages
       dl(

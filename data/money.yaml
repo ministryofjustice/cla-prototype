@@ -5,7 +5,7 @@ income:
       label: Wages before tax
       type: number
       inline_help: This includes your self-employment earnings
-      more_info: The total amount you earned before tax. Check your most recent payslips.
+      more_info: Check your most recent payslips.
       frequency: &frequency
         value: pm
         options:
@@ -69,7 +69,6 @@ income:
       name: pension
       label: Pension received
       type: number
-      inline_help: Payments you get if you’re retired
       frequency: *frequency
 
   - partner: *coming_in_me
@@ -82,13 +81,13 @@ outgoings:
       label: Tax paid
       type: number
       frequency: *frequency
-      inline_help: Money taken out of your pay by your employer - check your payslip
+      inline_help: Money taken out of your wages by your employer - check your payslip
     -
       name: ni
       label: National Insurance contributions paid
       type: number
       frequency: *frequency
-      inline_help: Money taken out of your pay by your employer – check your payslip
+      inline_help: Money taken out of your wages by your employer – check your payslip
     -
       name: mortgage
       label: Mortgage

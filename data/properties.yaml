@@ -12,7 +12,7 @@
     type: number
     prefix: '£'
     # value: 0
-    inline_help: Include the full amount owing, even if the property has shared ownership
+    inline_help: Include the full amount you owe, even if the property has shared ownership
   -
     name: is_main
     label: Are you living at this property?
@@ -38,7 +38,7 @@
     name: is_disputed
     label: Is the property disputed?
     type: radio
-    inline_help: eg as part of the financial settlement of a divorce
+    inline_help: for example, as part of the financial settlement of a divorce
     more_info: |
       A disputed property is one whose ownership is disputed by someone eg an ex-partner wants
       to claim a share in it as part of a divorce or separation, or a creditor or mortgage company

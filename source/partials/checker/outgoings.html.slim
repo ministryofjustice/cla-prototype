@@ -8,7 +8,7 @@ form name="moneyOutForm" ng-submit="submit(moneyOutForm)"
     ng-repeat="item in outgoings"
     ng-if="item.me || item.partner && has_partner"
   )
-    h3 ng-if="item.partner" Your partner
+    h3 ng-if="item.partner" Your partner’s outgoings
 
     fieldset ng-repeat="set in item"
       / Tax & NI

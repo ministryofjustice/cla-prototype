@@ -30,7 +30,7 @@
   more_info: |
     People you live with and support financially.
 
-    This could be an ill or disabled relative or a young person you get Child Benefit for.
+    This could be an ill or disabled relative or a young person for whom you get Child Benefit.
   options: *yes-no
 -
   name: has_savings
@@ -41,7 +41,7 @@
     A valuable item is any one item you own worth over £500, but NOT
 
     * household furniture and effects, unless they’re exceptionally valuable
-    * tools of your trade (eg computers for a graphic designer, carpentry tools for a carpenter)
+    * tools of your trade (for example, computers for a graphic designer, carpentry tools for a carpenter)
     * the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
 
   options: *yes-no
@@ -49,7 +49,7 @@
   name: own_property
   label: Do you or your partner own any property in the UK?
   type: radio
-  inline_help: eg house, flat, caravan, boat
+  inline_help: For example, a house, flat, caravan, boat
   options: *yes-no
 -
   name: is_working

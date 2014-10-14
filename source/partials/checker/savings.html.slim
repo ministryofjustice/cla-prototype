@@ -2,7 +2,7 @@ h1 Your savings
 
 form name="savingsForm" ng-submit="submit(savingsForm)"
   div ng-repeat="item in savings" ng-if="item.me || item.partner && has_partner"
-    h3 ng-if="item.partner" Your partner
+    h3 ng-if="item.partner" Your partner’s savings
     fieldset ng-repeat="set in item"
       dl ng-repeat="field in set"
         dt
