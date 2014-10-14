@@ -2,7 +2,7 @@ doctype html
 html ng-app="CLA"
   head
     meta charset='utf-8'
-    title = current_page.data.title || yield_content(:page_title) || 'Civil Legal Advice'
+    title = current_page.data.title || yield_content(:page_title) || 'Civil Legal Aid'
     meta name='viewport' content='width=device-width'
     = stylesheet_link_tag 'styles'
     = include_stylesheets(current_page.data.stylesheets || current_page.data.stylesheet)

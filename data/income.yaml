@@ -1,0 +1,73 @@
+- me: &coming_in_me
+  -
+    name: earnings
+    label: Wages before tax
+    type: number
+    inline_help: This includes your self-employment earnings
+    more_info: Check your most recent payslips.
+    frequency: &frequency
+      value: pm
+      options:
+        -
+          name: pw
+          label: per week
+        -
+          name: 4w
+          label: 4 weekly
+        -
+          name: pm
+          label: per month
+        -
+          name: py
+          label: per year
+  -
+    name: benefits
+    label: Benefits
+    type: number
+    frequency: *frequency
+    inline_help: You don’t have to declare some benefits as income
+    more_info: |
+      You don’t have to declare the following benefits as income:
+
+      * Attendance Allowance
+      * Care in the community Direct Payment
+      * Carers’ Allowance
+      * Constant Attendance Allowance
+      * Council Tax Benefits
+      * Disability Living Allowance
+      * Earnings Top Up
+      * Exceptionally Severe Disablement Allowance
+      * Fostering Allowance (to the extent it exceeds dependants allowance)
+      * Housing Benefit
+      * Independent Living Funds payment
+      * Personal Independent Payments (replaces Disability Living Allowance)
+      * Severe Disablement Allowance
+      * Social Fund Payments
+      * Lump sum payments under Widow's Pension
+      * War Pension (Any)
+
+      You must declare any other benefits here. (There is a separate field for Child Benefit below.)
+  -
+    name: child_benefits
+    label: Child Benefit
+    type: number
+    frequency: *frequency
+  -
+    name: tax_credits
+    label: Tax credits
+    type: number
+    frequency: *frequency
+  -
+    name: maintenance_received
+    label: Maintenance received
+    type: number
+    frequency: *frequency
+    inline_help: Payments you get from an ex-partner
+    more_info: Regular payments you get from an ex-partner to help with your living costs or the living costs of your child or children.
+  -
+    name: pension
+    label: Pension received
+    type: number
+    frequency: *frequency
+
+- partner: *coming_in_me

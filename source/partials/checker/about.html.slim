@@ -4,7 +4,7 @@ form name="aboutForm" ng-submit="submit(aboutForm)"
   fieldset
     dl ng-repeat="field in about"
       dt
-        span {{ field.label|removeTextOnCondition : !has_partner : 'or your partner' }}
+        span {{ field.label|replaceTextOnCondition : !hasPartner : 'or your partner' : '' }}
         help-text field="field"
       dd
         label ng-repeat="option in field.options"
@@ -17,7 +17,7 @@ form name="aboutForm" ng-submit="submit(aboutForm)"
           )  {{option.label}}
         div(
           style="margin-top:5px"
-          ng-if="field.name == 'has_children' && has_children || field.name == 'caring_responsibilities' && is_caring"
+          ng-if="field.name == 'has_children' && hasChildren || field.name == 'caring_responsibilities' && isCaring"
         )
           label for="number_of_children" How many?
           input#number_of_children.form-control.m-xsmall>(
@@ -29,4 +29,4 @@ form name="aboutForm" ng-submit="submit(aboutForm)"
             ng-required="true"
           )
 
-  p.action: button.button Next step
+  = partial 'action', locals: { button_label: 'Continue' }

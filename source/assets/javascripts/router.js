@@ -22,13 +22,5 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider, $uiVi
       },
       controller: 'CheckerCtrl',
       onEnter: scrollToTop
-    })
-    .state('result', {
-      url: '/result/:id',
-      controller: 'ResultCtrl',
-      templateUrl: function($stateParams) {
-        return './partials/result/' + $stateParams.id + '.html';
-      },
-      onEnter: scrollToTop
     });
 });

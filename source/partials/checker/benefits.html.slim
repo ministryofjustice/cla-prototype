@@ -1,10 +1,10 @@
 h1 Your benefits
 
-p {{'Are you or your partner on any of these benefits?'|removeTextOnCondition : !has_partner : 'or your partner'}}
+p {{ 'Are you or your partner on any of these benefits?'|replaceTextOnCondition : !hasPartner : 'or your partner' : '' }}
 
 form(name="benefitsForm" ng-submit="submit(benefitsForm)" novalidate)
 
-  .error(scroll-to ng-if="submitted && benefitsForm.$invalid")
+  .error(scroll-to ng-if="benefitsForm.submitted && benefitsForm.$invalid")
     p Please select at least one option
 
   fieldset
@@ -17,4 +17,4 @@ form(name="benefitsForm" ng-submit="submit(benefitsForm)" novalidate)
             ng-required="!anySelected(benefits)"
           )  {{field.label}}
 
-  p.action: button.button Next step
+  = partial 'action', locals: { button_label: 'Continue' }

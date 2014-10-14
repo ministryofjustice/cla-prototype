@@ -38,6 +38,16 @@ section {
 
 .action {
   margin: 20px 0;
+
+  button.m-skip {
+    color: $black;
+    background: $grey-3;
+    box-shadow: 0 2px 0 $grey-1;
+
+    &:hover {
+      background: $grey-2;
+    }
+  }
 }
 
 
@@ -60,15 +70,49 @@ section {
 }
 
 .box {
-  margin: 30px 0;
+  margin: 40px 0;
+  padding: 0;
+  border-top: 2px solid #ddd;
+  padding-top: 40px;
+
+  &:first-child {
+    border: 0;
+    padding-top: 0;
+  }
+
+  header {
+    @include clearfix;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $grey-3;
+
+    h3 {
+      margin: 0;
+      float: left;
+    }
+
+    a {
+      @include core-16;
+      float: right;
+      margin: 7px 0 0;
+    }
+  }
 
   h4 {
-    margin: 0 0 10px;
+    margin: 20px 0 5px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .block {
+    padding: 10px;
+    background: $grey-4;
   }
 
   > ul {
-    background: $grey-4;
-    padding: 30px 30px 30px 60px;
+    padding-left: 30px;
     margin: 0;
 
     li {
@@ -189,4 +233,63 @@ button.reset {
     }
   }
 
+}
+
+
+.checked-list {
+  list-style: none;
+
+  li:before {
+    content: '✓';
+    float: left;
+    margin-left: -24px;
+    color: $green;
+  }
+}
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+
+  caption {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  th {
+    text-align: left;
+    font-weight: normal;
+  }
+
+  tr:nth-child(odd) {
+    td,
+    th {
+      background: $grey-4;
+    }
+  }
+
+  .total.total {
+    td,
+    th {
+      border-top: 1px dotted #ddd;
+      background: none;
+    }
+  }
+
+  ._label {
+    width: 40%;
+  }
+
+  ._value {
+    padding-left: 10px;
+  }
 }

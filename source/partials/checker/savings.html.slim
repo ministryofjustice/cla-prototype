@@ -1,7 +1,7 @@
 h1 Your savings
 
 form name="savingsForm" ng-submit="submit(savingsForm)"
-  div ng-repeat="item in savings" ng-if="item.me || item.partner && has_partner"
+  div ng-repeat="item in savings" ng-if="item.me || item.partner && hasPartner"
     h3 ng-if="item.partner" Your partner’s savings
     fieldset ng-repeat="set in item"
       dl ng-repeat="field in set"
@@ -22,4 +22,4 @@ form name="savingsForm" ng-submit="submit(savingsForm)"
             ng-required="true"
         )
 
-  p.action: button.button Next step
+  = partial 'action', locals: { button_label: 'Continue' }

@@ -1,29 +1,35 @@
-h1 You might be able to get legal aid
+h1
+  span> You might be able
+  span to get legal aid
 p
   ' Based on the answers you have given, you might be financially eligible for legal aid.
   ' But we don’t know yet whether your problem is covered.
 
 form name="applicationForm" ng-submit="submit(applicationForm)"
-  dl style="margin-bottom: 30px"
+  dl(
+    style="margin-bottom: 30px"
+    ng-repeat="field in application | filter : 'extra_notes'"
+  )
     dt
-      = label_tag 'extra_notes', caption: 'In your own words, please tell us more about your problem (optional)'
+      = label_tag '{{field.name}}', caption: '{{field.label}}{{field.optional ? " (optional)" : ""}}'
     dd
       textarea.form-control(
         id="extra_notes"
-        rows="7"
-        class="m-full"
-        ng-model="application[5].extra_notes"
+        rows="{{field.rows}}"
+        class="m-{{field.size || 'normal'}}"
+        ng-model="field.value"
+        ng-required="{{!field.optional}}"
       )
 
   h3 Next step
   p You’ll need to speak to an operator who can help you apply for legal aid. Please submit your details so that they call you back.
 
-  fieldset
-    dl ng-repeat="field in application"
+  fieldset style="margin-top: 20px"
+    dl ng-repeat="field in application | filter : '!extra_notes'"
       dt
-        = label_tag '{{field.name}}', caption: '{{field.label}}'
+        = label_tag '{{field.name}}', caption: '{{field.label}}{{field.optional ? " (optional)" : ""}}'
         help-text field="field"
-      dd
+      dd ng-if="field.name != 'contact_time_preference'"
         input.form-control(
           id="{{field.name}}"
           type="{{field.type}}"
@@ -39,6 +45,15 @@ form name="applicationForm" ng-submit="submit(applicationForm)"
           ng-if="field.type == 'textarea'"
           ng-required="{{!field.optional}}"
         )
+      dd ng-if="field.name == 'contact_time_preference'"
+        select.form-control>(
+          ng-model="field.day.value"
+          ng-options="o.name as o.label for o in field.day.options"
+        )
+        select.form-control(
+          ng-model="field.time.value"
+          ng-options="o.name as o.label for o in field.time.options"
+        )
 
   .notice
     h4 What happens next
@@ -47,4 +62,4 @@ form name="applicationForm" ng-submit="submit(applicationForm)"
       ' they will find you specialist legal help, like a phone call with a solicitor
       ' or support from a family mediation service.
 
-  p.action: button.button Submit
+  p.action: button.button Review your application

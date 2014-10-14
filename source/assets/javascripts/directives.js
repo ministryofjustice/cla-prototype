@@ -13,11 +13,11 @@ app.directive('resetStorage', function($state, storage) {
   return {
     restrict: 'E',
     replace: true,
-    template: '<button class="reset">Reset storage</button>',
+    template: '<button class="reset">Reset</button>',
     link: function(scope, elem, attr) {
       elem.on('click', function() {
         storage.clearAll();
-        $state.go($state.current, {}, { reload: true });
+        $state.go('start', {}, { reload: true });
       });
     }
   };

@@ -5,7 +5,7 @@ markdown:
 
 .notice
   p If you have more than one problem, you can complete the checker more than once.
-  p If you’re really not sure what to choose, ask us to call you back.
+  p If you’re really not sure what to choose, 'ask us to #{link_to 'call you back', 'http://callmeback.justice.gov.uk/'}.
 
 
 form name="problemForm" ng-submit="submit(problemForm)"
@@ -23,4 +23,4 @@ form name="problemForm" ng-submit="submit(problemForm)"
           span {{field.label}}
           help-text field="field"
 
-  p.action: button.button Next step
+  = partial 'action', locals: { button_label: 'Continue' }

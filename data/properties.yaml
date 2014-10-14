@@ -29,6 +29,7 @@
     suffix: '%'
     type: number
     # value: 0
+    size: small
     inline_help: If you’re the only owner, put 100
     more_info: |
       If you are the only owner of the property, your share of it is 100%. A couple who owns their home as joint owners own 50% of the property each.

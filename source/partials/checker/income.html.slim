@@ -3,14 +3,14 @@ h1 Your income
 form name="incomeForm" ng-submit="submit(incomeForm)"
   div(
     ng-repeat="item in income"
-    ng-if="item.me || item.partner && has_partner"
+    ng-if="item.me || item.partner && hasPartner"
   )
     h3 ng-if="item.partner" Your partner’s income
     fieldset ng-repeat="set in item"
-      / Wages
+      / Wages & benefits
       dl(
         ng-repeat="field in set"
-        ng-if="field.name == 'earnings' && is_working"
+        ng-if="(field.name == 'earnings' && isWorking) || (field.name == 'benefits' && hasBenefits)"
       )
         dt
           = label_tag '{{field.name}}', caption: '{{field.label}}'
@@ -29,7 +29,7 @@ form name="incomeForm" ng-submit="submit(incomeForm)"
             ng-options="o.name as o.label for o in field.frequency.options"
           )
       / All other incomes
-      dl ng-repeat="field in set" ng-if="field.name != 'earnings'"
+      dl ng-repeat="field in set" ng-if="field.name != 'earnings' && field.name != 'benefits'"
         dt
           = label_tag '{{field.name}}', caption: '{{field.label}}'
           help-text field="field"
@@ -47,4 +47,4 @@ form name="incomeForm" ng-submit="submit(incomeForm)"
             ng-options="o.name as o.label for o in field.frequency.options"
           )
 
-  p.action: button.button Next step
+  = partial 'action', locals: { button_label: 'Continue' }

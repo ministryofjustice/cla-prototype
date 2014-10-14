@@ -32,4 +32,4 @@ form name="propertyForm" ng-submit="submit(propertyForm)"
             ng-required="true"
           )  {{option.label}}
 
-  p.action: button.button Next step
+  = partial 'action', locals: { button_label: 'Continue' }

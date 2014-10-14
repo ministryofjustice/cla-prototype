@@ -1,0 +1,8 @@
+- button_label ||= 'Submit'
+
+p.action
+  button.button ng-if="!beingReviewed" = button_label
+  button.button(
+    ng-if="beingReviewed"
+    ui-sref="checker({ stage: 'result-review' })"
+  ) Save

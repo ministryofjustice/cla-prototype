@@ -30,18 +30,18 @@ app.factory('decision', function($state, storage) {
         'savings',
         'income',
         'outgoings',
-        'result'
+        'application'
       ];
 
       var skippedSteps = [];
 
-      if (!scope.has_benefits) {
+      if (!scope.hasBenefits) {
         skippedSteps.push('benefits');
       }
-      if (!scope.own_property) {
+      if (!scope.ownProperty) {
         skippedSteps.push('property');
       }
-      if (!scope.has_savings) {
+      if (!scope.hasSavings) {
         skippedSteps.push('savings');
       }
 
@@ -52,10 +52,13 @@ app.factory('decision', function($state, storage) {
       this.checkEligibility(scope);
 
       if (this.isEligible && (currentStep === 'benefits' || currentStep === 'outgoings')) {
-        return $state.go('result', { id: 'eligible' });
+        return $state.go('checker', { stage: 'result-eligible' });
       }
       if (currentStep === 'outgoings') {
-        return $state.go('result', { id: 'ineligible' });
+        return $state.go('checker', { stage: 'result-ineligible' });
+      }
+      if (currentStep === 'application') {
+        return $state.go('checker', { stage: 'result-review' });
       }
 
       $state.go('checker', { stage: remainingSteps[nextStepIndex] });

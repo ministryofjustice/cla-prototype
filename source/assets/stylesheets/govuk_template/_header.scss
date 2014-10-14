@@ -223,7 +223,7 @@
   }
   .header-bar {
     height: 10px;
-    background-color: $beta-colour;
+    background-color: $govuk-blue;
     @include ie-lte(8) {
       font-size: 0;
     }

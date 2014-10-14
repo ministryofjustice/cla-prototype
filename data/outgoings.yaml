@@ -1,0 +1,60 @@
+- me: &going_out_me
+  -
+    name: tax_paid
+    label: Tax paid
+    type: number
+    frequency: &frequency
+      value: pm
+      options:
+        -
+          name: pw
+          label: per week
+        -
+          name: 4w
+          label: 4 weekly
+        -
+          name: pm
+          label: per month
+        -
+          name: py
+          label: per year
+    inline_help: Money taken out of your wages by your employer - check your payslip
+  -
+    name: ni
+    label: National Insurance contributions paid
+    type: number
+    frequency: *frequency
+    inline_help: Money taken out of your wages by your employer – check your payslip
+  -
+    name: mortgage
+    label: Mortgage
+    type: number
+    frequency: *frequency
+  -
+    name: rent
+    label: Rent
+    type: number
+    frequency: *frequency
+  -
+    name: maintenance
+    label: Maintenance paid
+    type: number
+    frequency: *frequency
+    inline_help: Money you pay to an ex-partner
+    more_info: >
+      Regular payments you make to an ex-partner to help with their living costs
+      or the living costs of your child who no longer lives with you.
+  -
+    name: childcare
+    label: Childcare
+    type: number
+    frequency: *frequency
+    inline_help: Money you pay for your child to be looked after while you work or study
+  -
+    name: contribution_order
+    label: Contribution order
+    type: number
+    frequency: *frequency
+    inline_help: Money you pay towards the cost of legal help after a criminal conviction
+
+- partner: *going_out_me

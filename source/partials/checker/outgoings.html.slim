@@ -6,7 +6,7 @@ p
 form name="outgoingsForm" ng-submit="submit(outgoingsForm)"
   div(
     ng-repeat="item in outgoings"
-    ng-if="item.me || item.partner && has_partner"
+    ng-if="item.me || item.partner && hasPartner"
   )
     h3 ng-if="item.partner" Your partner’s outgoings
 
@@ -14,7 +14,7 @@ form name="outgoingsForm" ng-submit="submit(outgoingsForm)"
       / Tax & NI
       dl(
         ng-repeat="field in set"
-        ng-if="is_working && (field.name == 'tax_paid' || field.name == 'ni')"
+        ng-if="isWorking && (field.name == 'tax_paid' || field.name == 'ni')"
       )
         dt
           = label_tag '{{field.name}}', caption: '{{field.label}}'
@@ -56,4 +56,4 @@ form name="outgoingsForm" ng-submit="submit(outgoingsForm)"
             ng-options="o.name as o.label for o in field.frequency.options"
           )
 
-  p.action: button.button Submit
+  = partial 'action'

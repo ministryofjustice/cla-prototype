@@ -1,28 +1,19 @@
-# -
-#   name: extra_notes
-#   label: In your own words, please tell us more about your problem (optional)
-#   type: textarea
-#   size: full
-#   optional: true
-#   rows: 7
+-
+  name: extra_notes
+  label: In your own words, please tell us more about your problem
+  type: textarea
+  size: full
+  optional: true
+  rows: 7
 -
   name: title
   label: Title
   type: text
-  inline_help: Mr, Mrs, Ms, etc.
+  inline_help: Mr, Mrs, Ms, etc
 -
   name: full_name
   label: Full name
   type: text
-  size: xlarge
--
-  name: postcode
-  label: Postcode
-  type: text
--
-  name: address
-  label: Address
-  type: textarea
   size: xlarge
 -
   name: contact_number
@@ -31,6 +22,61 @@
 -
   name: contact_time_preference
   label: When can we call you?
+  type: select
+  day:
+    value: today
+    options:
+    -
+      name: today
+      label: Today
+    -
+      name: tomorrow
+      label: Tomorrow
+    -
+      name: wednesday
+      label: Wednesday
+    -
+      name: thursday
+      label: Thursday
+    -
+      name: friday
+      label: Friday
+    -
+      name: saturday
+      label: Saturday
+  time:
+    value: 10
+    options:
+    -
+      name: 10
+      label: 10:30 - 11:30
+    -
+      name: 11
+      label: 11:30 - 12:30
+    -
+      name: 12
+      label: 12:30 - 13:30
+    -
+      name: 13
+      label: 13:30 - 14:30
+    -
+      name: 14
+      label: 14:30 - 15:30
+    -
+      name: 15
+      label: 15:30 - 16:30
+    -
+      name: 16
+      label: 16:30 - 17:30
+  size: xlarge
+-
+  name: postcode
+  label: Postcode
   type: text
   optional: true
-  size: large
+-
+  name: address
+  label: Address
+  type: textarea
+  optional: true
+  size: xlarge
