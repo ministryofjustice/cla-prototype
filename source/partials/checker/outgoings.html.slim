@@ -3,7 +3,7 @@ h1 Your outgoings
 p
   | We need to know about certain things you spend your money on, so please answer these questions as fully and accurately as you can.
 
-form name="moneyOutForm" ng-submit="submit(moneyOutForm)"
+form name="outgoingsForm" ng-submit="submit(outgoingsForm)"
   div(
     ng-repeat="item in outgoings"
     ng-if="item.me || item.partner && has_partner"
@@ -33,7 +33,7 @@ form name="moneyOutForm" ng-submit="submit(moneyOutForm)"
             ng-model="field.frequency.value"
             ng-options="o.name as o.label for o in field.frequency.options"
           )
-      / All other outglings
+      / All other outgoings
       dl(
         ng-repeat="field in set"
         ng-if="field.name != 'tax_paid' && field.name != 'ni'"
@@ -56,4 +56,4 @@ form name="moneyOutForm" ng-submit="submit(moneyOutForm)"
             ng-options="o.name as o.label for o in field.frequency.options"
           )
 
-  p.action: button.button Next step
+  p.action: button.button Submit

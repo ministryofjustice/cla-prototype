@@ -29,7 +29,7 @@
   label: Contact phone number
   type: text
 -
-  name: contact_time_prefefence
+  name: contact_time_preference
   label: When can we call you?
   type: text
   optional: true
