@@ -48,7 +48,7 @@ div ng-controller="ReviewCtrl"
       h3 Savings
       = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'savings' })"
 
-    table
+    table.table
       caption You
       tr ng-repeat="item in savings[0].me"
         th._label {{item.label}}
