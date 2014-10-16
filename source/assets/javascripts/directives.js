@@ -39,3 +39,17 @@ app.directive('helpText', function() {
     }
   };
 });
+
+app.directive('goBackLink', function($window) {
+  return {
+    restrict: 'E',
+    replace: true,
+    template: '<a href="#" class="go-back-link">Back</a>',
+    link: function(scope, elem, attr) {
+      elem.on('click', function(e) {
+        e.preventDefault();
+        $window.history.back();
+      });
+    }
+  };
+});

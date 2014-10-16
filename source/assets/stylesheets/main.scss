@@ -293,3 +293,15 @@ button.reset {
     padding-left: 10px;
   }
 }
+
+.go-back-link {
+  @include position(-10px null null null);
+  font-size: 15px;
+
+  &:before {
+    display: inline-block;
+    margin-right: 6px;
+    content: '◀';
+    font-size: 13px;
+  }
+}
