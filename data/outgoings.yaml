@@ -19,12 +19,14 @@
           name: py
           label: per year
     inline_help: Money taken out of your wages by your employer - check your payslip
+    more_info: If you’re self-employed include any tax paid on your earnings.
   -
     name: ni
     label: National Insurance contributions paid
     type: number
     frequency: *frequency
-    inline_help: Money taken out of your wages by your employer – check your payslip
+    inline_help: Money taken out of your wages by your employer - check your payslip
+    more_info: If you’re self-employed include any National Insurance contributions you’ve paid.
   -
     name: mortgage
     label: Mortgage

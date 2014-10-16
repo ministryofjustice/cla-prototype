@@ -1,4 +1,12 @@
-h1 Your application is submitted
+.completion-box
+  h1 ✓ Application complete
+  p
+    span> Your reference number is
+    strong._reference-number 7C-4943-2533
 
-p Your reference number: 7C-4943-2533.
-p You will be contacted about your case within two working hours.
+h3 What happens next?
+
+p
+  ' An operator will call you back around the time you chose
+  ' ({{(application[4].day.options|filter:application[4].day.value)[0].label}} between {{(application[4].time.options|filter:application[4].time.value)[0].label}}).
+p If the operator you speak to believes you can get legal aid, they will find you specialist legal help, like a phone call with a solicitor or support from a family mediation service.

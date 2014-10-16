@@ -5,12 +5,14 @@
     type: number
     prefix: '£'
     # value: 0
+    min: 0
     inline_help: Use your own estimate
   -
     name: mortgage_left
     label: How much is left to pay on the mortgage?
     type: number
     prefix: '£'
+    min: 0
     # value: 0
     inline_help: Include the full amount you owe, even if the property has shared ownership
   -
@@ -29,7 +31,9 @@
     suffix: '%'
     type: number
     # value: 0
-    size: small
+    size: xsmall
+    min: 0
+    max: 100
     inline_help: If you’re the only owner, put 100
     more_info: |
       If you are the only owner of the property, your share of it is 100%. A couple who owns their home as joint owners own 50% of the property each.

@@ -17,9 +17,10 @@ form name="propertyForm" ng-submit="submit(propertyForm)"
         )  {{field.prefix}}
         input.form-control.m-small>(
           type="{{field.type}}"
-          min="0"
+          min="{{field.min || 0}}"
           id="{{field.name}}"
-          max="250000"
+          max="{{field.max}}"
+          class="m-{{field.size || 'normal'}}"
           ng-model="field.value"
           ng-required="true"
         )

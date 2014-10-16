@@ -131,3 +131,17 @@ dl.callout {
 .result-picker {
   float: right;
 }
+
+
+.completion-box {
+  background: $turquoise;
+  color: $white;
+  padding: 20px;
+  text-align: center;
+
+  ._reference-number {
+    font-size: 25px;
+    margin-top: 5px;
+    display: block;
+  }
+}

@@ -6,13 +6,25 @@ markdown:
   Choose what is putting you or your family at immediate risk.
 
 .notice
-  p If you have more than one problem, you can complete the checker more than once.
-  p If you’re really not sure what to choose, ask us to #{link_to 'call you back', 'http://callmeback.justice.gov.uk/'}.
+  p If you have more than one problem, you can complete this service more than once.
+  p If you’re really not sure what to choose, ask us to #{link_to 'call you back', 'http://callmeback.justice.gov.uk/', target: '_blank'}.
 
 
 form name="problemForm" ng-submit="submit(problemForm)"
   fieldset
-    dl ng-repeat="field in categories.list"
+    dl ng-repeat="field in categories.list|filter:'!none'|orderBy:'label'"
+      dd
+        label.m-block
+          input>(
+            type="radio"
+            value="{{field.name}}"
+            name="category"
+            ng-model="categories.selected"
+            ng-required="true"
+          )
+          span {{field.label}}
+          help-text field="field"
+    dl ng-repeat="field in categories.list|filter:'none'"
       dd
         label.m-block
           input>(

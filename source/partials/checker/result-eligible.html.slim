@@ -1,9 +1,8 @@
 h1
   span> You might be able
   span to get legal aid
-p
-  ' Based on the answers you have given, you might be financially eligible for legal aid.
-  ' But we don’t know yet whether your problem is covered.
+p Based on the answers you have given, you might be financially eligible for legal aid.
+p We don’t know yet if your specific situation is covered.
 
 form name="applicationForm" ng-submit="submit(applicationForm)"
   dl(
@@ -21,8 +20,10 @@ form name="applicationForm" ng-submit="submit(applicationForm)"
         ng-required="{{!field.optional}}"
       )
 
-  h3 Next step
-  p You’ll need to speak to an operator who can help you apply for legal aid. Please submit your details so that they call you back.
+  h3 Request a callback
+  p
+    ' To find out if legal aid can help in your specific situation, you need to speak to an operator.
+    | Please submit your details so that they call you back.
 
   fieldset style="margin-top: 20px"
     dl ng-repeat="field in application | filter : '!extra_notes'"
@@ -62,4 +63,4 @@ form name="applicationForm" ng-submit="submit(applicationForm)"
       ' they will find you specialist legal help, like a phone call with a solicitor
       ' or support from a family mediation service.
 
-  p.action: button.button Review your application
+  p.action: button.button Review your answers

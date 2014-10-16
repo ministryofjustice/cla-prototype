@@ -9,7 +9,7 @@
   name: title
   label: Title
   type: text
-  inline_help: Mr, Mrs, Ms, etc
+  inline_help: Mr, Mrs, Ms
 -
   name: full_name
   label: Full name

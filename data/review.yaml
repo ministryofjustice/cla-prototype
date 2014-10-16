@@ -21,5 +21,5 @@ about:
     0: You’re not working
     1: You’re working
   older_than_sixty:
-    0: You’re younger than 60
+    0: You’re aged under 60
     1: You’re aged 60 or over

@@ -17,10 +17,12 @@ list:
     inline_help: Divorce, separation, contact with children
   -
     name: immigration
-    label: Applying for asylum or permission to stay in the UK
+    label: Immigration and asylum
+    inline_help: Applying for asylum or permission to stay in the UK
   -
     name: benefits
     label: Welfare benefits appeals
+    inline_help: Appealing a decision about your benefits
   -
     name: education
     label: Education
@@ -28,34 +30,43 @@ list:
   -
     name: aap
     label: Trouble with the police
+    inline_help: Being treated unfairly by the police, wrongful arrest
   -
     name: discrimination
     label: Discrimination
-    inline_help: Being treated unfairly because of your race, sex, sexual orientation etc
+    inline_help: Being treated unfairly because of your race, sex, sexual orientation
   -
     name: consumer
     label: Consumer issues
+    inline_help: Problems when buying goods and services
   -
     name: pi
     label: Personal injury
+    inline_help: An accident that was not your fault
   -
     name: publiclaw
     label: Public law
+    inline_help: Taking legal action against a public body, like your local council
   -
     name: commcare
     label: Community care
+    inline_help: You’re unhappy with the care being provided for yourself or a relative
   -
     name: clinneg
     label: Clinical negligence
+    inline_help: Doctors and nurses not treating you with due care
   -
     name: mentalhealth
     label: Mental health
+    inline_help: Getting someone to speak for you at a mental health tribunal or inquest
   -
     name: crime
     label: Crime, criminal law
+    inline_help: If you’ve been accused of a crime
   -
     name: employment
     label: Employment
+    inline_help: Being treated unfairly at work
   -
     name: none
     label: Any other problem

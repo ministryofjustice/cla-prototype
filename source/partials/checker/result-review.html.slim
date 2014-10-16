@@ -1,12 +1,12 @@
 h1 Review your answers
 
-p Please review your answers before submitting your application to an advisor.
+p Please review your answers before submitting your details.
 
 div ng-controller="ReviewCtrl"
   section.box
     header
       h3 You need help with
-      = link_to 'Edit your answer', '#', 'ui-sref' => "checker({ stage: 'problem' })"
+      = link_to 'Change your answer', '#', 'ui-sref' => "checker({ stage: 'problem' })"
     ul.checked-list
       li ng-repeat="category in categories.list|filter:categories.selected"
         span {{ category.label }}
@@ -15,7 +15,7 @@ div ng-controller="ReviewCtrl"
   section.box
     header
       h3 About you
-      = link_to 'Edit your answers', '#', 'ui-sref' => "checker({ stage: 'about' })"
+      = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'about' })"
     ul.checked-list
       li ng-repeat="item in about"
         span ng-if="item.name == 'has_children'"
@@ -28,7 +28,7 @@ div ng-controller="ReviewCtrl"
   section.box ng-if="isFormSubmitted('benefits')"
     header
       h3 Your benefits
-      = link_to 'Edit your answers', '#', 'ui-sref' => "checker({ stage: 'benefits' })"
+      = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'benefits' })"
     ul.checked-list
       li ng-repeat="item in benefits|filter:true"
         | {{item.label}}
@@ -36,7 +36,7 @@ div ng-controller="ReviewCtrl"
   section.box ng-if="isFormSubmitted('properties')"
     header
       h3 Your property
-      = link_to 'Edit your answers', '#', 'ui-sref' => "checker({ stage: 'property' })"
+      = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'property' })"
     div ng-repeat="item in properties"
       table.table
         tr ng-repeat="field in item"
@@ -46,7 +46,7 @@ div ng-controller="ReviewCtrl"
   section.box ng-if="isFormSubmitted('savings')"
     header
       h3 Savings
-      = link_to 'Edit your answers', '#', 'ui-sref' => "checker({ stage: 'savings' })"
+      = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'savings' })"
 
     table
       caption You
@@ -68,7 +68,7 @@ div ng-controller="ReviewCtrl"
   section.box ng-if="isFormSubmitted('income')"
     header
       h3 Income
-      = link_to 'Edit your answers', '#', 'ui-sref' => "checker({ stage: 'income' })"
+      = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'income' })"
 
     table.table
       caption ng-if="hasPartner" You
@@ -92,7 +92,7 @@ div ng-controller="ReviewCtrl"
   section.box ng-if="isFormSubmitted('outgoings')"
     header
       h3 Outgoings
-      = link_to 'Edit your answers', '#', 'ui-sref' => "checker({ stage: 'outgoings' })"
+      = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'outgoings' })"
 
     table.table
       caption ng-if="hasPartner" You
@@ -117,14 +117,14 @@ div ng-controller="ReviewCtrl"
   section.box ng-if="application[0].value"
     header
       h3 Your problem in your own words
-      = link_to 'Edit your answer', '#', 'ui-sref' => "checker({ stage: 'result-eligible' })"
+      = link_to 'Change your answer', '#', 'ui-sref' => "checker({ stage: 'result-eligible' })"
 
     div btf-markdown="application[0].value"
 
   section.box
     header
       h3 Contact details
-      = link_to 'Edit your answers', '#', 'ui-sref' => "checker({ stage: 'result-eligible' })"
+      = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'result-eligible' })"
     table.table
       tr
         th._label Full name

@@ -3,7 +3,7 @@
     name: earnings
     label: Wages before tax
     type: number
-    inline_help: This includes your self-employment earnings
+    inline_help: This includes your earnings from self-employment
     more_info: Check your most recent payslips.
     frequency: &frequency
       value: pm
