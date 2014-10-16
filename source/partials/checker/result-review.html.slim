@@ -53,17 +53,17 @@ div ng-controller="ReviewCtrl"
       tr ng-repeat="item in savings[0].me"
         th._label {{item.label}}
         td._value {{item.value > 0 ? '£' + (item.value|number) : '—'}}
-      tr.total
-        th Total
-        td £{{getSumFor(type)|number}}
+      / tr.total
+      /   th Total
+      /   td £{{getSumFor(type)|number}}
     table.table ng-if="hasPartner"
       caption Partner
       tr ng-repeat="item in savings[1].partner"
         th._label {{item.label}}
         td._value {{item.value > 0 ? '£' + (item.value|number) : '—'}}
-      tr.total
-        th Total
-        td £{{getSumFor(type)|number}}
+      / tr.total
+      /   th Total
+      /   td £{{getSumFor(type)|number}}
 
   section.box ng-if="isFormSubmitted('income')"
     header
@@ -76,18 +76,18 @@ div ng-controller="ReviewCtrl"
         th._label {{item.label}}
         td._value ng-if="item.value > 0" £{{item.value|number}} {{(item.frequency.options|filter:item.frequency.value)[0].label}}
         td._value ng-if="!item.value || item.value < 0" —
-      tr.total
-        th Total
-        td._value £{{getSumFor(income[0].me)|number}}
+      / tr.total
+      /   th Total
+      /   td._value £{{getSumFor(income[0].me)|number}}
     table.table ng-if="hasPartner"
       caption Partner
       tr ng-repeat="item in savings[1].partner"
         th._label {{item.label}}
         td._value ng-if="item.value > 0" £{{item.value|number}} {{(item.frequency.options|filter:item.frequency.value)[0].label}}
         td._value ng-if="!item.value || item.value < 0" —
-      tr.total
-        th Total
-        td £{{getSumFor(savings[1].partner)|number}}
+      / tr.total
+      /   th Total
+      /   td £{{getSumFor(savings[1].partner)|number}}
 
   section.box ng-if="isFormSubmitted('outgoings')"
     header
@@ -100,18 +100,18 @@ div ng-controller="ReviewCtrl"
         th._label {{item.label}}
         td._value ng-if="item.value > 0" £{{item.value|number}} {{(item.frequency.options|filter:item.frequency.value)[0].label}}
         td._value ng-if="!item.value || item.value < 0" —
-      tr.total
-        th Total
-        td._value £{{getSumFor(outgoings[0].me)|number}}
+      / tr.total
+      /   th Total
+      /   td._value £{{getSumFor(outgoings[0].me)|number}}
     table.table ng-if="hasPartner"
       caption Partner
       tr ng-repeat="item in outgoings[1].partner"
         th._label {{item.label}}
         td._value ng-if="item.value > 0" £{{item.value|number}} {{(item.frequency.options|filter:item.frequency.value)[0].label}}
         td._value ng-if="!item.value || item.value < 0" —
-      tr.total
-        th Total
-        td._value £{{getSumFor(outgoings[1].partner)|number}}
+      / tr.total
+      /   th Total
+      /   td._value £{{getSumFor(outgoings[1].partner)|number}}
 
 
   section.box ng-if="application[0].value"

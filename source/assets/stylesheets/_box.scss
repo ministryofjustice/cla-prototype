@@ -1,0 +1,55 @@
+.box {
+  margin: 40px 0;
+  padding: 0;
+  border-top: 2px solid #ddd;
+  padding-top: 40px;
+
+  &:first-child {
+    border: 0;
+    padding-top: 0;
+  }
+
+  header {
+    @include clearfix;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $grey-3;
+
+    h3 {
+      margin: 0;
+      float: left;
+    }
+
+    a {
+      @include core-16;
+      float: right;
+      margin: 7px 0 0;
+    }
+  }
+
+  h4 {
+    margin: 20px 0 5px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .block {
+    padding: 10px;
+    background: $grey-4;
+  }
+
+  > ul {
+    padding-left: 30px;
+    margin: 0;
+
+    li {
+      margin: 10px 0;
+    }
+
+    ul {
+      margin: 10px 0;
+    }
+  }
+}

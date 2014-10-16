@@ -23,6 +23,25 @@ app.directive('resetStorage', function($state, storage) {
   };
 });
 
+app.directive('resultPicker', function() {
+  return {
+    restrict: 'E',
+    replace: true,
+    templateUrl: './partials/-result-picker.html',
+    scope: true,
+    link: function(scope, elem, attr) {
+      angular.element(document.body).on('click', function(e) {
+        if (e.target.className === 'toggle') {
+          return;
+        }
+        scope.$apply(function() {
+          scope.expanded = false;
+        });
+      });
+    }
+  };
+});
+
 app.directive('helpText', function() {
   return {
     restrict: 'E',
