@@ -33,15 +33,17 @@ div ng-controller="ReviewCtrl"
       li ng-repeat="item in benefits|filter:true"
         | {{item.label}}
 
-  section.box ng-if="isFormSubmitted('properties')"
+  section.box ng-if="isFormSubmitted('property')"
     header
-      h3 Your property
+      h3 Your {{ properties.length > 1 ? 'properties' : 'property'}}
       = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'property' })"
     div ng-repeat="item in properties"
       table.table
+        caption ng-if="properties.length > 1" Property {{$index + 1}}
         tr ng-repeat="field in item"
           th._label {{field.label}}
-          td._value {{field.value > 0 ? '£' + (field.value|number) : '—'}}
+          td._value ng-if="field.type == 'number'" {{field.value > 0 ? '£' + (field.value|number) : '—'}}
+          td._value ng-if="field.type == 'radio'" {{field.value === 1 ? 'Yes' : 'No'}}
 
   section.box ng-if="isFormSubmitted('savings')"
     header

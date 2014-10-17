@@ -6,6 +6,10 @@ p If you own more than one property, you can add another property later.
 
 form name="propertyForm" ng-submit="submit(propertyForm)"
   fieldset ng-repeat="property in properties"
+    header
+      h4 ng-if="properties.length > 1" Property {{$index + 1}}
+      button.button.m-secondary ng-if="$index > 0" type="button" ng-click="removeProperty(property, properties)"
+        | Remove property
     dl ng-repeat="field in property"
       dt
         = label_tag '{{field.name}}', caption: '{{field.label}}'
@@ -34,5 +38,8 @@ form name="propertyForm" ng-submit="submit(propertyForm)"
             ng-model="field.value"
             ng-required="true"
           )  {{option.label}}
+
+  .fieldset-action
+    button.button.m-secondary type="button" ng-click="addProperty(properties)" Add another property
 
   = partial 'action', locals: { button_label: 'Continue' }

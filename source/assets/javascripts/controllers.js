@@ -39,6 +39,17 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
   $scope.anySelected = function(options) {
     return _.any(options, { value: true });
   };
+
+  $scope.addProperty = function(set) {
+    set.push(angular.copy(FORM_DATA.properties[0]));
+  };
+
+  $scope.removeProperty = function(property, set) {
+    if(property.length === 1) {
+      return;
+    }
+    _.remove(set, property);
+  };
 });
 
 
