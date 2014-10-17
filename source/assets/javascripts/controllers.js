@@ -40,6 +40,19 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
     return _.any(options, { value: true });
   };
 
+  $scope.handleDisabledBenefits = function(option, options) {
+    var noneOfAboveSelected = option.name !== 'none_of_above' && _.find(options, { name: 'none_of_above' }).value;
+    if(noneOfAboveSelected) {
+      var benefitOptions = _.filter(options, function(option) { return option.name !== 'none_of_above'; });
+      _.map(benefitOptions, function(option) {
+        option.value = false;
+      });
+      return true;
+    }
+
+    return false;
+  };
+
   $scope.addProperty = function(set) {
     set.push(angular.copy(FORM_DATA.properties[0]));
   };

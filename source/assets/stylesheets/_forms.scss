@@ -116,8 +116,12 @@ form {
   label.m-block {
     display: block;
 
-    &:active {
+    &:not(.s-disabled):active {
       background: rgba(black, .1);
+    }
+
+    &.s-disabled {
+      opacity: .4;
     }
   }
 
