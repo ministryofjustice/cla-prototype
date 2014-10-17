@@ -17,14 +17,17 @@ form name="incomeForm" ng-submit="submit(incomeForm)"
         dt
           = label_tag '{{field.name}}', caption: '{{field.label}}'
           help-text field="field"
-        dd ng-repeat="(name, label) in item"
+        dd
           input.form-control.m-small>(
             type="{{field.type}}"
             id="{{field.name}}"
-            max="250000"
-            min="0"
+            min="{{field.min}}"
+            max="{{field.max}}"
+            pattern="{{field.pattern}}"
+            title="{{field.title}}"
             ng-model="field.value"
             ng-required="true"
+            delimited-number
           )
           select.form-control(
             ng-model="field.frequency.value"
@@ -35,14 +38,17 @@ form name="incomeForm" ng-submit="submit(incomeForm)"
         dt
           = label_tag '{{field.name}}', caption: '{{field.label}}'
           help-text field="field"
-        dd ng-repeat="(name, label) in item"
+        dd
           input.form-control.m-small>(
             type="{{field.type}}"
             id="{{field.name}}"
-            max="250000"
-            min="0"
+            min="{{field.min}}"
+            max="{{field.max}}"
+            pattern="{{field.pattern}}"
+            title="{{field.title}}"
             ng-model="field.value"
             ng-required="true"
+            delimited-number
           )
           select.form-control(
             ng-model="field.frequency.value"

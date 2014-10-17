@@ -72,3 +72,17 @@ app.directive('goBackLink', function($window) {
     }
   };
 });
+
+app.directive('delimitedNumber', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, elem, attrs, ctrl) {
+      ctrl.$parsers.push(function(value) {
+        if(!value) {
+          return;
+        }
+        return parseFloat(value.replace(',', ''));
+      });
+    }
+  };
+});

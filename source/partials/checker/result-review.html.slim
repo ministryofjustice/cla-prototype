@@ -42,7 +42,7 @@ div ng-controller="ReviewCtrl"
         caption ng-if="properties.length > 1" Property {{$index + 1}}
         tr ng-repeat="field in item"
           th._label {{field.label}}
-          td._value ng-if="field.type == 'number'" {{field.value > 0 ? '£' + (field.value|number) : '—'}}
+          td._value ng-if="field.type == 'number' || field.type == 'text'" {{field.value > 0 ? field.prefix + (field.value|number) + field.suffix : '—'}}
           td._value ng-if="field.type == 'radio'" {{field.value === 1 ? 'Yes' : 'No'}}
 
   section.box ng-if="isFormSubmitted('savings')"

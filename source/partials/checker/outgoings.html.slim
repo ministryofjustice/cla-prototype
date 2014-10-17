@@ -25,10 +25,12 @@ form name="outgoingsForm" ng-submit="submit(outgoingsForm)"
           input.form-control.m-small>(
             type="{{field.type}}"
             id="{{field.name}}"
-            max="250000"
-            min="0"
+            min="{{field.min}}"
+            max="{{field.max}}"
+            pattern="{{field.pattern}}"
             ng-model="field.value"
             ng-required="true"
+            delimited-number
           )
 
           select.form-control(
@@ -47,10 +49,12 @@ form name="outgoingsForm" ng-submit="submit(outgoingsForm)"
           input.form-control.m-small>(
             type="{{field.type}}"
             id="{{field.name}}"
-            max="250000"
-            min="0"
+            min="{{field.min}}"
+            max="{{field.max}}"
+            pattern="{{field.pattern}}"
             ng-model="field.value"
             ng-required="true"
+            delimited-number
           )
 
           select.form-control(

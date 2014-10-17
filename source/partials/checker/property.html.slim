@@ -14,19 +14,21 @@ form name="propertyForm" ng-submit="submit(propertyForm)"
       dt
         = label_tag '{{field.name}}', caption: '{{field.label}}'
         help-text field="field"
-      dd ng-if="field.type == 'number'"
+      dd ng-if="field.type == 'number' || field.type == 'text'"
         label.field-label.prefix(
           for="{{field.name}}"
           ng-if="field.prefix"
         )  {{field.prefix}}
         input.form-control.m-small>(
           type="{{field.type}}"
-          min="{{field.min || 0}}"
+          min="{{field.min}}"
           id="{{field.name}}"
           max="{{field.max}}"
           class="m-{{field.size || 'normal'}}"
+          pattern="{{field.pattern}}"
           ng-model="field.value"
           ng-required="true"
+          delimited-number
         )
         span.field-label.suffix< ng-if="field.suffix" {{field.suffix}}
       dd ng-if="field.type == 'radio'"

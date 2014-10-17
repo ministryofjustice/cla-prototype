@@ -17,11 +17,13 @@ form name="savingsForm" ng-submit="submit(savingsForm)"
           )  {{field.prefix}}
           input.form-control.m-small>(
             type="{{field.type}}"
-            min="0"
             id="{{field.name}}"
-            max="250000"
+            min="{{field.min}}"
+            max="{{field.max}}"
+            pattern="{{field.pattern}}"
             ng-model="field.value"
             ng-required="true"
+            delimited-number
         )
 
   = partial 'action', locals: { button_label: 'Continue' }

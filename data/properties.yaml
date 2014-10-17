@@ -2,18 +2,20 @@
   -
     name: worth
     label: How much is the property worth?
-    type: number
+    type: text
     prefix: '£'
     # value: 0
     min: 0
+    pattern: '[0-9,\.]+'
     inline_help: Use your own estimate
   -
     name: mortgage_left
     label: How much is left to pay on the mortgage?
-    type: number
+    type: text
     prefix: '£'
     min: 0
     # value: 0
+    pattern: '[0-9,\.]+'
     inline_help: Include the full amount you owe, even if the property has shared ownership
   -
     name: is_main
@@ -29,12 +31,13 @@
     name: share
     label: What share of the property do you own?
     suffix: '%'
-    type: number
+    type: text
     # value: 0
     size: xsmall
     min: 0
     max: 100
     value: 100
+    pattern: '[0-9,\.]+'
     inline_help: If you’re the only owner, put 100
     more_info: |
       If you are the only owner of the property, your share of it is 100%. A couple who owns their home as joint owners own 50% of the property each.

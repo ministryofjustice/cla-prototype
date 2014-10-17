@@ -2,9 +2,12 @@
   -
     name: earnings
     label: Wages before tax
-    type: number
+    type: text
     inline_help: This includes your earnings from self-employment
     more_info: Check your most recent payslips.
+    min: 0
+    pattern: '[0-9,\.]+'
+    title: Please enter a number
     frequency: &frequency
       value: pm
       options:
@@ -23,8 +26,10 @@
   -
     name: benefits
     label: Benefits
-    type: number
+    type: text
     frequency: *frequency
+    min: 0
+    pattern: '[0-9,\.]+'
     inline_help: You don’t have to declare some benefits as income
     more_info: |
       You don’t have to declare the following benefits as income:
@@ -50,24 +55,32 @@
   -
     name: child_benefits
     label: Child Benefit
-    type: number
+    type: text
+    pattern: '[0-9,\.]+'
+    min: 0
     frequency: *frequency
   -
     name: tax_credits
     label: Tax credits
-    type: number
+    type: text
+    min: 0
+    pattern: '[0-9,\.]+'
     frequency: *frequency
   -
     name: maintenance_received
     label: Maintenance received
-    type: number
+    type: text
+    min: 0
+    pattern: '[0-9,\.]+'
     frequency: *frequency
     inline_help: Payments you get from an ex-partner
     more_info: Regular payments you get from an ex-partner to help with your living costs or the living costs of your child or children.
   -
     name: pension
     label: Pension received
-    type: number
+    type: text
+    pattern: '[0-9,\.]+'
+    min: 0
     frequency: *frequency
 
 - partner: *coming_in_me
