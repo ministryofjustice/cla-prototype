@@ -8,6 +8,12 @@
       label: 'Yes'
     - value: 0
       label: 'No'
+  with_yes:
+    name: is_separated,
+    type: radio
+    label: Are you separated?
+    options: *yes-no
+
 -
   name: has_benefits
   label: Are you or your partner on any benefits?
@@ -26,6 +32,12 @@
     Young people aged 16 or over who live with you and who you support financially
     should be included in the next field under “Do you have any dependants aged 16 or over?”
   options: *yes-no
+  with_yes:
+    name: number_of_children,
+    type: number
+    label: How many?
+    min: 1
+    max: 15
 
 -
   name: caring_responsibilities
@@ -37,6 +49,12 @@
 
     This could be an ill or disabled relative or a young person for whom you get Child Benefit.
   options: *yes-no
+  with_yes:
+    name: number_of_dependants,
+    type: number
+    label: How many?
+    min: 1
+    max: 15
 -
   name: has_savings
   label: Do you or your partner have any savings, investments or any valuables?

@@ -13,6 +13,7 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
   // Update rootScope with global values
   $scope.$watch('about', function(value) {
     $scope.hasPartner  = _.some(value, { name: 'has_partner',  value: '1' });
+    $scope.isSeparatedPartner = _.some(value, { name: 'has_partner', value: '1', with_yes: { value: '1' } });
     $scope.hasBenefits = _.some(value, { name: 'has_benefits', value: '1' });
     $scope.hasChildren = _.some(value, { name: 'has_children', value: '1' });
     $scope.isCaring    = _.some(value, { name: 'caring_responsibilities', value: '1' });

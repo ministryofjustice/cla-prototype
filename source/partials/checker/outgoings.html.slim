@@ -8,9 +8,9 @@ p
 form name="outgoingsForm" ng-submit="submit(outgoingsForm)"
   div(
     ng-repeat="item in outgoings"
-    ng-if="item.me || item.partner && hasPartner"
+    ng-if="item.me || item.partner && hasPartner && !isSeparatedPartner"
   )
-    h3 ng-if="item.partner" Your partner’s outgoings
+    h3 ng-if="item.partner && !isSeparatedPartner" Your partner’s outgoings
 
     fieldset ng-repeat="set in item"
       / Tax & NI
