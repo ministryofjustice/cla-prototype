@@ -26,13 +26,13 @@
 
 // Banners
 .alpha-banner {
-  @include fix-phase-banner(alpha);
+  // @include fix-phase-banner(alpha);
 }
 
 
 // Grid layout
 .grid-wrapper {
-  @include contain-floats;
+  @include clearfix;
   @include media(tablet) {
     padding: 0 $gutter-half;
   }

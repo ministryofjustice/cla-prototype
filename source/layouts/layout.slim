@@ -11,10 +11,11 @@ html ng-app="CLA"
     = partial 'header'
 
     #wrapper
-      main#content role="main"
+      main#content role='main'
         .inner-block = partial 'phase-banner'
-        section.inner-block(ui-view autoscroll)
-          == yield
+        section.inner-block ng-class="{'m-has-sidebar' : hasSidebar}"
+          .content(ui-view autoscroll) == yield
+          aside.sidebar ng-if="hasSidebar" ng-include="'partials/-sidebar.html'"
 
     = partial 'footer'
 

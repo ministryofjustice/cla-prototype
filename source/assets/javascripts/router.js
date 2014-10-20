@@ -9,11 +9,10 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider, $uiVi
   $stateProvider
     .state('start', {
       url: '',
-      templateUrl: './partials/start-page.html'
-    })
-    .state('threshold', {
-      url: '/threshold',
-      templateUrl: './partials/threshold.html'
+      templateUrl: './partials/start-page.html',
+      controller: function($rootScope) {
+        $rootScope.hasSidebar = true;
+      }
     })
     .state('checker', {
       url: '/checker/:stage',

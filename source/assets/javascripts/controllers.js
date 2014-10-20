@@ -22,6 +22,8 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
     $scope.isWorking   = _.some(value, { name: 'is_working',   value: '1' });
   }, true);
 
+  $scope.$root.hasSidebar = false;
+
   $scope.submit = function(form) {
     $scope.submittedForms.push(form.$name.replace(/Form$/, ''));
     $scope.submittedForms = _.uniq($scope.submittedForms);
