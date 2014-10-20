@@ -3,7 +3,7 @@ describe('CLA: Eligible', function() {
   it('should open start page', function() {
     browser.get('http://localhost:4567/');
 
-    expect(browser.getTitle()).toEqual('Civil Legal Advice');
+    expect(browser.getTitle()).toEqual('Civil Legal Aid');
     expect(element(by.css('h1')).getText()).toEqual('Can I get legal aid?');
   });
 
