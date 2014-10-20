@@ -11,7 +11,8 @@
   with_yes:
     name: is_separated,
     type: radio
-    label: Are you separated?
+    label: Are you in dispute with your partner?
+    inline_help: This means a dispute over money or property following a separation
     options: *yes-no
 
 -
@@ -44,10 +45,7 @@
   label: Do you have any dependants aged 16 or over?
   type: radio
   inline_help: People who you live with and support financially
-  more_info: |
-    People you live with and support financially.
-
-    This could be an ill or disabled relative or a young person for whom you get Child Benefit.
+  more_info: This could be an ill or disabled relative or a young person for whom you get Child Benefit.
   options: *yes-no
   with_yes:
     name: number_of_dependants,
@@ -57,9 +55,9 @@
     max: 15
 -
   name: has_savings
-  label: Do you or your partner have any savings, investments or any valuables?
+  label: Do you or your partner have any savings, investments or any valuable items?
   type: radio
-  inline_help: Items worth over £500 each
+  inline_help: Valuable items worth over £500 each
   more_info: |
     A valuable item is any one item you own worth over £500, but NOT
 
@@ -70,7 +68,7 @@
   options: *yes-no
 -
   name: own_property
-  label: Do you or your partner own any property in the UK?
+  label: Do you or your partner own any property?
   type: radio
   inline_help: For example, a house, flat, caravan, boat
   options: *yes-no

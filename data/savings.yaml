@@ -1,11 +1,12 @@
 - me:
   -
     name: bank
-    label: Money saved in a bank or building society
+    label: Total value of savings
     type: text
     pattern: '[0-9,\.]+'
     prefix: '£'
     value: 0
+    inline_help: Cash at home or in a bank or building society
   -
     name: investments
     label: Total value of investments
@@ -21,12 +22,13 @@
     pattern: '[0-9,\.]+'
     prefix: '£'
     value: 0
+    inline_help: Items you own worth over £500 each, with some exceptions
     more_info: |
-      Include any single item you own worth over £500, but:
+      The following are excluded:
 
-      * NOT household furniture and effects, unless they’re exceptionally valuable
-      * NOT tools of your trade (eg computers for a graphic designer, carpentry tools for a carpenter)
-      * NOT the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
+      * household furniture and effects, unless they’re exceptionally valuable
+      * tools of your trade (eg computers for a graphic designer, carpentry tools for a carpenter)
+      * the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
 
       For classic cars, luxury vehicles and valuable household furniture and effects,
       give the price the item would sell for if you sold it today.

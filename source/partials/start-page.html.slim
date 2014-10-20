@@ -3,7 +3,11 @@ p.subtitle
   ' This service tells you if you might be able to get legal aid
   | in England and Wales - and suggests other sources of help if you can’t.
 
-p Don’t use this service if you’ve been charged with a crime.
+p
+  ' You can only use this service for non-criminal (civil) problems.
+  ' If you have been charged with a crime, talk to your solicitor
+  | about #{link_to 'criminal legal aid', 'https://www.gov.uk/criminal-legal-aid-means-testing', target: '_blank'}.
+
 
 markdown:
   ### Before you start
@@ -30,5 +34,5 @@ markdown:
 
   You (and your partner if you have one) must meet BOTH of the following conditions:
 
-  * you must have less than £2,657 a month coming in before tax
-  * you must have less than £8,000 in savings or in a home you own
+  * your income should not be more than £2,657 a month before tax
+  * your savings should not be more than £8,000

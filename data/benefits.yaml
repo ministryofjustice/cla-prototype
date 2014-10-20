@@ -7,8 +7,12 @@
   label: Income-based Jobseeker’s Allowance
   type: checkbox
 -
+  name: guarantee_credit
+  label: Guarantee Credit
+  type: checkbox
+-
   name: universal_credit
-  label: Guarantee Credit or Universal Credit
+  label: Universal Credit
   type: checkbox
 -
   name: employment_allowance
@@ -20,5 +24,5 @@
   type: checkbox
 -
   name: none_of_above
-  label: None of the above
+  label: A different benefit not listed above
   type: checkbox

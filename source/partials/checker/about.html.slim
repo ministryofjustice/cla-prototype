@@ -31,7 +31,9 @@ form name="aboutForm" ng-submit="submit(aboutForm)"
           style="margin-top:5px"
           ng-if="field.name == 'has_partner' && hasPartner"
         )
-          div style="margin: 10px 0 5px 10px" {{field.with_yes.label}}
+          div style="margin: 10px 0 5px 10px"
+            ' {{field.with_yes.label}}
+            help-text field="field.with_yes"
           label ng-repeat="option in field.with_yes.options"
             input>(
               type="{{field.with_yes.type}}"

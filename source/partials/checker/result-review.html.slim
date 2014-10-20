@@ -51,14 +51,14 @@ div ng-controller="ReviewCtrl"
       = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'savings' })"
 
     table.table
-      caption You
+      caption ng-if="hasPartner && !isSeparatedPartner" You
       tr ng-repeat="item in savings[0].me"
         th._label {{item.label}}
         td._value {{item.value > 0 ? '£' + (item.value|number) : '—'}}
       / tr.total
       /   th Total
       /   td £{{getSumFor(type)|number}}
-    table.table ng-if="hasPartner"
+    table.table ng-if="hasPartner && !isSeparatedPartner"
       caption Partner
       tr ng-repeat="item in savings[1].partner"
         th._label {{item.label}}
@@ -73,7 +73,7 @@ div ng-controller="ReviewCtrl"
       = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'income' })"
 
     table.table
-      caption ng-if="hasPartner" You
+      caption ng-if="hasPartner && !isSeparatedPartner" You
       tr ng-repeat="item in income[0].me"
         th._label {{item.label}}
         td._value ng-if="item.value > 0" £{{item.value|number}} {{(item.frequency.options|filter:item.frequency.value)[0].label}}
@@ -81,7 +81,7 @@ div ng-controller="ReviewCtrl"
       / tr.total
       /   th Total
       /   td._value £{{getSumFor(income[0].me)|number}}
-    table.table ng-if="hasPartner"
+    table.table ng-if="hasPartner && !isSeparatedPartner"
       caption Partner
       tr ng-repeat="item in savings[1].partner"
         th._label {{item.label}}
@@ -97,7 +97,7 @@ div ng-controller="ReviewCtrl"
       = link_to 'Change your answers', '#', 'ui-sref' => "checker({ stage: 'outgoings' })"
 
     table.table
-      caption ng-if="hasPartner" You
+      caption ng-if="hasPartner && !isSeparatedPartner" You
       tr ng-repeat="item in outgoings[0].me"
         th._label {{item.label}}
         td._value ng-if="item.value > 0" £{{item.value|number}} {{(item.frequency.options|filter:item.frequency.value)[0].label}}
@@ -105,7 +105,7 @@ div ng-controller="ReviewCtrl"
       / tr.total
       /   th Total
       /   td._value £{{getSumFor(outgoings[0].me)|number}}
-    table.table ng-if="hasPartner"
+    table.table ng-if="hasPartner && !isSeparatedPartner"
       caption Partner
       tr ng-repeat="item in outgoings[1].partner"
         th._label {{item.label}}

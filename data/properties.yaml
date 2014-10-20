@@ -19,7 +19,7 @@
     inline_help: Include the full amount you owe, even if the property has shared ownership
   -
     name: is_main
-    label: Are you living at this property?
+    label: Is this property your main home?
     type: radio
     inline_help: If you are separated and no longer live in the property you own, please answer ‘no’.
     options: &yes-no
@@ -40,14 +40,15 @@
     pattern: '[0-9,\.]+'
     inline_help: If you’re the only owner, put 100
     more_info: |
-      If you are the only owner of the property, your share of it is 100%. A couple who owns their home as joint owners own 50% of the property each.
+      If you are the only owner of the property, your share of it is 100%.
+      A couple who owns their home as joint owners own 100% together.
 
-      You might also own a share in your home (eg 25%) as part of a shared ownership scheme run by a housing corporation.
+      You might also share the ownership of a property with a friend.
   -
     name: is_disputed
-    label: Is the property disputed?
+    label: Is your share of the property in dispute?
     type: radio
-    inline_help: for example, as part of the financial settlement of a divorce
+    inline_help: For example, as part of the financial settlement of a divorce
     more_info: |
       A disputed property is one whose ownership is disputed by someone eg an ex-partner wants
       to claim a share in it as part of a divorce or separation, or a creditor or mortgage company

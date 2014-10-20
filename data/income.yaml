@@ -82,5 +82,13 @@
     pattern: '[0-9,\.]+'
     min: 0
     frequency: *frequency
+  -
+    name: other_icome
+    label: Any other income
+    type: text
+    pattern: '[0-9,\.]+'
+    min: 0
+    inline_help: For example, student income, rental income
+    frequency: *frequency
 
 - partner: *coming_in_me
