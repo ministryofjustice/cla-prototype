@@ -116,12 +116,20 @@ form {
   label.m-block {
     display: block;
 
+    &:hover,
+    &.s-selected {
+      background: rgba(black, .05);
+      box-shadow: inset 0 0 0 1px rgba(black, .2);
+    }
+
     &:not(.s-disabled):active {
       background: rgba(black, .1);
     }
 
     &.s-disabled {
       opacity: .4;
+      background: none;
+      box-shadow: none;
     }
   }
 

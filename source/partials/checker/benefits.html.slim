@@ -12,7 +12,7 @@ form(name="benefitsForm" ng-submit="submit(benefitsForm)" novalidate)
   fieldset
     dl ng-repeat="field in benefits"
       dd
-        label.m-block ng-class="{'s-disabled' : handleDisabledBenefits(field, benefits)}"
+        label.m-block ng-class="{'s-disabled' : handleDisabledBenefits(field, benefits), 's-selected' : field.value == 1}"
           input>(
             type="{{field.type}}"
             ng-disabled="handleDisabledBenefits(field, benefits)"

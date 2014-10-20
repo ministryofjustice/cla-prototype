@@ -17,7 +17,7 @@ form(name="problemForm" ng-submit="submit(problemForm)" novalidate)
 
   dl ng-repeat="field in categories.list|filter:'!none'|orderBy:'label'"
     dd
-      label.m-block
+      label.m-block ng-class="{'s-selected' : field.name == categories.selected}"
         input>(
           type="radio"
           value="{{field.name}}"
@@ -29,7 +29,7 @@ form(name="problemForm" ng-submit="submit(problemForm)" novalidate)
         help-text field="field"
   dl ng-repeat="field in categories.list|filter:'none'"
     dd
-      label.m-block
+      label.m-block ng-class="{'s-selected' : field.name == categories.selected}"
         input>(
           type="radio"
           value="{{field.name}}"
