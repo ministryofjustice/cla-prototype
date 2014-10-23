@@ -9,7 +9,7 @@
     - value: 0
       label: 'No'
   with_yes:
-    name: is_separated,
+    name: is_separated
     type: radio
     label: Are you in dispute with your partner?
     inline_help: This means a dispute over money or property following a separation
@@ -34,7 +34,7 @@
     should be included in the next field under “Do you have any dependants aged 16 or over?”
   options: *yes-no
   with_yes:
-    name: number_of_children,
+    name: number_of_children
     type: number
     label: How many?
     min: 1
@@ -48,7 +48,7 @@
   more_info: This could be an ill or disabled relative or a young person for whom you get Child Benefit.
   options: *yes-no
   with_yes:
-    name: number_of_dependants,
+    name: number_of_dependants
     type: number
     label: How many?
     min: 1

@@ -25,7 +25,9 @@ form name="aboutForm" ng-submit="submit(aboutForm)"
           input.form-control.m-xsmall>(
             id="{{field.with_yes.name}}"
             type="{{field.with_yes.type}}"
+            name="{{field.with_yes.name}}"
             ng-model="field.sub_value"
+            ng-required="true"
           )
         div(
           style="margin-top:5px"
@@ -37,7 +39,7 @@ form name="aboutForm" ng-submit="submit(aboutForm)"
           label ng-repeat="option in field.with_yes.options"
             input>(
               type="{{field.with_yes.type}}"
-              name="{{field.with_yes..name}}"
+              name="{{field.with_yes.name}}"
               value="{{option.value}}"
               ng-model="field.with_yes.value"
               ng-required="true"
