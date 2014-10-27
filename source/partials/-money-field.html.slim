@@ -3,6 +3,10 @@ dl
     = label_tag '{{field.name}}', caption: '{{field.label}}'
     help-text field="field"
   dd
+    label.field-label.prefix(
+      for="{{field.name}}"
+      ng-if="field.prefix"
+    )  {{field.prefix}}
     input.form-control.m-small>(
       type="{{field.type}}"
       id="{{field.name}}"

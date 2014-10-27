@@ -1,5 +1,6 @@
 app.filter('replaceTextOnCondition', function() {
   return function(input, condition, textToReplaceFrom, textToReplaceWith) {
-    return condition ? input.replace(textToReplaceFrom, textToReplaceWith) : input;
+    var re = new RegExp(textToReplaceFrom, 'g');
+    return condition ? input.replace(re, textToReplaceWith) : input;
   };
 });
