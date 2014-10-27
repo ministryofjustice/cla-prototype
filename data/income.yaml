@@ -1,13 +1,10 @@
-- me: &coming_in_me
+- joint:
   -
-    name: earnings
-    label: Wages before tax
+    name: child_benefit
+    label: Child Benefit
     type: text
-    inline_help: This includes your earnings from self-employment
-    more_info: Check your most recent payslips.
-    min: 0
     pattern: '[0-9,\.]+'
-    title: Please enter a number
+    inline_help: The total you get for all your children
     frequency: &frequency
       value: pm
       options:
@@ -24,71 +21,131 @@
           name: py
           label: per year
   -
+    name: child_tax_credit
+    label: Child Tax Credit
+    type: text
+    pattern: '[0-9,\.]+'
+    inline_help: The total you get for all your children
+    frequency: *frequency
+  -
+    name: excluded_benefits
+    label: Do you get any of these benefits?
+    inline_help: These benefits don’t count as income. Please tick the ones you receive.
+    options:
+      - name: attendance_allowance
+        label: Attendance Allowance
+        type: checkbox
+      - name: care_in_community
+        label: Care in the community Direct Payment
+        type: checkbox
+      - name: carers_allowance
+        label: Carers’ Allowance
+        type: checkbox
+      - name: constant_attendance_allowance
+        label: Constant Attendance Allowance
+        type: checkbox
+      - name: council_tax_benefits
+        label: Council Tax Benefits
+        type: checkbox
+      - name: disability_living_allowance
+        label: Disability Living Allowance
+        type: checkbox
+      - name: earnings_top_up
+        label: Earnings Top Up
+        type: checkbox
+      - name: exceptionally_severe_disablement
+        label: Exceptionally Severe Disablement Allowance
+        type: checkbox
+      - name: fostering_allowance
+        label: Fostering Allowance (to the extent it exceeds dependants allowance)
+        type: checkbox
+      - name: housing_benefit
+        label: Housing Benefit
+        type: checkbox
+      - name: independent_living_funds
+        label: Independent Living Funds payment
+        type: checkbox
+      - name: personal_independent
+        label: Personal Independent Payments (replaces Disability Living Allowance)
+        type: checkbox
+      - name: severe_disablement
+        label: Severe Disablement Allowance
+        type: checkbox
+      - name: social_fund
+        label: Social Fund Payments
+        type: checkbox
+      - name: lump_sum_widows_pension
+        label: Lump sum payments under Widow's Pension
+        type: checkbox
+      - name: war_pension
+        label: War Pension (Any)
+        type: checkbox
+  -
+    name: has_other_benefits
+    label: Do you receive any other benefits not listed?
+    type: radio
+    options: &yes-no
+      - value: 1
+        label: 'Yes'
+      - value: 0
+        label: 'No'
+  -
     name: benefits
-    label: Benefits
+    label: Total amount of benefits not listed above
     type: text
     frequency: *frequency
-    min: 0
     pattern: '[0-9,\.]+'
-    inline_help: You don’t have to declare some benefits as income
-    more_info: |
-      You don’t have to declare the following benefits as income:
 
-      * Attendance Allowance
-      * Care in the community Direct Payment
-      * Carers’ Allowance
-      * Constant Attendance Allowance
-      * Council Tax Benefits
-      * Disability Living Allowance
-      * Earnings Top Up
-      * Exceptionally Severe Disablement Allowance
-      * Fostering Allowance (to the extent it exceeds dependants allowance)
-      * Housing Benefit
-      * Independent Living Funds payment
-      * Personal Independent Payments (replaces Disability Living Allowance)
-      * Severe Disablement Allowance
-      * Social Fund Payments
-      * Lump sum payments under Widow's Pension
-      * War Pension (Any)
-
-      You must declare any other benefits here. (There is a separate field for Child Benefit below.)
+- me: &me-money-in
   -
-    name: child_benefits
-    label: Child Benefit
+    name: earnings
+    label: Wages before tax
     type: text
+    inline_help: This includes your earnings from self-employment
     pattern: '[0-9,\.]+'
-    min: 0
+    title: Please enter a number
     frequency: *frequency
   -
-    name: tax_credits
-    label: Tax credits
+    name: tax_paid
+    label: Income tax
     type: text
-    min: 0
+    inline_help: Tax paid directly out of your wages and any tax you pay on self-employed earnings
+    pattern: '[0-9,\.]+'
+    title: Please enter a number
+    frequency: *frequency
+  -
+    name: ni
+    label: National Insurance contributions
+    type: text
+    pattern: '[0-9,\.]+'
+    frequency: *frequency
+    inline_help: Check your payslip or your National Insurance statement if you’re self-employed
+  -
+    name: working_tax_credit
+    label: Working tax credit
+    type: text
     pattern: '[0-9,\.]+'
     frequency: *frequency
   -
     name: maintenance_received
     label: Maintenance received
     type: text
-    min: 0
     pattern: '[0-9,\.]+'
     frequency: *frequency
     inline_help: Payments you get from an ex-partner
-    more_info: Regular payments you get from an ex-partner to help with your living costs or the living costs of your child or children.
   -
     name: pension
     label: Pension received
     type: text
     pattern: '[0-9,\.]+'
-    min: 0
+    inline_help: Payments you received if you’re retired
     frequency: *frequency
   -
     name: other_icome
     label: Any other income
     type: text
     pattern: '[0-9,\.]+'
-    min: 0
-    inline_help: For example, student income, rental income
+    inline_help: For example, student grants, income from trust funds, dividends
     frequency: *frequency
 
-- partner: *coming_in_me
+- partner: *me-money-in

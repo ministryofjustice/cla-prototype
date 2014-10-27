@@ -1,65 +1,23 @@
 go-back-link
 
-h1 Your outgoings
+h1 ng-if="hasPartner && !isSeparatedPartner" You and your partner’s outgoings
+h1 ng-if="!hasPartner && !isSeparatedPartner" Your outgoings
 
 p
-  | We need to know about certain things you spend your money on, so please answer these questions as fully and accurately as you can.
+  ' We only nee to know about some things you pay for,
+  | to work out if you may be able to get legal aid.
 
 form name="outgoingsForm" ng-submit="submit(outgoingsForm)"
-  div(
-    ng-repeat="item in outgoings"
-    ng-if="item.me || item.partner && hasPartner && !isSeparatedPartner"
-  )
-    h3 ng-if="item.partner && !isSeparatedPartner" Your partner’s outgoings
-
-    fieldset ng-repeat="set in item"
-      / Tax & NI
-      dl(
-        ng-repeat="field in set"
-        ng-if="isWorking && (field.name == 'tax_paid' || field.name == 'ni')"
-      )
-        dt
-          = label_tag '{{field.name}}', caption: '{{field.label}}'
-          help-text field="field"
-        dd ng-repeat="(name, label) in item"
-          input.form-control.m-small>(
-            type="{{field.type}}"
-            id="{{field.name}}"
-            min="{{field.min}}"
-            max="{{field.max}}"
-            pattern="{{field.pattern}}"
-            ng-model="field.value"
-            ng-required="true"
-            delimited-number
-          )
-
-          select.form-control(
-            ng-model="field.frequency.value"
-            ng-options="o.name as o.label for o in field.frequency.options"
-          )
-      / All other outgoings
-      dl(
-        ng-repeat="field in set"
-        ng-if="field.name != 'tax_paid' && field.name != 'ni'"
-      )
-        dt
-          = label_tag '{{field.name}}', caption: '{{field.label}}'
-          help-text field="field"
-        dd ng-repeat="(name, label) in item"
-          input.form-control.m-small>(
-            type="{{field.type}}"
-            id="{{field.name}}"
-            min="{{field.min}}"
-            max="{{field.max}}"
-            pattern="{{field.pattern}}"
-            ng-model="field.value"
-            ng-required="true"
-            delimited-number
-          )
-
-          select.form-control(
-            ng-model="field.frequency.value"
-            ng-options="o.name as o.label for o in field.frequency.options"
-          )
+  fieldset
+    ng-include(
+      src="'partials/-money-field.html'"
+      ng-repeat="field in outgoings"
+      ng-if="field.name != 'childcare'"
+    )
+    ng-include(
+      src="'partials/-money-field.html'"
+      ng-repeat="field in outgoings"
+      ng-if="hasChildren && field.name == 'childcare'"
+    )
 
   = partial 'action'

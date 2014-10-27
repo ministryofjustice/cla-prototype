@@ -1,58 +1,63 @@
 go-back-link
 
-h1 Your income
+h1 Money coming in
 
-form name="incomeForm" ng-submit="submit(incomeForm)"
-  div(
-    ng-repeat="item in income"
-    ng-if="item.me || item.partner && hasPartner && !isSeparatedPartner"
-  )
-    h3 ng-if="item.partner && !isSeparatedPartner" Your partner’s income
+p
+  ' We need to know how much money you have coming in, because
+  ' this affects whether or not you can get legal aid.
+  ' Please answer these questions as fully and accurately as you can.
+
+form name="incomeForm" ng-submit="submit(incomeForm)" ng-controller="IncomeCtrl"
+  div ng-repeat="item in income" ng-if="item.joint"
+    h3 ng-if="hasPartner && !isSeparatedPartner" Joint money coming in
     fieldset ng-repeat="set in item"
-      / Wages & benefits
-      dl(
+      ng-include(
+        src="'partials/-money-field.html'"
         ng-repeat="field in set"
-        ng-if="(field.name == 'earnings' && isWorking) || (field.name == 'benefits' && hasBenefits)"
+        ng-if="(hasChildren || isCaring) && (field.name == 'child_benefit' || field.name == 'child_tax_credit')"
       )
-        dt
-          = label_tag '{{field.name}}', caption: '{{field.label}}'
-          help-text field="field"
-        dd
-          input.form-control.m-small>(
-            type="{{field.type}}"
-            id="{{field.name}}"
-            min="{{field.min}}"
-            max="{{field.max}}"
-            pattern="{{field.pattern}}"
-            title="{{field.title}}"
-            ng-model="field.value"
-            ng-required="true"
-            delimited-number
-          )
-          select.form-control(
-            ng-model="field.frequency.value"
-            ng-options="o.name as o.label for o in field.frequency.options"
-          )
-      / All other incomes
-      dl ng-repeat="field in set" ng-if="field.name != 'earnings' && field.name != 'benefits'"
-        dt
-          = label_tag '{{field.name}}', caption: '{{field.label}}'
-          help-text field="field"
-        dd
-          input.form-control.m-small>(
-            type="{{field.type}}"
-            id="{{field.name}}"
-            min="{{field.min}}"
-            max="{{field.max}}"
-            pattern="{{field.pattern}}"
-            title="{{field.title}}"
-            ng-model="field.value"
-            ng-required="true"
-            delimited-number
-          )
-          select.form-control(
-            ng-model="field.frequency.value"
-            ng-options="o.name as o.label for o in field.frequency.options"
-          )
+      ng-include(
+        src="'partials/-checkbox-field.html'"
+        ng-repeat="field in set"
+        ng-if="hasBenefits && hasOtherBenefits && field.name == 'excluded_benefits'"
+      )
+      ng-include(
+        src="'partials/-radio-field.html'"
+        ng-repeat="field in set"
+        ng-if="hasBenefits && hasOtherBenefits && field.name == 'has_other_benefits'"
+      )
+      ng-include(
+        src="'partials/-money-field.html'"
+        ng-repeat="field in set"
+        ng-if="hasBenefits && hasOtherBenefits && hasAdditionalBenefits && field.name == 'benefits'"
+      )
+
+  div ng-repeat="item in income" ng-if="item.me"
+    h3 ng-if="hasPartner && !isSeparatedPartner" Your money coming in
+    fieldset ng-repeat="set in item"
+      ng-include(
+        src="'partials/-money-field.html'"
+        ng-repeat="field in set"
+        ng-if="isWorking && (field.name == 'earnings' || field.name == 'tax_paid' || field.name == 'ni' || field.name == 'working_tax_credit')"
+      )
+      ng-include(
+        src="'partials/-money-field.html'"
+        ng-repeat="field in set"
+        ng-if="field.name != 'earnings' && field.name != 'tax_paid' && field.name != 'ni' && field.name != 'working_tax_credit'"
+      )
+
+  div ng-repeat="item in income" ng-if="item.partner"
+    h3 ng-if="hasPartner && !isSeparatedPartner" Your partner’s money coming in
+    fieldset ng-repeat="set in item"
+      ng-include(
+        src="'partials/-money-field.html'"
+        ng-repeat="field in set"
+        ng-if="isWorking && (field.name == 'earnings' || field.name == 'tax_paid' || field.name == 'ni' || field.name == 'working_tax_credit')"
+      )
+      ng-include(
+        src="'partials/-money-field.html'"
+        ng-repeat="field in set"
+        ng-if="field.name != 'earnings' && field.name != 'tax_paid' && field.name != 'ni' && field.name != 'working_tax_credit'"
+      )
 
   = partial 'action', locals: { button_label: 'Continue' }
