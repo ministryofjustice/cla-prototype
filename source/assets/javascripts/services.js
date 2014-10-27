@@ -28,6 +28,7 @@ app.factory('decision', function($state, storage) {
         'benefits',
         'property',
         'savings',
+        'benefitsTaxCredits',
         'income',
         'outgoings',
         'application'
@@ -43,6 +44,9 @@ app.factory('decision', function($state, storage) {
       }
       if (!scope.hasSavings) {
         skippedSteps.push('savings');
+      }
+      if (!scope.hasOtherBenefits && !scope.hasChildren && !scope.isCaring) {
+        skippedSteps.push('benefitsTaxCredits');
       }
 
       var currentStep = currentForm.$name.replace(/Form$/, '');

@@ -1,76 +1,46 @@
-- me: &going_out_me
-  -
-    name: tax_paid
-    label: Income tax
-    type: text
-    min: 0
-    pattern: '[0-9,\.]+'
-    frequency: &frequency
-      value: pm
-      options:
-        -
-          name: pw
-          label: per week
-        -
-          name: 4w
-          label: 4 weekly
-        -
-          name: pm
-          label: per month
-        -
-          name: py
-          label: per year
-    inline_help: Money taken out of your wages by your employer - check your payslip
-    more_info: If you’re self-employed include any tax paid on your earnings.
-  -
-    name: ni
-    label: National Insurance contributions
-    type: text
-    min: 0
-    pattern: '[0-9,\.]+'
-    frequency: *frequency
-    inline_help: Money taken out of your wages by your employer - check your payslip
-    more_info: If you’re self-employed include any National Insurance contributions you’ve paid.
-  -
-    name: mortgage
-    label: Mortgage
-    type: text
-    min: 0
-    pattern: '[0-9,\.]+'
-    frequency: *frequency
-  -
-    name: rent
-    label: Rent
-    type: text
-    min: 0
-    pattern: '[0-9,\.]+'
-    frequency: *frequency
-  -
-    name: maintenance
-    label: Maintenance paid
-    type: text
-    min: 0
-    pattern: '[0-9,\.]+'
-    frequency: *frequency
-    inline_help: Money you pay to an ex-partner
-    more_info: >
-      Regular payments you make to an ex-partner to help with their living costs
-      or the living costs of your child who no longer lives with you.
-  -
-    name: childcare
-    label: Childcare
-    type: text
-    min: 0
-    pattern: '[0-9,\.]+'
-    frequency: *frequency
-    inline_help: Money you pay for your child to be looked after while you work or study
-  -
-    name: contribution_order
-    label: Income Contribution Order
-    type: text
-    min: 0
-    pattern: '[0-9,\.]+'
-    frequency: *frequency
-    inline_help: Money you pay towards your criminal legal aid
-
-- partner: *going_out_me
+-
+  name: rent
+  label: Rent
+  type: text
+  inline_help: Money you and your partner pay your landlord
+  pattern: '[0-9,\.]+'
+  prefix: £
+  frequency: &frequency
+    value: pm
+    options:
+      -
+        name: pw
+        label: per week
+      -
+        name: 4w
+        label: 4 weekly
+      -
+        name: pm
+        label: per month
+      -
+        name: py
+        label: per year
+-
+  name: childcare
+  label: Childcare
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: £
+  frequency: *frequency
+  inline_help: Money you and your partner pay for your child to be looked after while you work or study
+-
+  name: maintenance
+  label: Maintenance
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: £
+  frequency: *frequency
+  inline_help: Money you and/or your partner pay to an ex-partner for their living costs
+-
+  name: contribution_order
+  label: Income Contribution Order
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: £
+  frequency: *frequency
+  inline_help: Money you and/or your partner pay towards your criminal legal aid

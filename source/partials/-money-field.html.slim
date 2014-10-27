@@ -1,0 +1,24 @@
+dl
+  dt
+    = label_tag '{{field.name}}', caption: '{{field.label}}'
+    help-text field="field"
+  dd
+    label.field-label.prefix(
+      for="{{field.name}}"
+      ng-if="field.prefix"
+    )  {{field.prefix}}
+    input.form-control.m-small>(
+      type="{{field.type}}"
+      id="{{field.name}}"
+      min="{{field.min}}"
+      max="{{field.max}}"
+      pattern="{{field.pattern}}"
+      title="{{field.title}}"
+      ng-model="field.value"
+      ng-required="true"
+      delimited-number
+    )
+    select.form-control(
+      ng-model="field.frequency.value"
+      ng-options="o.name as o.label for o in field.frequency.options"
+    )

@@ -1,89 +1,30 @@
-- me:
-  -
-    name: bank
-    label: Total value of savings
-    type: text
-    pattern: '[0-9,\.]+'
-    prefix: '£'
-    value: 0
-    inline_help: Cash at home or in a bank or building society
-  -
-    name: investments
-    label: Total value of investments
-    type: text
-    pattern: '[0-9,\.]+'
-    prefix: '£'
-    value: 0
-    inline_help: This includes shares, bonds and ISAs
-  -
-    name: valuable_items
-    label: Total value of valuable items worth over £500 each
-    type: text
-    pattern: '[0-9,\.]+'
-    prefix: '£'
-    value: 0
-    inline_help: Items you own worth over £500 each, with some exceptions
-    more_info: |
-      The following are excluded:
+-
+  name: bank
+  label: Savings
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: '£'
+  inline_help: The total amount of savings in cash, bank or building society
+-
+  name: investments
+  label: Investments
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: '£'
+  inline_help: This includes stocks, shares, bonds (but not property)
+-
+  name: valuable_items
+  label: Valuable items you and your partner own worth over £500 each
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: '£'
+  inline_help: Total value of any items you own with some exceptions
+  more_info: |
+    The following are excluded:
 
-      * household furniture and effects, unless they’re exceptionally valuable
-      * tools of your trade (eg computers for a graphic designer, carpentry tools for a carpenter)
-      * the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
+    * household furniture and effects, unless they’re exceptionally valuable
+    * tools of your trade (eg computers for a graphic designer, carpentry tools for a carpenter)
+    * the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
 
-      For classic cars, luxury vehicles and valuable household furniture and effects,
-      give the price the item would sell for if you sold it today.
-  -
-    name: money_owed
-    label: Money owed to you
-    type: text
-    pattern: '[0-9,\.]+'
-    prefix: '£'
-    value: 0
-    inline_help: Money you have lent to someone else
-    more_info: >
-      We need to know about any money that is owed to you because this can affect whether you can get legal aid.
-      Money owed to you includes money owed by friends and relatives as well as businesses and other people.
-
-- partner:
-  -
-    name: bank
-    label: Money saved in a bank or building society
-    type: text
-    pattern: '[0-9,\.]+'
-    prefix: '£'
-    value: 0
-  -
-    name: investments
-    label: Total value of investments
-    type: text
-    pattern: '[0-9,\.]+'
-    prefix: '£'
-    value: 0
-    inline_help: This includes shares, bonds and ISAs
-  -
-    name: valuable_items
-    label: Total value of valuable items worth over £500 each
-    type: text
-    pattern: '[0-9,\.]+'
-    prefix: '£'
-    value: 0
-    more_info: |
-      Include any single item your partner owns worth over £500, but:
-
-      * NOT household furniture and effects, unless they’re exceptionally valuable
-      * NOT tools of your partner’s trade (eg computers for a graphic designer, carpentry tools for a carpenter)
-      * NOT the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
-
-      For classic cars, luxury vehicles and valuable household furniture and effects,
-      give the price the item would sell for today.
-  -
-    name: money_owed
-    label: Money owed to your partner
-    type: text
-    pattern: '[0-9,\.]+'
-    prefix: '£'
-    value: 0
-    inline_help: Money your partner has lent to someone else
-    more_info: >
-      We need to know about any money that is owed to your partner because this can affect whether you can get legal aid.
-      Money owed to your partner includes money owed by friends and relatives as well as businesses and other people.
+    For classic cars, luxury vehicles and valuable household furniture and effects,
+    give the price the item would sell for if you sold it today.

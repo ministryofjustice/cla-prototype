@@ -15,12 +15,17 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
     $scope.hasPartner  = _.some(value, { name: 'has_partner',  value: '1' });
     $scope.isSeparatedPartner = _.some(value, { name: 'has_partner', value: '1', with_yes: { value: '1' } });
     $scope.hasBenefits = _.some(value, { name: 'has_benefits', value: '1' });
+    $scope.hasBenefits = _.some(value, { name: 'has_benefits', value: '1' });
     $scope.hasChildren = _.some(value, { name: 'has_children', value: '1' });
     $scope.isCaring    = _.some(value, { name: 'caring_responsibilities', value: '1' });
     $scope.hasSavings  = _.some(value, { name: 'has_savings',  value: '1' });
     $scope.ownProperty = _.some(value, { name: 'own_property', value: '1' });
     $scope.isWorking   = _.some(value, { name: 'is_working',   value: '1' });
   }, true);
+
+  $scope.$watch('benefits', function(value) {
+    $scope.hasOtherBenefits = _.some(value, { name: 'none_of_above', value: true });
+  });
 
   $scope.$root.hasSidebar = false;
 
@@ -43,19 +48,6 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
     return _.any(options, { value: true });
   };
 
-  $scope.handleDisabledBenefits = function(option, options) {
-    var noneOfAboveSelected = option.name !== 'none_of_above' && _.find(options, { name: 'none_of_above' }).value;
-    if(noneOfAboveSelected) {
-      var benefitOptions = _.filter(options, function(option) { return option.name !== 'none_of_above'; });
-      _.map(benefitOptions, function(option) {
-        option.value = false;
-      });
-      return true;
-    }
-
-    return false;
-  };
-
   $scope.addProperty = function(set) {
     set.push(angular.copy(FORM_DATA.properties[0]));
   };
@@ -66,6 +58,17 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
     }
     _.remove(set, property);
   };
+});
+
+
+app.controller('IncomeCtrl', function($scope) {
+  $scope.$watch('income', function(value) {
+    if(!value.length && value[0].benefits_tax_credit) {
+      return;
+    }
+
+    $scope.hasAdditionalBenefits = _.some(value[0].benefits_tax_credit, { name: 'has_other_benefits', value: '1' });
+  }, true);
 });
 
 

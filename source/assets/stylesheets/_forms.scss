@@ -51,7 +51,7 @@ form {
   }
 
   dl {
-    margin: 0 0 1px;
+    margin: 0 0 2px;
     background: $grey-4;
 
     &.m-inline {
@@ -92,14 +92,21 @@ form {
     margin: 0;
     padding: 20px;
 
+    > label {
+      input[type="radio"],
+      input[type="checkbox"] {
+        float: left;
+        margin: 5px 6px 0 0;
+      }
+    }
+
     > label.m-block {
       padding: 20px 20px 20px 40px;
       margin: -20px;
 
       input[type="radio"],
       input[type="checkbox"] {
-        margin: 5px 0 0 -24px;
-        float: left;
+        margin-left: -18px;
       }
     }
   }
@@ -109,6 +116,7 @@ form {
   }
 
   label {
+    vertical-align: top;
     display: inline-block;
     padding: 5px 10px;
   }
@@ -137,16 +145,17 @@ form {
     font-weight: bold;
 
     &.m-secondary {
-      background: $grey-1;
-      box-shadow: 0 2px 0 darken($grey-1, 15);
+      background: $grey-4;
+      box-shadow: none;
       font-weight: normal;
-      font-size: .9em;
+      padding: 8px 15px;
+      color: $link-colour;
+      font-weight: bold;
 
       &:hover,
       &:active,
       &:focus {
-        background: darken($grey-1, 15);
-        box-shadow: 0 2px 0 darken($grey-1, 25);
+        background: darken($grey-4, 10);
       }
     }
   }

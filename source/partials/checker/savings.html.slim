@@ -1,29 +1,31 @@
 go-back-link
 
-h1 Your savings
+div ng-if="hasPartner"
+  h1 You and your partner’s savings
+  p Any cash, savings or investments held in both your names.
+div ng-if="!hasPartner"
+  h1 Your savings
+  p We need to know about any money you have saved or invested.
 
 form name="savingsForm" ng-submit="submit(savingsForm)"
-  div ng-repeat="item in savings" ng-if="item.me || item.partner && hasPartner && !isSeparatedPartner"
-    h3 ng-if="item.partner && !isSeparatedPartner" Your partner’s savings
-    fieldset ng-repeat="set in item"
-      dl ng-repeat="field in set"
-        dt
-          = label_tag '{{field.name}}', caption: '{{field.label}}'
-          help-text field="field"
-        dd
-          label.field-label.prefix(
-            for="{{field.name}}"
-            ng-if="field.prefix"
-          )  {{field.prefix}}
-          input.form-control.m-small>(
-            type="{{field.type}}"
-            id="{{field.name}}"
-            min="{{field.min}}"
-            max="{{field.max}}"
-            pattern="{{field.pattern}}"
-            ng-model="field.value"
-            ng-required="true"
-            delimited-number
-        )
+  dl ng-repeat="field in savings"
+    dt
+      = label_tag '{{field.name}}', caption: '{{field.label}}'
+      help-text field="field"
+    dd
+      label.field-label.prefix(
+        for="{{field.name}}"
+        ng-if="field.prefix"
+      )  {{field.prefix}}
+      input.form-control.m-small>(
+        type="{{field.type}}"
+        id="{{field.name}}"
+        min="{{field.min}}"
+        max="{{field.max}}"
+        pattern="{{field.pattern}}"
+        ng-model="field.value"
+        ng-required="true"
+        delimited-number
+    )
 
   = partial 'action', locals: { button_label: 'Continue' }

@@ -2,7 +2,7 @@ go-back-link
 
 h1 Your property
 p A property could be a house, flat, garage, boat or caravan.
-p If you own more than one property, you can add another property later.
+p If you own more than one property, you can add another property below.
 
 form name="propertyForm" ng-submit="submit(propertyForm)"
   fieldset ng-repeat="property in properties"
@@ -10,7 +10,7 @@ form name="propertyForm" ng-submit="submit(propertyForm)"
       h4 ng-if="properties.length > 1" Property {{$index + 1}}
       button.button.m-secondary ng-if="$index > 0" type="button" ng-click="removeProperty(property, properties)"
         | Remove property
-    dl ng-repeat="field in property"
+    dl ng-repeat="field in property" ng-if="field.name != 'rent_income' || field.name == 'rent_income' && property[($index - 1)].value == 1"
       dt
         = label_tag '{{field.name}}', caption: '{{field.label}}'
         help-text field="field"
