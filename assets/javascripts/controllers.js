@@ -63,10 +63,11 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
 
 app.controller('IncomeCtrl', function($scope) {
   $scope.$watch('income', function(value) {
-    if(!value.length && value[0].joint) {
+    if(!value.length && value[0].benefits_tax_credit) {
       return;
     }
-    $scope.hasAdditionalBenefits = _.some(value[0].joint, { name: 'has_other_benefits', value: '1' });
+
+    $scope.hasAdditionalBenefits = _.some(value[0].benefits_tax_credit, { name: 'has_other_benefits', value: '1' });
   }, true);
 });
 
