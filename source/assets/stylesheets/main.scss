@@ -179,10 +179,14 @@ dl.callout {
       margin: 15px 0 10px;
     }
 
-    ul {
+    nav ul {
       list-style: none;
-      margin: 0;
       padding: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
       font-size: 16px;
 
       li {
