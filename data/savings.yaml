@@ -20,11 +20,10 @@
   prefix: '£'
   inline_help: Total value of any items you own with some exceptions
   more_info: |
-    The following are excluded:
+    Don’t include the following:
 
     * household furniture and effects, unless they’re exceptionally valuable
-    * tools of your trade (eg computers for a graphic designer, carpentry tools for a carpenter)
+    * tools of your trade (for example, computers for a graphic designer, carpentry tools for a carpenter)
     * the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
 
-    For classic cars, luxury vehicles and valuable household furniture and effects,
-    give the price the item would sell for if you sold it today.
+    Give the item’s current value - what the item would sell for if you sold it today.

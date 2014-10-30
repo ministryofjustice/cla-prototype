@@ -1,8 +1,11 @@
 go-back-link
 
-h1 Your property
-p A property could be a house, flat, garage, boat or caravan.
-p If you own more than one property, you can add another property below.
+div
+  h1 ng-if="!hasPartner" Your property
+  h1 ng-if="hasPartner" You and your partner’s property
+  p style="padding-bottom:0" A property could be a house, flat, garage, boat or caravan.
+  p style="padding-bottom:0" ng-if="hasPartner" Please tell us about any property owned by you, your partner or both of you.
+  p {{'If you or your partner own more than one property, you can add more properties below.'|replaceTextOnCondition : !hasPartner : 'or your partner' : ''}}
 
 form name="propertyForm" ng-submit="submit(propertyForm)"
   fieldset ng-repeat="property in properties"
@@ -28,6 +31,7 @@ form name="propertyForm" ng-submit="submit(propertyForm)"
           pattern="{{field.pattern}}"
           ng-model="field.value"
           ng-required="true"
+          title="If you have nothing to declare, enter 0"
           delimited-number
         )
         span.field-label.suffix< ng-if="field.suffix" {{field.suffix}}

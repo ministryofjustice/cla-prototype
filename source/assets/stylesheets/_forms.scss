@@ -145,17 +145,17 @@ form {
     font-weight: bold;
 
     &.m-secondary {
-      background: $grey-4;
+      background: $grey-3;
       box-shadow: none;
       font-weight: normal;
-      padding: 8px 15px;
-      color: $link-colour;
+      padding: 8px 15px 6px;
+      color: $black;
       font-weight: bold;
 
       &:hover,
       &:active,
       &:focus {
-        background: darken($grey-4, 10);
+        background: darken($grey-3, 10);
       }
     }
   }

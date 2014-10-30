@@ -30,6 +30,12 @@
     pattern: '[0-9,\.]+'
     inline_help: Include the full amount you owe, even if the property has shared ownership
   -
+    name: mortgage_repayments
+    label: How much are your monthly mortgage repayments?
+    type: text
+    prefix: '£'
+    pattern: '[0-9,\.]+'
+  -
     name: has_rent_income
     label: Does anyone pay you rent for this property?
     type: radio

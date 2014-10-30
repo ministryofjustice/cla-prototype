@@ -1,32 +1,16 @@
-h1
-  span> You might be able
-  span to get legal aid
-p Based on the answers you have given, you might be financially eligible for legal aid.
-p We don’t know yet if your specific situation is covered.
+h1 You might qualify for legal aid with Civil Legal Advice
 
 form name="applicationForm" ng-submit="submit(applicationForm)"
-  dl(
-    style="margin-bottom: 30px"
-    ng-repeat="field in application | filter : 'extra_notes'"
-  )
-    dt
-      = label_tag '{{field.name}}', caption: '{{field.label}}{{field.optional ? " (optional)" : ""}}'
-    dd
-      textarea.form-control(
-        id="extra_notes"
-        rows="{{field.rows}}"
-        class="m-{{field.size || 'normal'}}"
-        ng-model="field.value"
-        ng-required="{{!field.optional}}"
-      )
-
   h3 Request a callback
   p
-    ' To find out if legal aid can help in your specific situation, you need to speak to an operator.
-    | Please submit your details so that they call you back.
+    ' To find out if legal aid can help in your specific situation,
+    ' you need to speak to an operator.
+    ' Please submit your details so that they call you back.
+    ' If you don’t have a number we can call you on please
+    | contact <a href="https://www.gov.uk/civil-legal-advice" target="_blank">Civil Legal Advice</a>.
 
   fieldset style="margin-top: 20px"
-    dl ng-repeat="field in application | filter : '!extra_notes'"
+    dl ng-repeat="field in application"
       dt
         = label_tag '{{field.name}}', caption: '{{field.label}}{{field.optional ? " (optional)" : ""}}'
         help-text field="field"
@@ -63,4 +47,5 @@ form name="applicationForm" ng-submit="submit(applicationForm)"
       ' they will find you specialist legal help, like a phone call with a solicitor
       ' or support from a family mediation service.
 
-  p.action: button.button Review your answers
+  p.action: button.button ui-sref="checker({ stage: 'result-confirmation' })"
+    | Request callback

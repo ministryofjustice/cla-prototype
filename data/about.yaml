@@ -19,19 +19,16 @@
   name: has_benefits
   label: Are you or your partner on any benefits?
   type: radio
-  more_info: Please answer ‘yes’ if you get any benefits at all
   inline_help: Being on some benefits can help you qualify for legal aid
   options: *yes-no
 -
   name: has_children
-  label: Do you or your partner have children?
+  label: Do you or your partner have any children aged 15 or under?
   type: radio
-  inline_help: Aged 15 or under, who live with you
+  inline_help: Don’t include any children who don’t live with you
   more_info: |
-    Don’t include any children who don’t live with you.
-
     Young people aged 16 or over who live with you and who you support financially
-    should be included in the next field under “Do you have any dependants aged 16 or over?”
+    should be included in the next question under “Do you have any dependants aged 16 or over?”
   options: *yes-no
   with_yes:
     name: number_of_children
@@ -39,7 +36,6 @@
     label: How many?
     min: 1
     max: 15
-
 -
   name: caring_responsibilities
   label: Do you have any dependants aged 16 or over?
@@ -57,13 +53,15 @@
   name: has_savings
   label: Do you or your partner have any savings, investments or any valuable items?
   type: radio
-  inline_help: Valuable items worth over £500 each
+  inline_help: Valuable items are worth over £500 each with some exceptions
   more_info: |
-    A valuable item is any one item you own worth over £500, but NOT
+    Don’t include the following:
 
     * household furniture and effects, unless they’re exceptionally valuable
     * tools of your trade (for example, computers for a graphic designer, carpentry tools for a carpenter)
     * the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
+
+    Give the item’s current value - what the item would sell for if you sold it today.
 
   options: *yes-no
 -

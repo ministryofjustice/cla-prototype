@@ -146,7 +146,7 @@
       a {
         display: block;
 
-        background-image: image-url("images/govuk-crest.png");
+        background-image: image-url("govuk-crest.png");
         background-repeat: no-repeat;
         background-position: 50% 0%;
 
@@ -155,12 +155,12 @@
         }
 
         @include device-pixel-ratio() {
-          background-image: image-url("/assets/images/govuk-crest-2x.png");
+          background-image: image-url("govuk-crest-2x.png");
           background-size: 125px 102px;
         }
 
         @include ie(6) {
-          background-image: image-url("images/govuk-crest-ie.png");
+          background-image: image-url("govuk-crest-ie.png");
         }
 
         text-align: center;

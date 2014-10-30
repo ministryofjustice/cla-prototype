@@ -5,6 +5,7 @@
   inline_help: Money you and your partner pay your landlord
   pattern: '[0-9,\.]+'
   prefix: £
+  title: If you have nothing to declare, enter 0
   frequency: &frequency
     value: pm
     options:
@@ -26,6 +27,7 @@
   type: text
   pattern: '[0-9,\.]+'
   prefix: £
+  title: If you have nothing to declare, enter 0
   frequency: *frequency
   inline_help: Money you and your partner pay for your child to be looked after while you work or study
 -
@@ -34,6 +36,7 @@
   type: text
   pattern: '[0-9,\.]+'
   prefix: £
+  title: If you have nothing to declare, enter 0
   frequency: *frequency
   inline_help: Money you and/or your partner pay to an ex-partner for their living costs
 -
@@ -42,5 +45,6 @@
   type: text
   pattern: '[0-9,\.]+'
   prefix: £
+  title: If you have nothing to declare, enter 0
   frequency: *frequency
   inline_help: Money you and/or your partner pay towards your criminal legal aid

@@ -1,6 +1,9 @@
 go-back-link
 
-h1 Your benefits and tax credits
+h1 ng-if="hasPartner"
+  ' You and your partner’s benefits and
+  span tax credits
+h1 ng-if="!hasPartner" Your benefits and tax credits
 p
   ' We need to know about any benefits and tax credits your whole household
   | receives. Please answer these questions as fully and accurately as you can.

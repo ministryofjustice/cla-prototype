@@ -1,11 +1,4 @@
 -
-  name: extra_notes
-  label: In your own words, please tell us more about your problem
-  type: textarea
-  size: full
-  optional: true
-  rows: 7
--
   name: title
   label: Title
   type: text
@@ -19,6 +12,17 @@
   name: contact_number
   label: Contact phone number
   type: text
+-
+  name: postcode
+  label: Postcode
+  type: text
+  optional: true
+-
+  name: address
+  label: Address
+  type: textarea
+  optional: true
+  size: xlarge
 -
   name: contact_time_preference
   label: When can we call you?
@@ -70,13 +74,12 @@
       label: 16:30 - 17:30
   size: xlarge
 -
-  name: postcode
-  label: Postcode
-  type: text
-  optional: true
--
-  name: address
-  label: Address
+  name: extra_notes
+  label: Help the operator to understand your situation
+  inline_help: |
+    In your own words, please tell us exactly what your problem is about.
+    The Civil Legal Advice operator will read this before they call you.
   type: textarea
+  size: full
   optional: true
-  size: xlarge
+  rows: 7

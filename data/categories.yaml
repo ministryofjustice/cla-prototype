@@ -34,11 +34,7 @@ list:
   -
     name: discrimination
     label: Discrimination
-    inline_help: Being treated unfairly because of your race, sex, sexual orientation
-  -
-    name: consumer
-    label: Consumer issues
-    inline_help: Problems when buying goods and services
+    inline_help: Being treated unfairly because of your race, sex, sexual orientation, for example as a consumer or in the workplace
   -
     name: pi
     label: Personal injury
@@ -59,14 +55,3 @@ list:
     name: mentalhealth
     label: Mental health
     inline_help: Getting someone to speak for you at a mental health tribunal or inquest
-  -
-    name: crime
-    label: Crime, criminal law
-    inline_help: If you’ve been accused of a crime
-  -
-    name: employment
-    label: Employment
-    inline_help: Being treated unfairly at work
-  -
-    name: none
-    label: Any other problem
