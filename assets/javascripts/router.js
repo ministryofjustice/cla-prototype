@@ -11,7 +11,7 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider, $uiVi
       url: '',
       templateUrl: './partials/start-page.html',
       controller: function($rootScope) {
-        $rootScope.hasSidebar = true;
+        $rootScope.sidebar = 'sidebar-resources';
       }
     })
     .state('checker', {

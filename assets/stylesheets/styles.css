@@ -1307,12 +1307,15 @@ dl.callout {
   .m-has-sidebar .sidebar h3 {
     margin: 15px 0 10px; }
   /* line 182, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
-  .m-has-sidebar .sidebar ul {
+  .m-has-sidebar .sidebar nav ul {
     list-style: none;
+    padding: 0; }
+  /* line 187, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
+  .m-has-sidebar .sidebar ul {
+    padding-left: 20px;
     margin: 0;
-    padding: 0;
     font-size: 16px; }
-    /* line 188, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
+    /* line 192, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
     .m-has-sidebar .sidebar ul li {
       margin: 5px 0; }
 

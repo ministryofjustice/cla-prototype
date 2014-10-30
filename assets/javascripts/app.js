@@ -12,7 +12,7 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider, $uiVi
       url: '',
       templateUrl: './partials/start-page.html',
       controller: function($rootScope) {
-        $rootScope.hasSidebar = true;
+        $rootScope.sidebar = 'sidebar-resources';
       }
     })
     .state('checker', {
@@ -49,11 +49,30 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
     $scope.isWorking   = _.some(value, { name: 'is_working',   value: '1' });
   }, true);
 
+  var FACE_TO_FACE_CATEGORIES = [
+    'clinneg',
+    'commcare',
+    'immigration',
+    'mentalhealth',
+    'pi',
+    'publiclaw',
+    'aap'
+  ];
+
+  $scope.$watch('categories', function(value) {
+    $scope.isFaceToFace = !!~FACE_TO_FACE_CATEGORIES.indexOf(value.selected);
+  }, true);
+
   $scope.$watch('benefits', function(value) {
     $scope.hasOtherBenefits = _.some(value, { name: 'none_of_above', value: true });
   });
 
-  $scope.$root.hasSidebar = false;
+
+  $scope.$root.sidebar = null;
+
+  if(!$state.params.stage.match(/^result/)) {
+    $scope.$root.sidebar = 'sidebar-reminder';
+  }
 
   $scope.submit = function(form) {
     $scope.submittedForms.push(form.$name.replace(/Form$/, ''));
@@ -179,7 +198,8 @@ app.directive('helpText', function() {
     replace: true,
     templateUrl: './partials/-help-text.html',
     scope: {
-      field: '='
+      field: '=',
+      hasPartner: '='
     },
     link: function(scope, elem, attr) {
       if(scope.field.inline_help || scope.field.more_info) {
@@ -274,15 +294,20 @@ app.factory('decision', function($state, storage) {
 
       this.checkEligibility(scope);
 
+      if(scope.isFaceToFace) {
+        return $state.go('checker', { stage: 'result-face-to-face' });
+      }
+
       if (this.isEligible && (currentStep === 'benefits' || currentStep === 'outgoings')) {
         return $state.go('checker', { stage: 'result-eligible' });
       }
       if (currentStep === 'outgoings') {
         return $state.go('checker', { stage: 'result-ineligible' });
       }
-      // if (currentStep === 'application') {
-      //   return $state.go('checker', { stage: 'result-review' });
-      // }
+      if (currentStep === 'application') {
+        return $state.go('checker', { stage: 'result-confirmation' });
+        // return $state.go('checker', { stage: 'result-review' });
+      }
 
       $state.go('checker', { stage: remainingSteps[nextStepIndex] });
     }
