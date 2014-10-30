@@ -657,7 +657,7 @@ input[type="search"]::-webkit-search-decoration {
       /* line 146, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/govuk_template/_footer.scss */
       #footer .footer-meta .copyright a {
         display: block;
-        background-image: url("../images/images/govuk-crest.png");
+        background-image: url("../images/govuk-crest.png");
         background-repeat: no-repeat;
         background-position: 50% 0%;
         text-align: center;
@@ -905,15 +905,15 @@ form {
     font-weight: bold; }
     /* line 147, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/_forms.scss */
     form .button.m-secondary {
-      background: #f8f8f8;
+      background: #dee0e2;
       box-shadow: none;
       font-weight: normal;
-      padding: 8px 15px;
-      color: #005ea5;
+      padding: 8px 15px 6px;
+      color: #0b0c0c;
       font-weight: bold; }
       /* line 155, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/_forms.scss */
       form .button.m-secondary:hover, form .button.m-secondary:active, form .button.m-secondary:focus {
-        background: #dfdfdf; }
+        background: #c3c7ca; }
   /* line 163, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/_forms.scss */
   form input[type="number"] {
     -webkit-appearance: textfield;
