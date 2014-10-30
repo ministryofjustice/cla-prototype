@@ -16,7 +16,7 @@ form name="propertyForm" ng-submit="submit(propertyForm)"
     dl ng-repeat="field in property" ng-if="field.name != 'rent_income' || field.name == 'rent_income' && property[($index - 1)].value == 1"
       dt
         = label_tag '{{field.name}}', caption: '{{field.label}}'
-        help-text field="field"
+        help-text field="field" has-partner="hasPartner"
       dd ng-if="field.type == 'number' || field.type == 'text'"
         label.field-label.prefix(
           for="{{field.name}}"

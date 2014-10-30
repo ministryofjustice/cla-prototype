@@ -65,9 +65,10 @@ app.factory('decision', function($state, storage) {
       if (currentStep === 'outgoings') {
         return $state.go('checker', { stage: 'result-ineligible' });
       }
-      // if (currentStep === 'application') {
-      //   return $state.go('checker', { stage: 'result-review' });
-      // }
+      if (currentStep === 'application') {
+        return $state.go('checker', { stage: 'result-confirmation' });
+        // return $state.go('checker', { stage: 'result-review' });
+      }
 
       $state.go('checker', { stage: remainingSteps[nextStepIndex] });
     }

@@ -1,6 +1,6 @@
 dl
   dt ng-if="field.label"
-    ' {{field.label}}
+    ' {{field.label | replaceTextOnCondition : !hasPartner : 'and|(\/?or)? your partner' : ''}}
     help-text field="field"
   dd
     label(

@@ -28,49 +28,51 @@
   label: When can we call you?
   type: select
   day:
-    value: today
     options:
     -
-      name: today
+      label: -- Day --
+    -
+      value: today
       label: Today
     -
-      name: tomorrow
+      value: tomorrow
       label: Tomorrow
     -
-      name: wednesday
+      value: wednesday
       label: Wednesday
     -
-      name: thursday
+      value: thursday
       label: Thursday
     -
-      name: friday
+      value: friday
       label: Friday
     -
-      name: saturday
+      value: saturday
       label: Saturday
   time:
-    value: 10
     options:
     -
-      name: 10
+      label: -- Time --
+    -
+      value: 10
       label: 10:30 - 11:30
     -
-      name: 11
+      value: 11
       label: 11:30 - 12:30
     -
-      name: 12
+      value: 12
       label: 12:30 - 13:30
     -
-      name: 13
+      value: 13
       label: 13:30 - 14:30
     -
-      name: 14
+      value: 14
       label: 14:30 - 15:30
     -
-      name: 15
+      value: 15
       label: 15:30 - 16:30
     -
-      name: 16
+      value: 16
       label: 16:30 - 17:30
   size: xlarge
 -
@@ -78,6 +80,7 @@
   label: Help the operator to understand your situation
   inline_help: |
     In your own words, please tell us exactly what your problem is about.
+
     The Civil Legal Advice operator will read this before they call you.
   type: textarea
   size: full

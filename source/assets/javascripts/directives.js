@@ -48,7 +48,8 @@ app.directive('helpText', function() {
     replace: true,
     templateUrl: './partials/-help-text.html',
     scope: {
-      field: '='
+      field: '=',
+      hasPartner: '='
     },
     link: function(scope, elem, attr) {
       if(scope.field.inline_help || scope.field.more_info) {

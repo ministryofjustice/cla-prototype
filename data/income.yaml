@@ -6,7 +6,7 @@
     pattern: '[0-9,\.]+'
     prefix: £
     title: If you have nothing to declare, enter 0
-    inline_help: The total you get for all your children
+    inline_help: The total amount you get for all your children
     frequency: &frequency
       value: pm
       options:
@@ -29,11 +29,11 @@
     pattern: '[0-9,\.]+'
     prefix: £
     title: If you have nothing to declare, enter 0
-    inline_help: The total you get for all your children
+    inline_help: The total amount you get for all your children
     frequency: *frequency
   -
     name: excluded_benefits
-    label: Do you get any of these benefits?
+    label: Do you or your partner get any of these benefits?
     inline_help: These benefits don’t count as income. Please tick the ones you receive.
     options:
       - name: attendance_allowance
@@ -86,7 +86,7 @@
         type: checkbox
   -
     name: has_other_benefits
-    label: Do you receive any other benefits not listed above?
+    label: Do you or your partner receive any other benefits not listed above?
     type: radio
     options: &yes-no
       - value: 1
@@ -107,7 +107,7 @@
     name: earnings
     label: Wages before tax
     type: text
-    inline_help: This includes your earnings from self-employment
+    inline_help: This includes all your wages and any earnings from self-employment
     pattern: '[0-9,\.]+'
     prefix: £
     title: If you have nothing to declare, enter 0

@@ -1,6 +1,6 @@
 dl
   dt
-    = label_tag '{{field.name}}', caption: '{{field.label}}'
+    = label_tag '{{field.name}}', caption: "{{field.label | replaceTextOnCondition : !hasPartner : 'and|(\/?or)? your partner' : ''}}"
     help-text field="field"
   dd
     label ng-repeat="option in field.options"
