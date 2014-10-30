@@ -55,6 +55,10 @@ app.factory('decision', function($state, storage) {
 
       this.checkEligibility(scope);
 
+      if(scope.isFaceToFace) {
+        return $state.go('checker', { stage: 'result-face-to-face' });
+      }
+
       if (this.isEligible && (currentStep === 'benefits' || currentStep === 'outgoings')) {
         return $state.go('checker', { stage: 'result-eligible' });
       }

@@ -23,6 +23,20 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
     $scope.isWorking   = _.some(value, { name: 'is_working',   value: '1' });
   }, true);
 
+  var FACE_TO_FACE_CATEGORIES = [
+    'clinneg',
+    'commcare',
+    'immigration',
+    'mentalhealth',
+    'pi',
+    'publiclaw',
+    'aap'
+  ];
+
+  $scope.$watch('categories', function(value) {
+    $scope.isFaceToFace = !!~FACE_TO_FACE_CATEGORIES.indexOf(value.selected);
+  }, true);
+
   $scope.$watch('benefits', function(value) {
     $scope.hasOtherBenefits = _.some(value, { name: 'none_of_above', value: true });
   });
