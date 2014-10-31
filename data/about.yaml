@@ -1,0 +1,87 @@
+-
+  name: has_partner
+  label: Do you have a partner?
+  type: radio
+  inline_help: Your partner is your husband, wife, civil partner or someone you live with as if you’re married
+  options: &yes-no
+    - value: 1
+      label: 'Yes'
+    - value: 0
+      label: 'No'
+  with_yes:
+    name: is_separated
+    type: radio
+    label: Are you in dispute with your partner?
+    inline_help: This means a dispute over money or property following a separation
+    options: *yes-no
+
+-
+  name: has_benefits
+  label: Are you or your partner on any benefits?
+  type: radio
+  inline_help: Being on some benefits can help you qualify for legal aid
+  options: *yes-no
+-
+  name: has_children
+  label: Do you or your partner have any children aged 15 or under?
+  type: radio
+  inline_help: Don’t include any children who don’t live with you
+  more_info: |
+    Young people aged 16 or over who live with you and who you support financially
+    should be included in the next question under “Do you have any dependants aged 16 or over?”
+  options: *yes-no
+  with_yes:
+    name: number_of_children
+    type: number
+    label: How many?
+    min: 1
+    max: 15
+-
+  name: caring_responsibilities
+  label: Do you have any dependants aged 16 or over?
+  type: radio
+  inline_help: People who you live with and support financially
+  more_info: This could be a young person for whom you get Child Benefit
+  options: *yes-no
+  with_yes:
+    name: number_of_dependants
+    type: number
+    label: How many?
+    min: 1
+    max: 15
+-
+  name: has_savings
+  label: Do you or your partner have any savings, investments or any valuable items?
+  type: radio
+  inline_help: Valuable items are worth over £500 each with some exceptions
+  more_info: |
+    Don’t include the following:
+
+    * household furniture and effects, unless they’re exceptionally valuable
+    * tools of your trade (for example, computers for a graphic designer, carpentry tools for a carpenter)
+    * the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
+
+    Give the item’s current value - what the item would sell for if you sold it today.
+
+  options: *yes-no
+-
+  name: own_property
+  label: Do you or your partner own any property?
+  type: radio
+  inline_help: For example, a house, flat or static caravan
+  options: *yes-no
+-
+  name: is_working
+  label: Are you or your partner employed?
+  type: radio
+  options: *yes-no
+-
+  name: is_self_employed
+  label: Are you or your partner self-employed?
+  type: radio
+  options: *yes-no
+-
+  name: older_than_sixty
+  label: Are you or your partner aged 60 or over?
+  type: radio
+  options: *yes-no

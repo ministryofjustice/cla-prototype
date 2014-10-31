@@ -1,0 +1,62 @@
+.field-help {
+  $_margin: 8px;
+
+  color: #6f777b;
+  font-size: .9em;
+  margin-top: $_margin/2;
+
+  ._inline-help {
+    margin-right: $_margin;
+  }
+
+  ._more-info {
+    &-toggle {
+      @extend a:link;
+      @include user-select(none);
+      display: inline-block;
+      font-size: 14px;
+      line-height: 14px;
+      cursor: default;
+      font-weight: bold;
+      outline: none;
+      padding-left: 12px;
+
+      &:before {
+        font-size: 16px;
+        content: '▸';
+        float: left;
+        margin-left: -12px;
+      }
+
+      &:active {
+        color: $yellow;
+      }
+
+      &.s-expanded:before {
+        content: '▾';
+      }
+    }
+
+    &-content {
+      margin-top: $_margin;
+
+      p,
+      ul {
+        font-size: inherit;
+      }
+
+      p {
+        padding: 0;
+        margin: $_margin 0 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      ul {
+        margin: $_margin 0;
+      }
+    }
+  }
+}

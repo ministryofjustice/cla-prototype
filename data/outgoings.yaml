@@ -1,0 +1,50 @@
+-
+  name: rent
+  label: Rent
+  type: text
+  inline_help: Money you and your partner pay your landlord
+  pattern: '[0-9,\.]+'
+  prefix: £
+  title: If you have nothing to declare, enter 0
+  frequency: &frequency
+    value: pm
+    options:
+      -
+        name: pw
+        label: per week
+      -
+        name: 4w
+        label: 4 weekly
+      -
+        name: pm
+        label: per month
+      -
+        name: py
+        label: per year
+-
+  name: childcare
+  label: Childcare
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: £
+  title: If you have nothing to declare, enter 0
+  frequency: *frequency
+  inline_help: Money you and your partner pay for your child to be looked after while you work or study
+-
+  name: maintenance
+  label: Maintenance
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: £
+  title: If you have nothing to declare, enter 0
+  frequency: *frequency
+  inline_help: Money you and/or your partner pay to an ex-partner for their living costs
+-
+  name: contribution_order
+  label: Income Contribution Order
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: £
+  title: If you have nothing to declare, enter 0
+  frequency: *frequency
+  inline_help: Money you and/or your partner pay towards your criminal legal aid

@@ -1,0 +1,22 @@
+go-back-link
+
+h1 Your benefits
+
+form(name="benefitsForm" ng-submit="submit(benefitsForm)" novalidate)
+
+  .error(scroll-to ng-if="benefitsForm.submitted && benefitsForm.$invalid")
+    p Please select at least one option
+
+  fieldset
+    dl
+      dd {{ 'Are you or your partner on any of these benefits?'|replaceTextOnCondition : !hasPartnerNotInDispute : 'or your partner' : '' }}
+    dl ng-repeat="field in benefits"
+      dd
+        label.m-block ng-class="{'s-selected' : field.value == 1}"
+          input>(
+            type="{{field.type}}"
+            ng-model="field.value"
+            ng-required="!anySelected(benefits)"
+          )  {{field.label}}
+
+  = partial 'action', locals: { button_label: 'Continue' }

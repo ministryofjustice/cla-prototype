@@ -1,0 +1,10 @@
+.field-help
+  span._inline-help ng-if="field.inline_help"
+    | {{ field.inline_help | replaceTextOnCondition : !hasPartner : "(and|or)(\/or)? your partner" : '' }}
+  span._more-info-toggle(
+    ng-class="{'s-expanded' : field.expanded}"
+    ng-click="field.expanded = !field.expanded"
+    ng-if="field.more_info"
+  )
+    | more info
+  ._more-info-content(ng-if="field.more_info && field.expanded" btf-markdown="field.more_info")

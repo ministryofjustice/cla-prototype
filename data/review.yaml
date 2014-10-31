@@ -1,0 +1,25 @@
+about:
+  has_partner:
+    0: You don’t have a partner
+    1: You have a partner
+  has_benefits:
+    0: You are not on benefits
+    1: You are on benefits
+  has_children:
+    0: You don’t have any children
+    1: You have {num} children
+  caring_responsibilities:
+    0: You don’t have any dependants aged 16 or over
+    1: You have {num} dependants aged 16 or over
+  has_savings:
+    0: You don’t have any savings
+    1: You have savings
+  own_property:
+    0: You don’t own any properties
+    1: You own one or more properties
+  is_working:
+    0: You’re not working
+    1: You’re working
+  older_than_sixty:
+    0: You’re aged under 60
+    1: You’re aged 60 or over

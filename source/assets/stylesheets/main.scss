@@ -1,0 +1,198 @@
+* {
+  @include box-sizing(border-box);
+}
+
+html {
+  background: $grey-3;
+}
+
+body {
+  @include core-19;
+  background: $white;
+  color: $text-colour;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.phase-banner {
+  @include phase-banner(beta);
+}
+
+#content {
+  @include outer-block;
+  min-height: 440px;
+
+  .inner-block {
+    @include inner-block(margin);
+  }
+}
+
+section {
+  @include clearfix;
+  padding: 30px 0;
+
+  > header {
+    margin-bottom: 30px;
+  }
+
+  .subtitle {
+    @include core-24;
+  }
+}
+
+.action {
+  margin: 20px 0;
+
+  button.m-skip {
+    color: $black;
+    background: $grey-3;
+    box-shadow: 0 2px 0 $grey-1;
+
+    &:hover {
+      background: $grey-2;
+    }
+  }
+}
+
+
+.notice,
+.error {
+  margin: 10px 0;
+  border-left: 3px solid $yellow;
+  background-color: lighten($yellow-25, 3);
+  padding: 12px 30px;
+
+  p {
+    @include core-16;
+    padding: 6px 0;
+  }
+}
+
+.error {
+  border-left-color: $red;
+  background-color: lighten($red-25, 3);
+}
+
+
+
+
+.callouts {
+  margin: 30px 0;
+}
+
+dl.callout {
+  @include clearfix;
+  padding-left: 270px;
+  margin: 0;
+
+  &:nth-child(odd) {
+    background: rgba(black, .05);
+  }
+
+  dt,
+  dd {
+    padding: 20px;
+    margin: 0;
+  }
+
+  dt {
+    float: left;
+    font-weight: bold;
+    padding-right: 50px;
+    width: 200px;
+    margin-left: -270px;
+  }
+}
+
+.header-proposition .content {
+  position: relative;
+}
+
+.checked-list {
+  list-style: none;
+
+  li:before {
+    content: '✓';
+    float: left;
+    margin-left: -24px;
+    color: $green;
+  }
+}
+
+.go-back-link {
+  @include position(-10px null null null);
+  font-size: 15px;
+
+  &:before {
+    display: inline-block;
+    margin-right: 6px;
+    content: '◀';
+    font-size: 13px;
+  }
+}
+
+
+.result-picker {
+  float: right;
+}
+
+
+.completion-box {
+  background: $turquoise;
+  color: $white;
+  padding: 20px;
+  text-align: center;
+
+  ._reference-number {
+    font-size: 25px;
+    margin-top: 5px;
+    display: block;
+  }
+}
+
+.m-has-sidebar {
+  .content,
+  .sidebar {
+    @include media(tablet) {
+      float: left;
+    }
+  }
+
+  .content {
+    @include media(tablet) {
+      padding-right: 40px;
+      width: 70%;
+    }
+  }
+
+  .sidebar {
+    margin-top: 40px;
+
+    @include media(tablet) {
+      margin-top: 15px;
+      width: 30%;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      padding-top: 15px;
+      border-top: 10px solid $govuk-blue;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+      font-size: 16px;
+
+      li {
+        margin: 5px 0;
+      }
+    }
+  }
+}

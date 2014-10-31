@@ -1,0 +1,41 @@
+h1 Can I get legal aid?
+p.subtitle
+  ' This service tells you if you might be able to get legal aid
+  | in England and Wales - and suggests other sources of help if you can’t.
+
+p
+  ' You can only use this service for non-criminal (civil) problems.
+  ' If you have been charged with a crime, talk to your solicitor
+  | about #{link_to 'criminal legal aid', 'https://www.gov.uk/legal-aid/how-to-claim', target: '_blank'}.
+
+
+markdown:
+  ### Before you start
+
+  To use this service, you’ll need:
+
+  * last month’s payslips (if you’re working)
+  * last month’s  bank statements
+  * details of any benefits you got last month
+
+p.action
+  button.button.button-get-started ui-sref="checker({ stage: 'problem' })" Start
+  small style="display: block" If you might be able to get legal aid, you can speak to an operator about your problem at the end of this service.
+
+
+markdown:
+  ### What is legal aid?
+
+  * it can help you cover the cost of legal advice
+  * it can get someone to speak for you in court
+  * it can help you resolve family problems without going to court
+
+  ### Who can get legal aid?
+
+  * your income (or combined income if you have a partner) should not
+    be more than £2,657 a month before tax
+  * your savings (or combined savings if you have a partner) should not
+    be more than £8,000
+  * your income (or combined income if you have a partner) after certain
+    outgoings have been deducted must not be more than £733 a month -
+    this service will ask you more about these outgoings

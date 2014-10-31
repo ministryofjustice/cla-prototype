@@ -1,0 +1,88 @@
+-
+  name: title
+  label: Title
+  type: text
+  inline_help: Mr, Mrs, Ms
+-
+  name: full_name
+  label: Full name
+  type: text
+  size: xlarge
+-
+  name: contact_number
+  label: Contact phone number
+  type: text
+-
+  name: postcode
+  label: Postcode
+  type: text
+  optional: true
+-
+  name: address
+  label: Address
+  type: textarea
+  optional: true
+  size: xlarge
+-
+  name: contact_time_preference
+  label: When can we call you?
+  type: select
+  day:
+    options:
+    -
+      label: -- Day --
+    -
+      value: today
+      label: Today
+    -
+      value: tomorrow
+      label: Tomorrow
+    -
+      value: wednesday
+      label: Wednesday
+    -
+      value: thursday
+      label: Thursday
+    -
+      value: friday
+      label: Friday
+    -
+      value: saturday
+      label: Saturday
+  time:
+    options:
+    -
+      label: -- Time --
+    -
+      value: 10
+      label: 10:30 - 11:30
+    -
+      value: 11
+      label: 11:30 - 12:30
+    -
+      value: 12
+      label: 12:30 - 13:30
+    -
+      value: 13
+      label: 13:30 - 14:30
+    -
+      value: 14
+      label: 14:30 - 15:30
+    -
+      value: 15
+      label: 15:30 - 16:30
+    -
+      value: 16
+      label: 16:30 - 17:30
+  size: xlarge
+-
+  name: extra_notes
+  label: Help the operator to understand your situation
+  inline_help: |
+    In your own words, please tell us exactly what your problem is about.
+
+    The Civil Legal Advice operator will read this before they call you.
+  type: textarea
+  size: full
+  optional: true
+  rows: 7

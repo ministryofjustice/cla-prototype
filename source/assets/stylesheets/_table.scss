@@ -1,0 +1,45 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+
+  caption {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  th {
+    text-align: left;
+    font-weight: normal;
+  }
+
+  tr:nth-child(odd) {
+    td,
+    th {
+      background: $grey-4;
+    }
+  }
+
+  .total.total {
+    td,
+    th {
+      border-top: 1px dotted #ddd;
+      background: none;
+    }
+  }
+
+  ._label {
+    width: 40%;
+  }
+
+  ._value {
+    padding-left: 10px;
+  }
+}

@@ -1,0 +1,31 @@
+go-back-link
+
+div ng-if="hasPartnerNotInDispute"
+  h1 You and your partner’s savings
+  p Any cash, savings or investments held in both your names.
+div ng-if="!hasPartnerNotInDispute"
+  h1 Your savings
+  p We need to know about any money you have saved or invested.
+
+form name="savingsForm" ng-submit="submit(savingsForm)"
+  dl ng-repeat="field in savings"
+    dt
+      = label_tag '{{field.name}}', caption: "{{field.label | replaceTextOnCondition : !hasPartnerNotInDispute : 'and|(\/?or)? your partner' : ''}}"
+      help-text field="field" hasPartner="hasPartnerNotInDispute"
+    dd
+      label.field-label.prefix(
+        for="{{field.name}}"
+        ng-if="field.prefix"
+      )  {{field.prefix}}
+      input.form-control.m-small>(
+        type="{{field.type}}"
+        id="{{field.name}}"
+        min="{{field.min}}"
+        max="{{field.max}}"
+        pattern="{{field.pattern}}"
+        ng-model="field.value"
+        ng-required="true"
+        delimited-number
+    )
+
+  = partial 'action', locals: { button_label: 'Continue' }

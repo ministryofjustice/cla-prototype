@@ -1,0 +1,57 @@
+list:
+  -
+    name: violence
+    label: Violence or abuse at home
+    inline_help: Domestic violence, child abuse, harassment by an ex-partner
+  -
+    name: housing
+    label: Housing
+    inline_help: Eviction, homelessness, losing your home, rent arrears
+  -
+    name: debt
+    label: Debt
+    inline_help: Money problems, bankruptcy, repossession
+  -
+    name: family
+    label: Family
+    inline_help: Divorce, separation, contact with children
+  -
+    name: immigration
+    label: Immigration and asylum
+    inline_help: Applying for asylum or permission to stay in the UK
+  -
+    name: benefits
+    label: Welfare benefits appeals
+    inline_help: Appealing a decision about your benefits
+  -
+    name: education
+    label: Education
+    inline_help: Special educational needs, problems with school places, exclusions, learning difficulties
+  -
+    name: aap
+    label: Trouble with the police
+    inline_help: Being treated unfairly by the police, wrongful arrest
+  -
+    name: discrimination
+    label: Discrimination
+    inline_help: Being treated unfairly because of your race, sex, sexual orientation, for example as a consumer or in the workplace
+  -
+    name: pi
+    label: Personal injury
+    inline_help: An accident that was not your fault
+  -
+    name: publiclaw
+    label: Public law
+    inline_help: Taking legal action against a public body, like your local council
+  -
+    name: commcare
+    label: Community care
+    inline_help: You’re unhappy with the care being provided for yourself or a relative
+  -
+    name: clinneg
+    label: Clinical negligence
+    inline_help: Doctors and nurses not treating you with due care
+  -
+    name: mentalhealth
+    label: Mental health
+    inline_help: Getting someone to speak for you at a mental health tribunal or inquest

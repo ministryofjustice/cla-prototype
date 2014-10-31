@@ -1,0 +1,48 @@
+go-back-link
+
+h1 About you
+
+form name="aboutForm" ng-submit="submit(aboutForm)"
+  fieldset
+    dl ng-repeat="field in about"
+      dt
+        span {{ field.label|replaceTextOnCondition : !hasPartnerNotInDispute : 'or your partner' : '' }}
+        help-text field="field"
+      dd
+        label ng-repeat="option in field.options"
+          input>(
+            type="{{field.type}}"
+            name="{{field.name}}"
+            value="{{option.value}}"
+            ng-model="field.value"
+            ng-required="true"
+          )  {{option.label}}
+        div(
+          style="margin-top:5px"
+          ng-if="field.name == 'has_children' && hasChildren || field.name == 'caring_responsibilities' && isCaring"
+        )
+          label for="{{field.with_yes.name}}" {{field.with_yes.label}}
+          input.form-control.m-xsmall>(
+            id="{{field.with_yes.name}}"
+            type="{{field.with_yes.type}}"
+            name="{{field.with_yes.name}}"
+            ng-model="field.sub_value"
+            ng-required="true"
+          )
+        div(
+          style="margin-top:5px"
+          ng-if="field.name == 'has_partner' && hasPartner"
+        )
+          div style="margin: 10px 0 5px 10px"
+            ' {{field.with_yes.label}}
+            help-text field="field.with_yes"
+          label ng-repeat="option in field.with_yes.options"
+            input>(
+              type="{{field.with_yes.type}}"
+              name="{{field.with_yes.name}}"
+              value="{{option.value}}"
+              ng-model="field.with_yes.value"
+              ng-required="true"
+            )  {{option.label}}
+
+  = partial 'action', locals: { button_label: 'Continue' }

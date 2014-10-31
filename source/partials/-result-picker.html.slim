@@ -1,0 +1,6 @@
+nav.result-picker ng-class="{'s-expanded' : expanded}"
+  a.toggle ng-click="expanded = !expanded" Debug
+  menu
+    li: a ui-sref="checker({ stage: 'result-ineligible' })" Ineligible
+    li: a ui-sref="checker({ stage: 'result-eligible' })" Eligible
+    / li: a ui-sref="checker({ stage: 'result-review' })" Review

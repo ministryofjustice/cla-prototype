@@ -1,0 +1,29 @@
+-
+  name: bank
+  label: Savings
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: '£'
+  inline_help: The total amount of savings in cash, bank or building society
+-
+  name: investments
+  label: Investments
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: '£'
+  inline_help: This includes stocks, shares, bonds (but not property)
+-
+  name: valuable_items
+  label: Valuable items you and your partner own worth over £500 each
+  type: text
+  pattern: '[0-9,\.]+'
+  prefix: '£'
+  inline_help: Total value of any items you own with some exceptions
+  more_info: |
+    Don’t include the following:
+
+    * household furniture and effects, unless they’re exceptionally valuable
+    * tools of your trade (for example, computers for a graphic designer, carpentry tools for a carpenter)
+    * the car or vehicle you use regularly, unless it’s a classic car or luxury vehicle
+
+    Give the item’s current value - what the item would sell for if you sold it today.

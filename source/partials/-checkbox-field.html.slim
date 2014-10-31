@@ -1,0 +1,14 @@
+dl
+  dt ng-if="field.label"
+    ' {{field.label | replaceTextOnCondition : !hasPartnerNotInDispute : 'and|(\/?or)? your partner' : ''}}
+    help-text field="field"
+  dd
+    label(
+      style="display: block;"
+      ng-repeat="option in field.options"
+      ng-class="{'s-selected' : field.value == 1}"
+    )
+      input>(
+        type="{{option.type}}"
+        ng-model="option.value"
+      )  {{option.label}}

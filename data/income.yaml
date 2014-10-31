@@ -1,0 +1,169 @@
+- benefits_tax_credit:
+  -
+    name: child_benefit
+    label: Child Benefit
+    type: text
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    inline_help: The total amount you get for all your children
+    frequency: &frequency
+      value: pm
+      options:
+        -
+          name: pw
+          label: per week
+        -
+          name: 4w
+          label: 4 weekly
+        -
+          name: pm
+          label: per month
+        -
+          name: py
+          label: per year
+  -
+    name: child_tax_credit
+    label: Child Tax Credit
+    type: text
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    inline_help: The total amount you get for all your children
+    frequency: *frequency
+  -
+    name: excluded_benefits
+    label: Do you or your partner get any of these benefits?
+    inline_help: These benefits don’t count as income. Please tick the ones you receive.
+    options:
+      - name: attendance_allowance
+        label: Attendance Allowance
+        type: checkbox
+      - name: care_in_community
+        label: Care in the community Direct Payment
+        type: checkbox
+      - name: carers_allowance
+        label: Carers’ Allowance
+        type: checkbox
+      - name: constant_attendance_allowance
+        label: Constant Attendance Allowance
+        type: checkbox
+      - name: council_tax_benefits
+        label: Council Tax Benefits
+        type: checkbox
+      - name: disability_living_allowance
+        label: Disability Living Allowance
+        type: checkbox
+      - name: earnings_top_up
+        label: Earnings Top Up
+        type: checkbox
+      - name: exceptionally_severe_disablement
+        label: Exceptionally Severe Disablement Allowance
+        type: checkbox
+      - name: fostering_allowance
+        label: Fostering Allowance
+        type: checkbox
+      - name: housing_benefit
+        label: Housing Benefit
+        type: checkbox
+      - name: independent_living_funds
+        label: Independent Living Funds payment
+        type: checkbox
+      - name: personal_independent
+        label: Personal Independent Payments
+        type: checkbox
+      - name: severe_disablement
+        label: Severe Disablement Allowance
+        type: checkbox
+      - name: social_fund
+        label: Social Fund Payments
+        type: checkbox
+      - name: war_pension
+        label: War Pension
+        type: checkbox
+      - name: lump_sum_widows_pension
+        label: Widow's Pension lump sum payments
+        type: checkbox
+  -
+    name: has_other_benefits
+    label: Do you or your partner receive any other benefits not listed above?
+    type: radio
+    options: &yes-no
+      - value: 1
+        label: 'Yes'
+      - value: 0
+        label: 'No'
+  -
+    name: benefits
+    label: Total amount of benefits not listed above
+    type: text
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    frequency: *frequency
+    pattern: '[0-9,\.]+'
+
+- me: &me-money-in
+  -
+    name: earnings
+    label: Wages before tax
+    type: text
+    inline_help: This includes all your wages and any earnings from self-employment
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    frequency: *frequency
+  -
+    name: tax_paid
+    label: Income tax
+    type: text
+    inline_help: Tax paid directly out of your wages and any tax you pay on self-employed earnings
+    pattern: '[0-9,\.]+'
+    title: If you have nothing to declare, enter 0
+    prefix: £
+    frequency: *frequency
+  -
+    name: ni
+    label: National Insurance contributions
+    type: text
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    frequency: *frequency
+    inline_help: Check your payslip or your National Insurance statement if you’re self-employed
+  -
+    name: working_tax_credit
+    label: Working Tax Credit
+    type: text
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    pattern: '[0-9,\.]+'
+    frequency: *frequency
+  -
+    name: maintenance_received
+    label: Maintenance received
+    type: text
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    frequency: *frequency
+    inline_help: Payments you get from an ex-partner
+  -
+    name: pension
+    label: Pension received
+    type: text
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    inline_help: Payments you receive if you’re retired
+    frequency: *frequency
+  -
+    name: other_icome
+    label: Any other income
+    type: text
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    inline_help: For example, student grants, income from trust funds, dividends
+    frequency: *frequency
+
+- partner: *me-money-in

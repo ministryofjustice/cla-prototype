@@ -1,0 +1,49 @@
+section {
+  h1 {
+    @include heading-48;
+    font-weight: 700;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  h2 {
+    @include heading-36;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    @include core-24;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+
+  h4 {
+    @include core-19;
+    font-weight: bold;
+  }
+
+  p, ul, ol, blockquote {
+    @include core-19;
+  }
+
+  p {
+    margin: 0;
+    padding: {
+      top: 12px;
+      bottom: 12px;
+    }
+  }
+
+  ul, ol {
+    padding-left: 30px;
+  }
+
+  ol {
+    li {
+      list-style: decimal;
+    }
+  }
+}

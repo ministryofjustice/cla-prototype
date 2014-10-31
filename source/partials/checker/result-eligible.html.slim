@@ -1,0 +1,62 @@
+h1 You might qualify for legal aid with Civil Legal Advice
+
+form(name="applicationForm" ng-submit="submit(applicationForm)")
+  h3 Request a callback
+  p
+    ' To find out if legal aid can help in your specific situation,
+    ' you need to speak to an operator.
+    ' Please submit your details so that they call you back.
+  p
+    ' If you don’t have a number we can call you on, please
+    | contact <a href="https://www.gov.uk/civil-legal-advice" target="_blank">Civil Legal Advice</a>.
+
+  .error(scroll-to ng-if="applicationForm.submitted && applicationForm.$invalid")
+    p You have some errors in this form
+
+  fieldset style="margin-top: 20px"
+    dl ng-repeat="field in application"
+      dt
+        = label_tag '{{field.name}}', caption: '{{field.label}}{{field.optional ? " (optional)" : ""}}'
+        help-text field="field"
+      dd ng-if="field.name != 'contact_time_preference'"
+        input.form-control(
+          id="{{field.name}}"
+          type="{{field.type}}"
+          class="m-{{field.size || 'normal'}}"
+          ng-if="field.type == 'text'"
+          ng-model="field.value"
+          ng-required="{{!field.optional}}"
+        )
+        textarea.form-control(
+          id="{{field.name}}"
+          rows="{{field.rows || 4}}"
+          class="m-{{field.size || 'normal'}}"
+          ng-if="field.type == 'textarea'"
+          ng-required="{{!field.optional}}"
+        )
+      dd(
+        ng-if="field.name == 'contact_time_preference'"
+        ng-class="{'error' : applicationForm.submitted && (applicationForm.preferredDay.$error || applicationForm.preferredTime.$error)}"
+      )
+        select.form-control>(
+          ng-model="field.day.value"
+          name="preferredDay"
+          ng-options="o.value as o.label for o in field.day.options"
+          ng-required="true"
+        )
+        select.form-control(
+          ng-model="field.time.value"
+          name="preferredTime"
+          ng-options="o.value as o.label for o in field.time.options"
+          ng-required="true"
+        )
+
+  .notice
+    h4 What happens next
+    p
+      ' If the operator you speak to believes you can get legal aid,
+      ' they will find you specialist legal help, like a phone call with a solicitor
+      ' or support from a family mediation service.
+
+  p.action: button.button
+    | Request callback

@@ -1,0 +1,58 @@
+-
+  -
+    name: is_main
+    label: Is this property your main home?
+    type: radio
+    inline_help: If you are separated and no longer live in the property you own, please answer ‘no’.
+    options: &yes-no
+      - value: 1
+        label: 'Yes'
+      - value: 0
+        label: 'No'
+  -
+    name: share
+    label: Does anyone else own a share of the property?
+    type: radio
+    inline_help: Other than you and your partner
+    options: *yes-no
+  -
+    name: worth
+    label: How much is the property worth?
+    type: text
+    prefix: '£'
+    pattern: '[0-9,\.]+'
+    inline_help: Use your own estimate
+  -
+    name: mortgage_left
+    label: How much is left to pay on the mortgage?
+    type: text
+    prefix: '£'
+    pattern: '[0-9,\.]+'
+    inline_help: Include the full amount you owe, even if the property has shared ownership
+  -
+    name: mortgage_repayments
+    label: How much are your monthly mortgage repayments?
+    type: text
+    prefix: '£'
+    pattern: '[0-9,\.]+'
+  -
+    name: has_rent_income
+    label: Does anyone pay you rent for this property?
+    type: radio
+    options: *yes-no
+  -
+    name: rent_income
+    label: How much rent do they pay you?
+    type: text
+    prefix: '£'
+    pattern: '[0-9,\.]+'
+  -
+    name: is_disputed
+    label: Is your share of the property in dispute?
+    type: radio
+    inline_help: For example, as part of the financial settlement of a divorce
+    more_info: |
+      A disputed property is one whose ownership is disputed by someone eg an ex-partner wants
+      to claim a share in it as part of a divorce or separation, or a creditor or mortgage company
+      wants to force the sale of it to repay a debt.
+    options: *yes-no

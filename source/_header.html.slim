@@ -1,0 +1,17 @@
+header#global-header.with-proposition role="banner"
+  .header-wrapper
+    .header-global
+      .header-logo
+        = link_to 'https://www.gov.uk/', title: 'Go to the GOV.UK homepage', class: 'content', id: 'logo'
+          = image_tag '/assets/images/gov.uk_logotype_crown.png', width: 35, height: 31
+          | GOV.UK
+
+    .header-proposition
+      .content
+        nav#proposition-menu
+          = link_to 'Civil Legal Aid', '#', id: 'proposition-name'
+          .util
+            reset-storage
+            result-picker
+
+#global-header-bar: .inner-block: .header-bar

@@ -1,0 +1,23 @@
+go-back-link
+
+h1 ng-if="hasPartnerNotInDispute" You and your partner’s outgoings
+h1 ng-if="!hasPartnerNotInDispute" Your outgoings
+
+p
+  ' We only need to know about some things you pay for,
+  | to work out if you may be able to get legal aid.
+
+form name="outgoingsForm" ng-submit="submit(outgoingsForm)"
+  fieldset
+    ng-include(
+      src="'partials/-money-field.html'"
+      ng-repeat="field in outgoings"
+      ng-if="field.name != 'childcare'"
+    )
+    ng-include(
+      src="'partials/-money-field.html'"
+      ng-repeat="field in outgoings"
+      ng-if="hasChildren && field.name == 'childcare'"
+    )
+
+  = partial 'action'
