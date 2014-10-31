@@ -12,8 +12,9 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
 
   // Update rootScope with global values
   $scope.$watch('about', function(value) {
-    $scope.hasPartner  = _.some(value, { name: 'has_partner',  value: '1' });
     $scope.isSeparatedPartner = _.some(value, { name: 'has_partner', value: '1', with_yes: { value: '1' } });
+    $scope.hasPartner  = _.some(value, { name: 'has_partner',  value: '1' });
+    $scope.hasPartnerNotInDispute = $scope.hasPartner && !$scope.isSeparatedPartner;
     $scope.hasBenefits = _.some(value, { name: 'has_benefits', value: '1' });
     $scope.hasBenefits = _.some(value, { name: 'has_benefits', value: '1' });
     $scope.hasChildren = _.some(value, { name: 'has_children', value: '1' });
@@ -45,7 +46,15 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
   $scope.$root.sidebar = null;
 
   if(!$state.params.stage.match(/^result/)) {
-    $scope.$root.sidebar = 'sidebar-reminder';
+    // $scope.$root.sidebar = 'sidebar-blank';
+
+    if(
+      $state.params.stage == 'about' ||
+      $state.params.stage == 'savings' ||
+      $state.params.stage == 'income'
+    ) {
+      $scope.$root.sidebar = 'sidebar-reminder';
+    }
   }
 
   $scope.submit = function(form) {

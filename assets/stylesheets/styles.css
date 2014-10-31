@@ -1296,26 +1296,27 @@ dl.callout {
     width: 70%; } }
 /* line 169, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
 .m-has-sidebar .sidebar {
-  border-top: 10px solid #005ea5;
   margin-top: 40px; }
   @media (min-width: 641px) {
     /* line 169, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
     .m-has-sidebar .sidebar {
       margin-top: 15px;
       width: 30%; } }
-  /* line 178, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
+  /* line 177, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
   .m-has-sidebar .sidebar h3 {
-    margin: 15px 0 10px; }
-  /* line 182, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
+    margin: 0 0 10px;
+    padding-top: 15px;
+    border-top: 10px solid #005ea5; }
+  /* line 183, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
   .m-has-sidebar .sidebar nav ul {
     list-style: none;
     padding: 0; }
-  /* line 187, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
+  /* line 188, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
   .m-has-sidebar .sidebar ul {
     padding-left: 20px;
     margin: 0;
     font-size: 16px; }
-    /* line 192, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
+    /* line 193, /Users/tyom/Dropbox/Code/MoJ/cla-prototype/source/assets/stylesheets/main.scss */
     .m-has-sidebar .sidebar ul li {
       margin: 5px 0; }
 
