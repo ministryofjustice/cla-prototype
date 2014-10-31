@@ -41,7 +41,7 @@
   label: Do you have any dependants aged 16 or over?
   type: radio
   inline_help: People who you live with and support financially
-  more_info: This could be an ill or disabled relative or a young person for whom you get Child Benefit.
+  more_info: This could be a young person for whom you get Child Benefit
   options: *yes-no
   with_yes:
     name: number_of_dependants
@@ -68,13 +68,17 @@
   name: own_property
   label: Do you or your partner own any property?
   type: radio
-  inline_help: For example, a house, flat, caravan, boat
+  inline_help: For example, a house, flat or static caravan
   options: *yes-no
 -
   name: is_working
-  label: Are you or your partner doing paid work?
+  label: Are you or your partner employed?
   type: radio
-  inline_help: This includes working for yourself
+  options: *yes-no
+-
+  name: is_self_employed
+  label: Are you or your partner self-employed?
+  type: radio
   options: *yes-no
 -
   name: older_than_sixty

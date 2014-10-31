@@ -45,7 +45,7 @@ app.factory('decision', function($state, storage) {
       if (!scope.hasSavings) {
         skippedSteps.push('savings');
       }
-      if (!scope.hasOtherBenefits && !scope.hasChildren && !scope.isCaring) {
+      if (!scope.hasBenefits || !scope.hasOtherBenefits && !scope.hasChildren && !scope.isCaring) {
         skippedSteps.push('benefitsTaxCredits');
       }
 
