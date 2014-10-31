@@ -9,7 +9,7 @@ form(name="benefitsForm" ng-submit="submit(benefitsForm)" novalidate)
 
   fieldset
     dl
-      dd {{ 'Are you or your partner on any of these benefits?'|replaceTextOnCondition : !hasPartner : 'or your partner' : '' }}
+      dd {{ 'Are you or your partner on any of these benefits?'|replaceTextOnCondition : !hasPartnerNotInDispute : 'or your partner' : '' }}
     dl ng-repeat="field in benefits"
       dd
         label.m-block ng-class="{'s-selected' : field.value == 1}"

@@ -6,7 +6,7 @@ form name="aboutForm" ng-submit="submit(aboutForm)"
   fieldset
     dl ng-repeat="field in about"
       dt
-        span {{ field.label|replaceTextOnCondition : !hasPartner : 'or your partner' : '' }}
+        span {{ field.label|replaceTextOnCondition : !hasPartnerNotInDispute : 'or your partner' : '' }}
         help-text field="field"
       dd
         label ng-repeat="option in field.options"
