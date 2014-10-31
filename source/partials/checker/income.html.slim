@@ -9,8 +9,8 @@ p
 
 form name="incomeForm" ng-submit="submit(incomeForm)" ng-controller="IncomeCtrl"
   div ng-repeat="item in income" ng-if="item.me"
-    h3 ng-if="hasPartner && !isSeparatedPartner" Your personal income
-    p ng-if="hasPartner && !isSeparatedPartner"
+    h3 ng-if="hasPartnerNotInDispute" Your personal income
+    p ng-if="hasPartnerNotInDispute"
       ' This section is for any money that is paid to you personally
       ' - for example, your wages. You should record income for your partner,
       | if you have one, in the next section.
@@ -26,8 +26,8 @@ form name="incomeForm" ng-submit="submit(incomeForm)" ng-controller="IncomeCtrl"
         ng-if="field.name != 'earnings' && field.name != 'tax_paid' && field.name != 'ni' && field.name != 'working_tax_credit'"
       )
 
-  div ng-repeat="item in income" ng-if="hasPartner && item.partner"
-    h3 ng-if="hasPartner && !isSeparatedPartner" Your partner’s income
+  div ng-repeat="item in income" ng-if="hasPartnerNotInDispute && item.partner"
+    h3 ng-if="hasPartnerNotInDispute" Your partner’s income
     fieldset ng-repeat="set in item"
       ng-include(
         src="'partials/-money-field.html'"

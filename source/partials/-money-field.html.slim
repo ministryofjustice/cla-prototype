@@ -1,7 +1,7 @@
 dl
   dt
-    = label_tag '{{field.name}}', caption: '{{field.label}}'
-    help-text field="field"
+    = label_tag '{{field.name}}', caption: "{{field.label | replaceTextOnCondition : !hasPartnerNotInDispute : 'and|(\/?or)? your partner' : ''}}"
+    help-text field="field" has-partner="hasPartnerNotInDispute"
   dd
     label.field-label.prefix(
       for="{{field.name}}"

@@ -1,7 +1,7 @@
 go-back-link
 
-h1 ng-if="hasPartner && !isSeparatedPartner" You and your partner’s outgoings
-h1 ng-if="!hasPartner && !isSeparatedPartner" Your outgoings
+h1 ng-if="hasPartnerNotInDispute" You and your partner’s outgoings
+h1 ng-if="!hasPartnerNotInDispute" Your outgoings
 
 p
   ' We only need to know about some things you pay for,
