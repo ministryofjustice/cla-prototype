@@ -46,7 +46,15 @@ app.controller('CheckerCtrl', function($scope, $state, $resource, storage, decis
   $scope.$root.sidebar = null;
 
   if(!$state.params.stage.match(/^result/)) {
-    $scope.$root.sidebar = 'sidebar-reminder';
+    // $scope.$root.sidebar = 'sidebar-blank';
+
+    if(
+      $state.params.stage == 'about' ||
+      $state.params.stage == 'savings' ||
+      $state.params.stage == 'income'
+    ) {
+      $scope.$root.sidebar = 'sidebar-reminder';
+    }
   }
 
   $scope.submit = function(form) {
