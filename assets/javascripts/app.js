@@ -311,7 +311,7 @@ app.factory('decision', function($state, storage) {
         return $state.go('checker', { stage: 'result-eligible' });
       }
       if (currentStep === 'outgoings') {
-        return $state.go('checker', { stage: 'result-ineligible' });
+        return $state.go('checker', { stage: 'result-eligible' });
       }
       if (currentStep === 'application') {
         return $state.go('checker', { stage: 'result-confirmation' });
