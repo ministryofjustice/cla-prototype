@@ -80,7 +80,7 @@
   name: is_self_employed
   label: Are you or your partner self-employed?
   type: radio
-  line_help: This means working for yourself - you may be both employed and self-employed
+  inline_help: This means working for yourself - you may be both employed and self-employed
   options: *yes-no
 -
   name: older_than_sixty
