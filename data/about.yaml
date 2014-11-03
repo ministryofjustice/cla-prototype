@@ -38,7 +38,7 @@
     max: 15
 -
   name: caring_responsibilities
-  label: Do you have any dependants aged 16 or over?
+  label: Do you or your partner have any dependants aged 16 or over?
   type: radio
   inline_help: People who you live with and support financially
   more_info: This could be a young person for whom you get Child Benefit
@@ -74,11 +74,13 @@
   name: is_working
   label: Are you or your partner employed?
   type: radio
+  inline_help: This means working as an employee - you may be both employed and self-employed
   options: *yes-no
 -
   name: is_self_employed
   label: Are you or your partner self-employed?
   type: radio
+  line_help: This means working for yourself - you may be both employed and self-employed
   options: *yes-no
 -
   name: older_than_sixty

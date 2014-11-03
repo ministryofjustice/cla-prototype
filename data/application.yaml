@@ -38,9 +38,6 @@
       value: tomorrow
       label: Tomorrow
     -
-      value: wednesday
-      label: Wednesday
-    -
       value: thursday
       label: Thursday
     -
@@ -49,31 +46,46 @@
     -
       value: saturday
       label: Saturday
+    -
+      value: monday
+      label: Monday
   time:
     options:
     -
       label: -- Time --
     -
+      value: 9
+      label: 09:00 - 10:00
+    -
       value: 10
-      label: 10:30 - 11:30
+      label: 10:00 - 11:00
     -
       value: 11
-      label: 11:30 - 12:30
+      label: 11:00 - 12:00
     -
       value: 12
-      label: 12:30 - 13:30
+      label: 12:00 - 13:00
     -
       value: 13
-      label: 13:30 - 14:30
+      label: 13:00 - 14:00
     -
       value: 14
-      label: 14:30 - 15:30
+      label: 14:00 - 15:00
     -
       value: 15
-      label: 15:30 - 16:30
+      label: 15:00 - 16:00
     -
       value: 16
-      label: 16:30 - 17:30
+      label: 16:00 - 17:00
+    -
+      value: 17
+      label: 17:00 - 18:00
+    -
+      value: 18
+      label: 18:00 - 19:00
+    -
+      value: 19
+      label: 19:00 - 20:00
   size: xlarge
 -
   name: extra_notes

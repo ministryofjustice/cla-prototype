@@ -166,4 +166,66 @@
     inline_help: For example, student grants, income from trust funds, dividends
     frequency: *frequency
 
-- partner: *me-money-in
+- partner:
+  -
+    name: earnings
+    label: Wages before tax
+    type: text
+    inline_help: This includes all your partner’s wages and any earnings from self-employment
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    frequency: *frequency
+  -
+    name: tax_paid
+    label: Income tax
+    type: text
+    inline_help: Tax paid directly out of your partner’s wages and any tax they pay on self-employed earnings
+    pattern: '[0-9,\.]+'
+    title: If you have nothing to declare, enter 0
+    prefix: £
+    frequency: *frequency
+  -
+    name: ni
+    label: National Insurance contributions
+    type: text
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    frequency: *frequency
+    inline_help: Check your partner’s payslip or National Insurance statement if they are self-employed
+  -
+    name: working_tax_credit
+    label: Working Tax Credit
+    type: text
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    pattern: '[0-9,\.]+'
+    frequency: *frequency
+  -
+    name: maintenance_received
+    label: Maintenance received
+    type: text
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    frequency: *frequency
+    inline_help: Payments they get from an ex-partner
+  -
+    name: pension
+    label: Pension received
+    type: text
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    inline_help: Payments they receive if they are retired
+    frequency: *frequency
+  -
+    name: other_icome
+    label: Any other income
+    type: text
+    pattern: '[0-9,\.]+'
+    prefix: £
+    title: If you have nothing to declare, enter 0
+    inline_help: For example, student grants, income from trust funds, dividends
+    frequency: *frequency
