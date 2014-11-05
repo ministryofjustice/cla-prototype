@@ -10,7 +10,6 @@ markdown:
   p If you’re really not sure what to choose, ask us to #{link_to 'call you back', 'http://callmeback.justice.gov.uk/', target: '_blank'}.
 
 form(name="problemForm" ng-submit="submit(problemForm)" novalidate)
-  h2 {{problemForm.submitted}}
   .error(scroll-to ng-if="problemForm.submitted && problemForm.$invalid")
     p Please select one option
 
