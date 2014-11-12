@@ -1,7 +1,7 @@
 list:
   -
     name: violence
-    label: Violence or abuse at home
+    label: Abuse at home
     inline_help: Domestic violence, child abuse, harassment by an ex-partner
   -
     name: housing
